@@ -1,0 +1,375 @@
+import SwiftUI
+import SwiftData
+
+struct SettingsView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Query private var settings: [UserSettings]
+    @Query private var streaks: [UserStreak]
+
+    @State private var notificationsEnabled: Bool = true
+    @State private var notificationTimes: [NotificationTime] = NotificationTime.defaults
+    @State private var showingResetAlert = false
+
+    private var currentSettings: UserSettings? {
+        settings.first
+    }
+
+    private var currentStreak: UserStreak? {
+        streaks.first
+    }
+
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                Color("BackgroundCream")
+                    .ignoresSafeArea()
+
+                ScrollView {
+                    VStack(spacing: 24) {
+                        streakSection
+
+                        notificationSection
+
+                        aboutSection
+
+                        resetSection
+                    }
+                    .padding()
+                }
+            }
+            .navigationTitle("Settings")
+            .onAppear {
+                loadSettings()
+            }
+            .alert("Reset All Data", isPresented: $showingResetAlert) {
+                Button("Cancel", role: .cancel) {}
+                Button("Reset", role: .destructive) {
+                    resetAllData()
+                }
+            } message: {
+                Text("This will delete all your favorites, history, and streak progress. This action cannot be undone.")
+            }
+        }
+    }
+
+    private var streakSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Your Progress")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(Color("TextPrimary"))
+
+            HStack(spacing: 20) {
+                StatCard(
+                    title: "Current Streak",
+                    value: "\(currentStreak?.currentStreak ?? 0)",
+                    icon: "flame.fill",
+                    color: .orange
+                )
+
+                StatCard(
+                    title: "Longest Streak",
+                    value: "\(currentStreak?.longestStreak ?? 0)",
+                    icon: "trophy.fill",
+                    color: Color("AccentGold")
+                )
+
+                StatCard(
+                    title: "Total Days",
+                    value: "\(currentStreak?.totalDaysActive ?? 0)",
+                    icon: "calendar",
+                    color: Color("AccentGreen")
+                )
+            }
+        }
+    }
+
+    private var notificationSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Notifications")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(Color("TextPrimary"))
+
+            VStack(spacing: 12) {
+                Toggle(isOn: $notificationsEnabled) {
+                    HStack {
+                        Image(systemName: "bell.fill")
+                            .foregroundStyle(Color("AccentGreen"))
+                        Text("Enable Notifications")
+                            .font(.system(size: 16, weight: .medium))
+                    }
+                }
+                .tint(Color("AccentGreen"))
+                .onChange(of: notificationsEnabled) { _, newValue in
+                    updateNotificationSetting(enabled: newValue)
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color("CardBackground"))
+                )
+
+                if notificationsEnabled {
+                    VStack(spacing: 8) {
+                        ForEach($notificationTimes) { $time in
+                            NotificationTimeRow(time: $time) {
+                                updateNotificationTimes()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private var aboutSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("About")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(Color("TextPrimary"))
+
+            VStack(spacing: 0) {
+                AboutRow(title: "Version", value: "1.0.0")
+                Divider()
+                AboutRow(title: "Dhikirs", value: "55+")
+                Divider()
+                AboutRow(title: "Sources", value: "Quran & Hadith")
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color("CardBackground"))
+            )
+        }
+    }
+
+    private var resetSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Data")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(Color("TextPrimary"))
+
+            Button(action: { showingResetAlert = true }) {
+                HStack {
+                    Image(systemName: "trash")
+                        .foregroundStyle(Color.red)
+                    Text("Reset All Data")
+                        .foregroundStyle(Color.red)
+                    Spacer()
+                }
+                .font(.system(size: 16, weight: .medium))
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color("CardBackground"))
+                )
+            }
+        }
+    }
+
+    private func loadSettings() {
+        if let settings = currentSettings {
+            notificationsEnabled = settings.notificationsEnabled
+            notificationTimes = settings.notificationTimes
+        }
+    }
+
+    private func updateNotificationSetting(enabled: Bool) {
+        if enabled {
+            Task {
+                let granted = await NotificationService.shared.requestAuthorization()
+                if granted {
+                    NotificationService.shared.scheduleNotifications(times: notificationTimes)
+                }
+            }
+        } else {
+            NotificationService.shared.cancelAllNotifications()
+        }
+
+        if let settings = currentSettings {
+            settings.notificationsEnabled = enabled
+            try? modelContext.save()
+        }
+    }
+
+    private func updateNotificationTimes() {
+        if let settings = currentSettings {
+            settings.notificationTimes = notificationTimes
+            try? modelContext.save()
+        }
+
+        if notificationsEnabled {
+            NotificationService.shared.scheduleNotifications(times: notificationTimes)
+        }
+    }
+
+    private func resetAllData() {
+        let favoriteDescriptor = FetchDescriptor<UserFavorite>()
+        let historyDescriptor = FetchDescriptor<ReadingHistory>()
+
+        if let favorites = try? modelContext.fetch(favoriteDescriptor) {
+            for favorite in favorites {
+                modelContext.delete(favorite)
+            }
+        }
+
+        if let history = try? modelContext.fetch(historyDescriptor) {
+            for item in history {
+                modelContext.delete(item)
+            }
+        }
+
+        if let streak = currentStreak {
+            streak.currentStreak = 0
+            streak.longestStreak = 0
+            streak.totalDaysActive = 0
+            streak.lastActiveDate = Date()
+        }
+
+        try? modelContext.save()
+    }
+}
+
+struct StatCard: View {
+    let title: String
+    let value: String
+    let icon: String
+    let color: Color
+
+    var body: some View {
+        VStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.system(size: 20))
+                .foregroundStyle(color)
+
+            Text(value)
+                .font(.system(size: 24, weight: .bold))
+                .foregroundStyle(Color("TextPrimary"))
+
+            Text(title)
+                .font(.system(size: 10, weight: .medium))
+                .foregroundStyle(Color("TextSecondary"))
+                .multilineTextAlignment(.center)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 16)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color("CardBackground"))
+                .shadow(color: .black.opacity(0.03), radius: 6, y: 3)
+        )
+    }
+}
+
+struct NotificationTimeRow: View {
+    @Binding var time: NotificationTime
+    let onUpdate: () -> Void
+
+    @State private var showTimePicker = false
+
+    var body: some View {
+        HStack {
+            Toggle(isOn: $time.isEnabled) {
+                HStack {
+                    Text(time.label)
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundStyle(Color("TextPrimary"))
+
+                    Spacer()
+
+                    Button(action: { showTimePicker = true }) {
+                        Text(time.timeString)
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(Color("AccentGreen"))
+                    }
+                }
+            }
+            .tint(Color("AccentGreen"))
+            .onChange(of: time.isEnabled) { _, _ in
+                onUpdate()
+            }
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color("CardBackground"))
+        )
+        .sheet(isPresented: $showTimePicker) {
+            TimePickerSheet(time: $time, onDone: onUpdate)
+        }
+    }
+}
+
+struct TimePickerSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @Binding var time: NotificationTime
+    let onDone: () -> Void
+
+    @State private var selectedDate: Date = Date()
+
+    var body: some View {
+        NavigationStack {
+            VStack {
+                DatePicker(
+                    "Select Time",
+                    selection: $selectedDate,
+                    displayedComponents: .hourAndMinute
+                )
+                .datePickerStyle(.wheel)
+                .labelsHidden()
+
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("Set Time")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") {
+                        let calendar = Calendar.current
+                        time.hour = calendar.component(.hour, from: selectedDate)
+                        time.minute = calendar.component(.minute, from: selectedDate)
+                        onDone()
+                        dismiss()
+                    }
+                    .fontWeight(.semibold)
+                }
+            }
+            .onAppear {
+                let calendar = Calendar.current
+                var components = DateComponents()
+                components.hour = time.hour
+                components.minute = time.minute
+                selectedDate = calendar.date(from: components) ?? Date()
+            }
+        }
+    }
+}
+
+struct AboutRow: View {
+    let title: String
+    let value: String
+
+    var body: some View {
+        HStack {
+            Text(title)
+                .font(.system(size: 16, weight: .medium))
+                .foregroundStyle(Color("TextPrimary"))
+
+            Spacer()
+
+            Text(value)
+                .font(.system(size: 14))
+                .foregroundStyle(Color("TextSecondary"))
+        }
+        .padding()
+    }
+}
+
+#Preview {
+    SettingsView()
+        .modelContainer(for: [UserSettings.self, UserStreak.self, UserFavorite.self, ReadingHistory.self], inMemory: true)
+}

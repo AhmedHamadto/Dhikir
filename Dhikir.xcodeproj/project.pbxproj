@@ -1,0 +1,750 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B91F607C0E65BA3685B7FEA /* DhikirModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C1AA89B18876B3EFAB07 /* DhikirModelTests.swift */; };
+		0E077771DDFDA183E594C94E /* Dhikir.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE12DD01B086919E0D4CF46 /* Dhikir.swift */; };
+		17E7CEE7EEB8A4434BC7DA4F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB522750215C8DD29FD33FF /* Date+Extensions.swift */; };
+		1B7B7BFF060FCD2554011A62 /* UserFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E69C4BFF27125249FF72067 /* UserFavorite.swift */; };
+		1BB95E006772CFB67C0E140B /* EmotionalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3DEAEEC29670EF55AFFDA /* EmotionalState.swift */; };
+		236636DD0FA2EB3F84BD3A36 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95527B339DE6454F1B723D03 /* UserSettings.swift */; };
+		23935F53FC9A26905071D758 /* UserStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA83BCA85B8363B46F19BDD8 /* UserStreak.swift */; };
+		2C185ECF258E90C0896D6BEA /* DatabaseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB5C28ED065CFDD2992DD2D /* DatabaseServiceTests.swift */; };
+		34EE498986E71EA600FE55AC /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653B97EC90AB3A7D34EE31A /* DateExtensionTests.swift */; };
+		49EF31EB08A6004163598B0C /* dhikirs.json in Resources */ = {isa = PBXBuildFile; fileRef = 47CCA4A0C63BA3098200D568 /* dhikirs.json */; };
+		4A1EE1851524BD94E51529FE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AF3C247D76C20B241E58257 /* Colors.xcassets */; };
+		4D4F11E474E528E8EFE36DAF /* StreakService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A846E29F5E49C00A371F02 /* StreakService.swift */; };
+		5B6025D8410C26871D1FD1B7 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CA3AD2191F28125576830 /* AudioService.swift */; };
+		67646EBF785E0A03A73C5D62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3D03227A0112D8C6335605 /* Assets.xcassets */; };
+		7231EC938AB0CD3AE0646F83 /* DhikirDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321DED22C78AB513BB4D83F /* DhikirDisplayView.swift */; };
+		88689C744C0C2066A3809890 /* DhikirUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703CEDA2DFAA990E39C7BA4E /* DhikirUITestsLaunchTests.swift */; };
+		904E92766E4DE458014D2AC4 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BEBE06BAF4C708FDE9978D /* HistoryView.swift */; };
+		9F48B6EC196174055F155FAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334A49921F6260F15C504C81 /* AppDelegate.swift */; };
+		A57B957E2ECF90C95B04A412 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC9A12A2E744E43447E978A /* DatabaseService.swift */; };
+		A9B6DB76B5AB4788C1B83615 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AD8B7C69329083B9BC922E /* ContentView.swift */; };
+		AB320E46F12785EA7C127469 /* EmotionalStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DA3AE1AE61DE0601BEB102 /* EmotionalStateTests.swift */; };
+		AE504410F9B36AAC3BFBE710 /* LifeSituation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43F1DF05665C99451C8913 /* LifeSituation.swift */; };
+		AF53CFB4B9669D9CD8FBCC44 /* ReadingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43997DB99D3F59E0161E749 /* ReadingHistory.swift */; };
+		B50F5CA9C6AE081566B3279E /* DhikirUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6357F3F838947A3D048018A /* DhikirUITests.swift */; };
+		B6AD25D510743071AFE3C5BF /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00048F4DB7E451433CE6F06 /* NotificationService.swift */; };
+		C0FF24F7C18DF709B883BBC5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A81696CA35589756E489D1 /* HomeView.swift */; };
+		C5893B049974B0C00C98947F /* DhikirDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A405A4918AF8FD7F3CD6776 /* DhikirDataTests.swift */; };
+		D209D423A52AB7426B04B2EC /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722ECC69DAEDBF8E25FE276 /* FavoritesView.swift */; };
+		E5E1FFC62D3290EAD06B07C0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C785EE20150A8023F986F8C /* SettingsView.swift */; };
+		E72AA76C8655E5CDC03EE67D /* DhikirApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BC6ED7EA6CFA5DE301963F /* DhikirApp.swift */; };
+		F1815DF12D80DDE8913FDC8B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C097552F6A28D6B0F3FAF10 /* OnboardingView.swift */; };
+		F41E6E3DF3CC4B2C9140F86A /* EmotionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9700E2E88E6824B3DBBFE3 /* EmotionButton.swift */; };
+		F4795D780DBAE22F670A6B0C /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC24EDE58738B8CD1F839E7 /* ShareSheet.swift */; };
+		FACB278FB3ADFD8E85DDFDA7 /* StreakServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA7A069799152E503461D7 /* StreakServiceTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03CED1A480FC5AA686E39D45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 709347D1E1BE63D87DC7EF81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4E5424FDD3F674257C56A53;
+			remoteInfo = Dhikir;
+		};
+		56A67B0017C673E643E92CCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 709347D1E1BE63D87DC7EF81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4E5424FDD3F674257C56A53;
+			remoteInfo = Dhikir;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0321DED22C78AB513BB4D83F /* DhikirDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikirDisplayView.swift; sourceTree = "<group>"; };
+		0AF3C247D76C20B241E58257 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		0EC24EDE58738B8CD1F839E7 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		191621B07D7A7225157895C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1E69C4BFF27125249FF72067 /* UserFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavorite.swift; sourceTree = "<group>"; };
+		334A49921F6260F15C504C81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		35A846E29F5E49C00A371F02 /* StreakService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakService.swift; sourceTree = "<group>"; };
+		43D3DEAEEC29670EF55AFFDA /* EmotionalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalState.swift; sourceTree = "<group>"; };
+		47CCA4A0C63BA3098200D568 /* dhikirs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dhikirs.json; sourceTree = "<group>"; };
+		511252A6E9FFC3DF72A94D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		54A778659338BD0011015F28 /* Dhikir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dhikir.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C785EE20150A8023F986F8C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5C9CA3AD2191F28125576830 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		6AC9A12A2E744E43447E978A /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		6E75CF6D3FA35E1FF57FD1BC /* DhikirUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = DhikirUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		703CEDA2DFAA990E39C7BA4E /* DhikirUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikirUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		71A81696CA35589756E489D1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7653B97EC90AB3A7D34EE31A /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
+		7A405A4918AF8FD7F3CD6776 /* DhikirDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikirDataTests.swift; sourceTree = "<group>"; };
+		89DA3AE1AE61DE0601BEB102 /* EmotionalStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalStateTests.swift; sourceTree = "<group>"; };
+		8C097552F6A28D6B0F3FAF10 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8D3D03227A0112D8C6335605 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		943218CF9660316FD84A8782 /* Dhikir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dhikir.entitlements; sourceTree = "<group>"; };
+		95527B339DE6454F1B723D03 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		A5BEBE06BAF4C708FDE9978D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		B8BC6ED7EA6CFA5DE301963F /* DhikirApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikirApp.swift; sourceTree = "<group>"; };
+		BAA7C1AA89B18876B3EFAB07 /* DhikirModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikirModelTests.swift; sourceTree = "<group>"; };
+		C00048F4DB7E451433CE6F06 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C5AA7A069799152E503461D7 /* StreakServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakServiceTests.swift; sourceTree = "<group>"; };
+		C722ECC69DAEDBF8E25FE276 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		CA83BCA85B8363B46F19BDD8 /* UserStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStreak.swift; sourceTree = "<group>"; };
+		CEE12DD01B086919E0D4CF46 /* Dhikir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dhikir.swift; sourceTree = "<group>"; };
+		D6357F3F838947A3D048018A /* DhikirUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikirUITests.swift; sourceTree = "<group>"; };
+		DCB5C28ED065CFDD2992DD2D /* DatabaseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceTests.swift; sourceTree = "<group>"; };
+		DE19E614AFF521327ED911C2 /* DhikirTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = DhikirTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF43F1DF05665C99451C8913 /* LifeSituation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeSituation.swift; sourceTree = "<group>"; };
+		E8AD8B7C69329083B9BC922E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EB76CE5D6491732F4F75171C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EC9700E2E88E6824B3DBBFE3 /* EmotionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButton.swift; sourceTree = "<group>"; };
+		EFB522750215C8DD29FD33FF /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		F43997DB99D3F59E0161E749 /* ReadingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingHistory.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0D2F77188976CF597B80AB68 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		29A3E9F0A55DD1B85CD26C4B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				C722ECC69DAEDBF8E25FE276 /* FavoritesView.swift */,
+				A5BEBE06BAF4C708FDE9978D /* HistoryView.swift */,
+				5C785EE20150A8023F986F8C /* SettingsView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		2FA62409188E6F8EE017764A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0321DED22C78AB513BB4D83F /* DhikirDisplayView.swift */,
+				71A81696CA35589756E489D1 /* HomeView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		49418B89E42F4C0738B7B8C9 /* Dhikir */ = {
+			isa = PBXGroup;
+			children = (
+				943218CF9660316FD84A8782 /* Dhikir.entitlements */,
+				191621B07D7A7225157895C6 /* Info.plist */,
+				55BCED47A64E77D4D9F4BD09 /* App */,
+				EF28ADCB45EFEDFD43F43C10 /* Data */,
+				E07969316B4221CB2FB3AFD6 /* Extensions */,
+				A132278AB08AA83011D3865B /* Models */,
+				BE25621C4BB421FACFD94F3F /* Resources */,
+				81EF244F3B972FDE386625A9 /* Services */,
+				9C6330408B5B21E78C9AB7D4 /* ViewModels */,
+				A90E47F2487C722A37F1E899 /* Views */,
+			);
+			path = Dhikir;
+			sourceTree = "<group>";
+		};
+		55BCED47A64E77D4D9F4BD09 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				334A49921F6260F15C504C81 /* AppDelegate.swift */,
+				E8AD8B7C69329083B9BC922E /* ContentView.swift */,
+				B8BC6ED7EA6CFA5DE301963F /* DhikirApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6BAFB26B0D0DE94188CE50C8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EC9700E2E88E6824B3DBBFE3 /* EmotionButton.swift */,
+				0EC24EDE58738B8CD1F839E7 /* ShareSheet.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7E02FFEDFBA3CF75019FAE55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54A778659338BD0011015F28 /* Dhikir.app */,
+				DE19E614AFF521327ED911C2 /* DhikirTests.xctest */,
+				6E75CF6D3FA35E1FF57FD1BC /* DhikirUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81EF244F3B972FDE386625A9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CA3AD2191F28125576830 /* AudioService.swift */,
+				6AC9A12A2E744E43447E978A /* DatabaseService.swift */,
+				C00048F4DB7E451433CE6F06 /* NotificationService.swift */,
+				35A846E29F5E49C00A371F02 /* StreakService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8F76780405045D2DEDBE681A /* DhikirUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D6357F3F838947A3D048018A /* DhikirUITests.swift */,
+				703CEDA2DFAA990E39C7BA4E /* DhikirUITestsLaunchTests.swift */,
+				EB76CE5D6491732F4F75171C /* Info.plist */,
+			);
+			path = DhikirUITests;
+			sourceTree = "<group>";
+		};
+		9C6330408B5B21E78C9AB7D4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A132278AB08AA83011D3865B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEE12DD01B086919E0D4CF46 /* Dhikir.swift */,
+				43D3DEAEEC29670EF55AFFDA /* EmotionalState.swift */,
+				DF43F1DF05665C99451C8913 /* LifeSituation.swift */,
+				F43997DB99D3F59E0161E749 /* ReadingHistory.swift */,
+				1E69C4BFF27125249FF72067 /* UserFavorite.swift */,
+				95527B339DE6454F1B723D03 /* UserSettings.swift */,
+				CA83BCA85B8363B46F19BDD8 /* UserStreak.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A501A2367095EC38E3F88B62 /* DhikirTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCB5C28ED065CFDD2992DD2D /* DatabaseServiceTests.swift */,
+				7653B97EC90AB3A7D34EE31A /* DateExtensionTests.swift */,
+				7A405A4918AF8FD7F3CD6776 /* DhikirDataTests.swift */,
+				BAA7C1AA89B18876B3EFAB07 /* DhikirModelTests.swift */,
+				89DA3AE1AE61DE0601BEB102 /* EmotionalStateTests.swift */,
+				511252A6E9FFC3DF72A94D05 /* Info.plist */,
+				C5AA7A069799152E503461D7 /* StreakServiceTests.swift */,
+			);
+			path = DhikirTests;
+			sourceTree = "<group>";
+		};
+		A90E47F2487C722A37F1E899 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6BAFB26B0D0DE94188CE50C8 /* Components */,
+				29A3E9F0A55DD1B85CD26C4B /* Features */,
+				2FA62409188E6F8EE017764A /* Main */,
+				EB169291C5463074C2A857FD /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE25621C4BB421FACFD94F3F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D3D03227A0112D8C6335605 /* Assets.xcassets */,
+				0AF3C247D76C20B241E58257 /* Colors.xcassets */,
+				0D2F77188976CF597B80AB68 /* Audio */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E07969316B4221CB2FB3AFD6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EFB522750215C8DD29FD33FF /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB169291C5463074C2A857FD /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				8C097552F6A28D6B0F3FAF10 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		EF28ADCB45EFEDFD43F43C10 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				47CCA4A0C63BA3098200D568 /* dhikirs.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FDC132FCA06BDC601A18434C = {
+			isa = PBXGroup;
+			children = (
+				49418B89E42F4C0738B7B8C9 /* Dhikir */,
+				A501A2367095EC38E3F88B62 /* DhikirTests */,
+				8F76780405045D2DEDBE681A /* DhikirUITests */,
+				7E02FFEDFBA3CF75019FAE55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F3B9006101D45BC5F1B6451 /* DhikirTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D03B53C1C7FC570205C32733 /* Build configuration list for PBXNativeTarget "DhikirTests" */;
+			buildPhases = (
+				F3428343359BB01E9109BDD3 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4CD3472D3817F412D6B1BC9 /* PBXTargetDependency */,
+			);
+			name = DhikirTests;
+			packageProductDependencies = (
+			);
+			productName = DhikirTests;
+			productReference = DE19E614AFF521327ED911C2 /* DhikirTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7EDEA48A1DD8F9C1C10E487B /* DhikirUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5243849093B52CB52611EDD /* Build configuration list for PBXNativeTarget "DhikirUITests" */;
+			buildPhases = (
+				E106ED448447306E361B52A0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3F278240B3612A84F16C4BD /* PBXTargetDependency */,
+			);
+			name = DhikirUITests;
+			packageProductDependencies = (
+			);
+			productName = DhikirUITests;
+			productReference = 6E75CF6D3FA35E1FF57FD1BC /* DhikirUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B4E5424FDD3F674257C56A53 /* Dhikir */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57C75D70F02FF021629D378F /* Build configuration list for PBXNativeTarget "Dhikir" */;
+			buildPhases = (
+				06A0C684CA2B193B26123290 /* Sources */,
+				91CB6C934865E1D8BEFBDEFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dhikir;
+			packageProductDependencies = (
+			);
+			productName = Dhikir;
+			productReference = 54A778659338BD0011015F28 /* Dhikir.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		709347D1E1BE63D87DC7EF81 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4F3B9006101D45BC5F1B6451 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					7EDEA48A1DD8F9C1C10E487B = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+						TestTargetID = B4E5424FDD3F674257C56A53;
+					};
+					B4E5424FDD3F674257C56A53 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 15E575B1791173DCA0011862 /* Build configuration list for PBXProject "Dhikir" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = FDC132FCA06BDC601A18434C;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4E5424FDD3F674257C56A53 /* Dhikir */,
+				4F3B9006101D45BC5F1B6451 /* DhikirTests */,
+				7EDEA48A1DD8F9C1C10E487B /* DhikirUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91CB6C934865E1D8BEFBDEFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67646EBF785E0A03A73C5D62 /* Assets.xcassets in Resources */,
+				4A1EE1851524BD94E51529FE /* Colors.xcassets in Resources */,
+				49EF31EB08A6004163598B0C /* dhikirs.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06A0C684CA2B193B26123290 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F48B6EC196174055F155FAE /* AppDelegate.swift in Sources */,
+				5B6025D8410C26871D1FD1B7 /* AudioService.swift in Sources */,
+				A9B6DB76B5AB4788C1B83615 /* ContentView.swift in Sources */,
+				A57B957E2ECF90C95B04A412 /* DatabaseService.swift in Sources */,
+				17E7CEE7EEB8A4434BC7DA4F /* Date+Extensions.swift in Sources */,
+				0E077771DDFDA183E594C94E /* Dhikir.swift in Sources */,
+				E72AA76C8655E5CDC03EE67D /* DhikirApp.swift in Sources */,
+				7231EC938AB0CD3AE0646F83 /* DhikirDisplayView.swift in Sources */,
+				F41E6E3DF3CC4B2C9140F86A /* EmotionButton.swift in Sources */,
+				1BB95E006772CFB67C0E140B /* EmotionalState.swift in Sources */,
+				D209D423A52AB7426B04B2EC /* FavoritesView.swift in Sources */,
+				904E92766E4DE458014D2AC4 /* HistoryView.swift in Sources */,
+				C0FF24F7C18DF709B883BBC5 /* HomeView.swift in Sources */,
+				AE504410F9B36AAC3BFBE710 /* LifeSituation.swift in Sources */,
+				B6AD25D510743071AFE3C5BF /* NotificationService.swift in Sources */,
+				F1815DF12D80DDE8913FDC8B /* OnboardingView.swift in Sources */,
+				AF53CFB4B9669D9CD8FBCC44 /* ReadingHistory.swift in Sources */,
+				E5E1FFC62D3290EAD06B07C0 /* SettingsView.swift in Sources */,
+				F4795D780DBAE22F670A6B0C /* ShareSheet.swift in Sources */,
+				4D4F11E474E528E8EFE36DAF /* StreakService.swift in Sources */,
+				1B7B7BFF060FCD2554011A62 /* UserFavorite.swift in Sources */,
+				236636DD0FA2EB3F84BD3A36 /* UserSettings.swift in Sources */,
+				23935F53FC9A26905071D758 /* UserStreak.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E106ED448447306E361B52A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B50F5CA9C6AE081566B3279E /* DhikirUITests.swift in Sources */,
+				88689C744C0C2066A3809890 /* DhikirUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3428343359BB01E9109BDD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C185ECF258E90C0896D6BEA /* DatabaseServiceTests.swift in Sources */,
+				34EE498986E71EA600FE55AC /* DateExtensionTests.swift in Sources */,
+				C5893B049974B0C00C98947F /* DhikirDataTests.swift in Sources */,
+				0B91F607C0E65BA3685B7FEA /* DhikirModelTests.swift in Sources */,
+				AB320E46F12785EA7C127469 /* EmotionalStateTests.swift in Sources */,
+				FACB278FB3ADFD8E85DDFDA7 /* StreakServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4CD3472D3817F412D6B1BC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4E5424FDD3F674257C56A53 /* Dhikir */;
+			targetProxy = 03CED1A480FC5AA686E39D45 /* PBXContainerItemProxy */;
+		};
+		F3F278240B3612A84F16C4BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4E5424FDD3F674257C56A53 /* Dhikir */;
+			targetProxy = 56A67B0017C673E643E92CCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		303758702044B7207D154F11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentGreen;
+				CODE_SIGN_ENTITLEMENTS = Dhikir/Dhikir.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = PSZB6QTMX7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Dhikir/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.Dhikir;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		36F794CB257E0E963044DA8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		455F36F4C648C4383CF7A635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentGreen;
+				CODE_SIGN_ENTITLEMENTS = Dhikir/Dhikir.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = PSZB6QTMX7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Dhikir/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.Dhikir;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8B66C8BBDA08FE64B2C1DE99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DhikirTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.DhikirTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dhikir.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dhikir";
+			};
+			name = Debug;
+		};
+		B9019168156B9CB7BBB4B0A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DhikirTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.DhikirTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dhikir.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dhikir";
+			};
+			name = Release;
+		};
+		D879585AABD16B70E0A6E404 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DhikirUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.DhikirUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Dhikir;
+			};
+			name = Release;
+		};
+		E2F3E67425D2E2E44538F7A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		E3958D0022E24D2C5ECCD399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DhikirUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.DhikirUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Dhikir;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15E575B1791173DCA0011862 /* Build configuration list for PBXProject "Dhikir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36F794CB257E0E963044DA8F /* Debug */,
+				E2F3E67425D2E2E44538F7A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		57C75D70F02FF021629D378F /* Build configuration list for PBXNativeTarget "Dhikir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				303758702044B7207D154F11 /* Debug */,
+				455F36F4C648C4383CF7A635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A5243849093B52CB52611EDD /* Build configuration list for PBXNativeTarget "DhikirUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3958D0022E24D2C5ECCD399 /* Debug */,
+				D879585AABD16B70E0A6E404 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D03B53C1C7FC570205C32733 /* Build configuration list for PBXNativeTarget "DhikirTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B66C8BBDA08FE64B2C1DE99 /* Debug */,
+				B9019168156B9CB7BBB4B0A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 709347D1E1BE63D87DC7EF81 /* Project object */;
+}
