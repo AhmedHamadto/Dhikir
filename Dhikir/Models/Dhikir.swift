@@ -84,10 +84,16 @@ final class Dhikir {
     }
 
     func translation(for language: SupportedLanguage) -> String {
-        if language == .english {
+        switch language {
+        case .english:
             return englishTranslation
+        case .arabic:
+            // For Arabic, the original arabicText IS the authentic dhikir
+            // Return it as the "translation" since Arabic speakers read the original
+            return arabicText
+        default:
+            return translations[language.rawValue] ?? englishTranslation
         }
-        return translations[language.rawValue] ?? englishTranslation
     }
 }
 

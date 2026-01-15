@@ -50,7 +50,10 @@
       "categories": ["sad", "seeking_forgiveness", "overwhelmed"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "The Prophet (SAW) said whoever says this, Allah will forgive him even if he fled from battle."
+      "benefit": "The Prophet (SAW) said whoever says this, Allah will forgive him even if he fled from battle.",
+      "translations": {
+        "ar": "أطلب المغفرة من الله العظيم الذي لا معبود بحق سواه، الحي الذي لا يموت، القائم على كل شيء، وأرجع إليه تائباً"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440004",
@@ -62,7 +65,10 @@
       "categories": ["anxious", "sad", "overwhelmed", "fearful"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "The Prophet (SAW) used to frequently make this comprehensive dua seeking refuge from worry, sadness, and all forms of distress."
+      "benefit": "The Prophet (SAW) used to frequently make this comprehensive dua seeking refuge from worry, sadness, and all forms of distress.",
+      "translations": {
+        "ar": "يا الله إني ألتجئ إليك من القلق والحزن، ومن العجز والكسل، ومن الجبن والبخل، ومن ثقل الديون وظلم الناس"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440005",
@@ -74,7 +80,10 @@
       "categories": ["sad", "facing_difficulty", "lost"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "Umm Salamah (RA) said this when her husband died, and Allah replaced him with the Prophet (SAW) as her husband."
+      "benefit": "Umm Salamah (RA) said this when her husband died, and Allah replaced him with the Prophet (SAW) as her husband.",
+      "translations": {
+        "ar": "نحن ملك لله وإليه مرجعنا. يا الله أثبني في مصيبتي وعوضني خيراً منها"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440006",
@@ -86,7 +95,10 @@
       "categories": ["angry", "anxious", "fearful"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "The Prophet (SAW) advised saying this when angry. Seeking refuge from Shaytan helps calm the heart and dispel anger."
+      "benefit": "The Prophet (SAW) advised saying this when angry. Seeking refuge from Shaytan helps calm the heart and dispel anger.",
+      "translations": {
+        "ar": "ألتجئ بالله من الشيطان المطرود من رحمة الله"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440007",
@@ -118,7 +130,10 @@
       "categories": ["grateful", "sad", "facing_difficulty"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "Said when faced with something disliked. Teaches us to be grateful in all circumstances."
+      "benefit": "Said when faced with something disliked. Teaches us to be grateful in all circumstances.",
+      "translations": {
+        "ar": "الشكر لله في جميع الأحوال والظروف"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440009",
@@ -130,7 +145,10 @@
       "categories": ["overwhelmed", "facing_difficulty", "anxious", "before_decision"],
       "repetitionCount": 7,
       "audioFileName": null,
-      "benefit": "A powerful dua for when facing any difficulty. Reminds us that only Allah can make things easy."
+      "benefit": "A powerful dua for when facing any difficulty. Reminds us that only Allah can make things easy.",
+      "translations": {
+        "ar": "يا الله لا يسير إلا ما يسرته، وأنت تجعل الصعب سهلاً إذا أردت"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440010",
@@ -142,7 +160,10 @@
       "categories": ["overwhelmed", "anxious", "facing_difficulty", "lonely"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "The Prophet (SAW) taught this dua for times of distress. Calling upon Allah by His beautiful names."
+      "benefit": "The Prophet (SAW) taught this dua for times of distress. Calling upon Allah by His beautiful names.",
+      "translations": {
+        "ar": "يا من له الحياة الدائمة، يا من يقوم على كل شيء، برحمتك أستغيث"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440011",
@@ -154,7 +175,10 @@
       "categories": ["anxious", "overwhelmed", "before_decision"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "The dua of Prophet Musa (AS) before speaking to Pharaoh. Excellent for expanding the chest and easing tasks."
+      "benefit": "The dua of Prophet Musa (AS) before speaking to Pharaoh. Excellent for expanding the chest and easing tasks.",
+      "translations": {
+        "ar": "يا ربي وسّع صدري وسهّل أمري"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440012",
@@ -166,7 +190,10 @@
       "categories": ["hopeful", "grateful", "after_salah"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "One of the most comprehensive duas in the Quran. The Prophet (SAW) used to make this dua frequently."
+      "benefit": "One of the most comprehensive duas in the Quran. The Prophet (SAW) used to make this dua frequently.",
+      "translations": {
+        "ar": "يا ربنا أعطنا في الدنيا خيراً وفي الآخرة خيراً واحمنا من عذاب النار"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440013",
@@ -178,7 +205,10 @@
       "categories": ["lost", "hopeful", "before_decision"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "A beautiful comprehensive dua asking Allah for the essentials of a good life."
+      "benefit": "A beautiful comprehensive dua asking Allah for the essentials of a good life.",
+      "translations": {
+        "ar": "يا الله أسألك الهداية والتقوى والعفة والغنى عن الناس"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440014",
@@ -190,7 +220,10 @@
       "categories": ["lost", "before_decision"],
       "repetitionCount": 7,
       "audioFileName": null,
-      "benefit": "A concise dua for guidance. The Prophet (SAW) told Ali (RA) to remember by 'guidance' the guidance of the path."
+      "benefit": "A concise dua for guidance. The Prophet (SAW) told Ali (RA) to remember by 'guidance' the guidance of the path.",
+      "translations": {
+        "ar": "يا الله أرشدني إلى الطريق الصحيح وثبتني عليه"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440015",
@@ -202,7 +235,10 @@
       "categories": ["morning", "upon_waking"],
       "repetitionCount": 1,
       "audioFileName": null,
-      "benefit": "One of the morning adhkar. Establishes tawheed and gratitude at the start of each day."
+      "benefit": "One of the morning adhkar. Establishes tawheed and gratitude at the start of each day.",
+      "translations": {
+        "ar": "دخلنا الصباح والملك كله لله، والحمد لله، لا معبود بحق إلا الله وحده لا شريك له، له الملك والحمد وهو على كل شيء قدير"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440016",
@@ -214,7 +250,10 @@
       "categories": ["evening"],
       "repetitionCount": 1,
       "audioFileName": null,
-      "benefit": "The evening version of the morning dhikir. Said in the evening to acknowledge Allah's sovereignty."
+      "benefit": "The evening version of the morning dhikir. Said in the evening to acknowledge Allah's sovereignty.",
+      "translations": {
+        "ar": "دخلنا المساء والملك كله لله، والحمد لله، لا معبود بحق إلا الله وحده لا شريك له، له الملك والحمد وهو على كل شيء قدير"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440017",
@@ -226,7 +265,10 @@
       "categories": ["before_sleep"],
       "repetitionCount": 1,
       "audioFileName": null,
-      "benefit": "The Prophet (SAW) would say this when going to sleep, acknowledging that sleep is a minor death."
+      "benefit": "The Prophet (SAW) would say this when going to sleep, acknowledging that sleep is a minor death.",
+      "translations": {
+        "ar": "باسمك يا الله أنام وأستيقظ"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440018",
@@ -238,7 +280,10 @@
       "categories": ["upon_waking", "morning"],
       "repetitionCount": 1,
       "audioFileName": null,
-      "benefit": "Said immediately upon waking. Acknowledging Allah's power over life and death."
+      "benefit": "Said immediately upon waking. Acknowledging Allah's power over life and death.",
+      "translations": {
+        "ar": "الحمد لله الذي أعاد إلينا الحياة بعد النوم وإليه البعث يوم القيامة"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440019",
@@ -250,7 +295,10 @@
       "categories": ["morning", "during_illness"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "A morning dua asking Allah for health in body, hearing, and sight - our most important faculties."
+      "benefit": "A morning dua asking Allah for health in body, hearing, and sight - our most important faculties.",
+      "translations": {
+        "ar": "يا الله احفظ صحة جسدي، واحفظ سمعي، واحفظ بصري، لا إله إلا أنت"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440020",
@@ -262,7 +310,10 @@
       "categories": ["morning", "evening", "fearful", "traveling"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "Whoever says this three times in morning and evening, nothing will harm them."
+      "benefit": "Whoever says this three times in morning and evening, nothing will harm them.",
+      "translations": {
+        "ar": "باسم الله الذي لا يضر مع ذكر اسمه شيء في الأرض ولا في السماء وهو السميع العليم"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440021",
@@ -274,7 +325,10 @@
       "categories": ["morning", "evening", "during_illness", "seeking_forgiveness"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "The Prophet (SAW) said: 'Ask Allah for pardon and well-being, for after certainty of faith, no one is given anything better than well-being.'"
+      "benefit": "The Prophet (SAW) said: 'Ask Allah for pardon and well-being, for after certainty of faith, no one is given anything better than well-being.'",
+      "translations": {
+        "ar": "يا الله أسألك العفو والعافية في الدنيا والآخرة"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440022",
@@ -286,7 +340,10 @@
       "categories": ["morning", "evening", "grateful", "after_salah"],
       "repetitionCount": 100,
       "audioFileName": null,
-      "benefit": "Whoever says this 100 times in the morning and evening will have his sins forgiven even if they were like the foam of the sea."
+      "benefit": "Whoever says this 100 times in the morning and evening will have his sins forgiven even if they were like the foam of the sea.",
+      "translations": {
+        "ar": "أنزه الله عن كل نقص وأحمده على كل نعمة"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440023",
@@ -298,7 +355,10 @@
       "categories": ["morning", "evening", "after_salah", "hopeful"],
       "repetitionCount": 10,
       "audioFileName": null,
-      "benefit": "Whoever says this 10 times will have the reward of freeing four slaves from the children of Isma'il."
+      "benefit": "Whoever says this 10 times will have the reward of freeing four slaves from the children of Isma'il.",
+      "translations": {
+        "ar": "لا معبود بحق إلا الله وحده لا شريك له، له الملك والحمد وهو على كل شيء قدير"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440024",
@@ -310,7 +370,10 @@
       "categories": ["after_salah", "grateful", "morning", "evening"],
       "repetitionCount": 33,
       "audioFileName": null,
-      "benefit": "The four beloved phrases to Allah. More beloved to the Prophet (SAW) than everything the sun rises upon."
+      "benefit": "The four beloved phrases to Allah. More beloved to the Prophet (SAW) than everything the sun rises upon.",
+      "translations": {
+        "ar": "تنزيه الله عن النقائص، والحمد لله على النعم، ولا معبود بحق إلا الله، والله أعظم من كل شيء"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440025",
@@ -322,7 +385,10 @@
       "categories": ["seeking_forgiveness", "after_salah", "sad"],
       "repetitionCount": 100,
       "audioFileName": null,
-      "benefit": "The Prophet (SAW) used to seek forgiveness from Allah more than 70 times a day."
+      "benefit": "The Prophet (SAW) used to seek forgiveness from Allah more than 70 times a day.",
+      "translations": {
+        "ar": "أطلب من الله أن يغفر لي ذنوبي"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440026",
