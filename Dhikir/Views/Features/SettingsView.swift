@@ -9,6 +9,8 @@ struct SettingsView: View {
     @State private var notificationsEnabled: Bool = true
     @State private var notificationTimes: [NotificationTime] = NotificationTime.defaults
     @State private var showingResetAlert = false
+    @State private var selectedAppearance: AppearanceMode = .system
+    @State private var selectedLanguage: SupportedLanguage = .english
 
     private var currentSettings: UserSettings? {
         settings.first
@@ -29,6 +31,10 @@ struct SettingsView: View {
                         streakSection
 
                         notificationSection
+
+                        appearanceSection
+
+                        languageSection
 
                         aboutSection
 
@@ -121,6 +127,84 @@ struct SettingsView: View {
         }
     }
 
+    private var appearanceSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Appearance")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(Color("TextPrimary"))
+
+            HStack(spacing: 12) {
+                ForEach(AppearanceMode.allCases, id: \.self) { mode in
+                    Button(action: {
+                        selectedAppearance = mode
+                        updateAppearance(mode)
+                    }) {
+                        VStack(spacing: 8) {
+                            Image(systemName: mode.icon)
+                                .font(.system(size: 24))
+                                .foregroundStyle(selectedAppearance == mode ? Color("AccentGreen") : Color("TextSecondary"))
+
+                            Text(mode.rawValue)
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundStyle(selectedAppearance == mode ? Color("AccentGreen") : Color("TextSecondary"))
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(Color("CardBackground"))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(selectedAppearance == mode ? Color("AccentGreen") : Color.clear, lineWidth: 2)
+                                )
+                        )
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+        }
+    }
+
+    private var languageSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Translation Language")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(Color("TextPrimary"))
+
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                ForEach(SupportedLanguage.allCases) { language in
+                    Button(action: {
+                        selectedLanguage = language
+                        updateLanguage(language)
+                    }) {
+                        HStack(spacing: 8) {
+                            Text(language.flag)
+                                .font(.system(size: 20))
+
+                            Text(language.displayName)
+                                .font(.system(size: 13, weight: .medium))
+                                .foregroundStyle(selectedLanguage == language ? Color("AccentGreen") : Color("TextPrimary"))
+                                .lineLimit(1)
+
+                            Spacer()
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("CardBackground"))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(selectedLanguage == language ? Color("AccentGreen") : Color.clear, lineWidth: 2)
+                                )
+                        )
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+        }
+    }
+
     private var aboutSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("About")
@@ -169,6 +253,22 @@ struct SettingsView: View {
         if let settings = currentSettings {
             notificationsEnabled = settings.notificationsEnabled
             notificationTimes = settings.notificationTimes
+            selectedAppearance = settings.appearanceMode
+            selectedLanguage = settings.preferredLanguage
+        }
+    }
+
+    private func updateAppearance(_ mode: AppearanceMode) {
+        if let settings = currentSettings {
+            settings.appearanceMode = mode
+            try? modelContext.save()
+        }
+    }
+
+    private func updateLanguage(_ language: SupportedLanguage) {
+        if let settings = currentSettings {
+            settings.preferredLanguage = language
+            try? modelContext.save()
         }
     }
 

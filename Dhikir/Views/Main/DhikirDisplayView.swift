@@ -5,6 +5,11 @@ struct DhikirDisplayView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Query private var favorites: [UserFavorite]
+    @Query private var settings: [UserSettings]
+
+    private var preferredLanguage: SupportedLanguage {
+        settings.first?.preferredLanguage ?? .english
+    }
 
     let category: String
 
@@ -56,7 +61,9 @@ struct DhikirDisplayView: View {
 
                                 repetitionSection(dhikir)
 
-                                actionButtons(dhikir)
+                                if dhikir.audioFileName != nil {
+                                    audioButton(dhikir)
+                                }
 
                                 swipeHint
                             }
@@ -75,6 +82,25 @@ struct DhikirDisplayView: View {
         }
         .navigationTitle(categoryTitle)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                Button(action: { showShareSheet = true }) {
+                    Image(systemName: "square.and.arrow.up")
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundStyle(Color("AccentGreen"))
+                }
+
+                Button(action: {
+                    if let dhikir = currentDhikir {
+                        toggleFavorite(dhikir)
+                    }
+                }) {
+                    Image(systemName: isFavorite ? "heart.fill" : "heart")
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundStyle(isFavorite ? Color.red : Color("AccentGreen"))
+                }
+            }
+        }
         .onAppear {
             loadDhikirs()
         }
@@ -137,11 +163,19 @@ struct DhikirDisplayView: View {
 
     private func translationSection(_ dhikir: Dhikir) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Translation")
-                .font(.system(size: 14, weight: .semibold))
-                .foregroundStyle(Color("AccentGreen"))
+            HStack {
+                Text("Translation")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(Color("AccentGreen"))
 
-            Text(dhikir.englishTranslation)
+                Spacer()
+
+                Text("\(preferredLanguage.flag) \(preferredLanguage.displayName)")
+                    .font(.system(size: 12, weight: .medium))
+                    .foregroundStyle(Color("TextSecondary"))
+            }
+
+            Text(dhikir.translation(for: preferredLanguage))
                 .font(.system(size: 16, weight: .regular))
                 .foregroundStyle(Color("TextPrimary"))
                 .multilineTextAlignment(.leading)
@@ -250,52 +284,26 @@ struct DhikirDisplayView: View {
         .padding(.vertical)
     }
 
-    private func actionButtons(_ dhikir: Dhikir) -> some View {
-        HStack(spacing: 20) {
-            Button(action: { toggleFavorite(dhikir) }) {
-                VStack(spacing: 4) {
-                    Image(systemName: isFavorite ? "heart.fill" : "heart")
-                        .font(.system(size: 24))
-                        .foregroundStyle(isFavorite ? Color.red : Color("TextSecondary"))
+    private func audioButton(_ dhikir: Dhikir) -> some View {
+        Button(action: { playAudio(dhikir) }) {
+            HStack(spacing: 12) {
+                Image(systemName: "speaker.wave.2.fill")
+                    .font(.system(size: 20))
+                    .foregroundStyle(Color("AccentGreen"))
 
-                    Text("Favorite")
-                        .font(.system(size: 12))
-                        .foregroundStyle(Color("TextSecondary"))
-                }
+                Text("Listen to Recitation")
+                    .font(.system(size: 16, weight: .medium))
+                    .foregroundStyle(Color("TextPrimary"))
             }
-
-            Button(action: { showShareSheet = true }) {
-                VStack(spacing: 4) {
-                    Image(systemName: "square.and.arrow.up")
-                        .font(.system(size: 24))
-                        .foregroundStyle(Color("TextSecondary"))
-
-                    Text("Share")
-                        .font(.system(size: 12))
-                        .foregroundStyle(Color("TextSecondary"))
-                }
-            }
-
-            if dhikir.audioFileName != nil {
-                Button(action: { playAudio(dhikir) }) {
-                    VStack(spacing: 4) {
-                        Image(systemName: "speaker.wave.2")
-                            .font(.system(size: 24))
-                            .foregroundStyle(Color("TextSecondary"))
-
-                        Text("Listen")
-                            .font(.system(size: 12))
-                            .foregroundStyle(Color("TextSecondary"))
-                    }
-                }
-            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 14)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color("CardBackground"))
+                    .shadow(color: .black.opacity(0.03), radius: 6, y: 3)
+            )
         }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 16)
-                .fill(Color("CardBackground"))
-                .shadow(color: .black.opacity(0.03), radius: 8, y: 4)
-        )
+        .buttonStyle(PlainButtonStyle())
     }
 
     private var swipeHint: some View {

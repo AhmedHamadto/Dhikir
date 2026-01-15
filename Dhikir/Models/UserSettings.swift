@@ -1,5 +1,28 @@
 import Foundation
 import SwiftData
+import SwiftUI
+
+enum AppearanceMode: String, Codable, CaseIterable {
+    case system = "System"
+    case light = "Light"
+    case dark = "Dark"
+
+    var colorScheme: ColorScheme? {
+        switch self {
+        case .system: return nil
+        case .light: return .light
+        case .dark: return .dark
+        }
+    }
+
+    var icon: String {
+        switch self {
+        case .system: return "circle.lefthalf.filled"
+        case .light: return "sun.max.fill"
+        case .dark: return "moon.fill"
+        }
+    }
+}
 
 @Model
 final class UserSettings {
@@ -7,23 +30,36 @@ final class UserSettings {
     var notificationsEnabled: Bool
     var notificationTimes: [NotificationTime]
     var hasCompletedOnboarding: Bool
-    var preferredLanguage: String
+    var preferredLanguageRaw: String
     var hapticFeedbackEnabled: Bool
+    var appearanceModeRaw: String
+
+    var appearanceMode: AppearanceMode {
+        get { AppearanceMode(rawValue: appearanceModeRaw) ?? .system }
+        set { appearanceModeRaw = newValue.rawValue }
+    }
+
+    var preferredLanguage: SupportedLanguage {
+        get { SupportedLanguage(rawValue: preferredLanguageRaw) ?? .english }
+        set { preferredLanguageRaw = newValue.rawValue }
+    }
 
     init(
         id: UUID = UUID(),
         notificationsEnabled: Bool = true,
         notificationTimes: [NotificationTime] = NotificationTime.defaults,
         hasCompletedOnboarding: Bool = false,
-        preferredLanguage: String = "en",
-        hapticFeedbackEnabled: Bool = true
+        preferredLanguage: SupportedLanguage = .english,
+        hapticFeedbackEnabled: Bool = true,
+        appearanceMode: AppearanceMode = .system
     ) {
         self.id = id
         self.notificationsEnabled = notificationsEnabled
         self.notificationTimes = notificationTimes
         self.hasCompletedOnboarding = hasCompletedOnboarding
-        self.preferredLanguage = preferredLanguage
+        self.preferredLanguageRaw = preferredLanguage.rawValue
         self.hapticFeedbackEnabled = hapticFeedbackEnabled
+        self.appearanceModeRaw = appearanceMode.rawValue
     }
 }
 

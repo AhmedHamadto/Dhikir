@@ -13,6 +13,10 @@ struct ContentView: View {
         return !userSettings.hasCompletedOnboarding && !hasCompletedOnboarding
     }
 
+    private var preferredColorScheme: ColorScheme? {
+        settings.first?.appearanceMode.colorScheme
+    }
+
     enum Tab {
         case home
         case favorites
@@ -28,6 +32,7 @@ struct ContentView: View {
                 mainTabView
             }
         }
+        .preferredColorScheme(preferredColorScheme)
         .onAppear {
             if let userSettings = settings.first {
                 hasCompletedOnboarding = userSettings.hasCompletedOnboarding

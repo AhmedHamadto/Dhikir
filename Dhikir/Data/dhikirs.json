@@ -10,7 +10,15 @@
       "categories": ["anxious", "overwhelmed", "fearful", "facing_difficulty"],
       "repetitionCount": 7,
       "audioFileName": null,
-      "benefit": "Said by Prophet Ibrahim (AS) when thrown into fire, and by the Companions before the Battle of Badr. Brings immense peace during anxiety and fear."
+      "benefit": "Said by Prophet Ibrahim (AS) when thrown into fire, and by the Companions before the Battle of Badr. Brings immense peace during anxiety and fear.",
+      "translations": {
+        "ar": "الله كافينا وهو أفضل من يُوكَل إليه الأمور",
+        "ur": "اللہ ہمارے لیے کافی ہے اور وہ بہترین کارساز ہے",
+        "id": "Cukuplah Allah bagi kami dan Dia adalah sebaik-baik Pelindung",
+        "tr": "Allah bize yeter, O ne güzel vekildir",
+        "fr": "Allah nous suffit, Il est le meilleur Garant",
+        "ms": "Cukuplah Allah bagi kami dan Dia sebaik-baik Pelindung"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440002",
@@ -22,7 +30,15 @@
       "categories": ["anxious", "overwhelmed", "facing_difficulty", "seeking_forgiveness"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "The supplication of Prophet Yunus (AS) in the belly of the whale. Allah says no Muslim will call upon Him with this except that He will respond."
+      "benefit": "The supplication of Prophet Yunus (AS) in the belly of the whale. Allah says no Muslim will call upon Him with this except that He will respond.",
+      "translations": {
+        "ar": "لا معبود بحق إلا أنت، سبحانك، إني كنت من الظالمين لنفسي",
+        "ur": "تیرے سوا کوئی معبود نہیں، تو پاک ہے، بے شک میں ظالموں میں سے تھا",
+        "id": "Tidak ada Tuhan selain Engkau, Maha Suci Engkau, sesungguhnya aku termasuk orang-orang yang zalim",
+        "tr": "Senden başka ilah yoktur, Sen münezzehsin, ben zalimlerden oldum",
+        "fr": "Il n'y a de divinité que Toi, Gloire à Toi, j'étais parmi les injustes",
+        "ms": "Tiada Tuhan selain Engkau, Maha Suci Engkau, sesungguhnya aku termasuk orang yang zalim"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440003",
@@ -82,7 +98,15 @@
       "categories": ["grateful", "joyful"],
       "repetitionCount": 3,
       "audioFileName": null,
-      "benefit": "Said when something good happens. The Prophet (SAW) taught this expression of gratitude for blessings."
+      "benefit": "Said when something good happens. The Prophet (SAW) taught this expression of gratitude for blessings.",
+      "translations": {
+        "ar": "الحمد لله الذي بنعمته تتم الأعمال الصالحة",
+        "ur": "تمام تعریف اللہ کے لیے ہے جس کی نعمت سے نیک کام مکمل ہوتے ہیں",
+        "id": "Segala puji bagi Allah yang dengan nikmat-Nya sempurnalah segala kebaikan",
+        "tr": "Nimeti ile salih amellerin tamamlandığı Allah'a hamd olsun",
+        "fr": "Louange à Allah par la grâce duquel les bonnes œuvres s'accomplissent",
+        "ms": "Segala puji bagi Allah yang dengan nikmat-Nya sempurnalah segala kebaikan"
+      }
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440008",
@@ -659,6 +683,246 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "Sayyid al-Istighfar (Master of Seeking Forgiveness). Whoever says it in the morning with conviction and dies that day enters Paradise."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440056",
+      "arabicText": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+      "transliteration": "Rabbana hab lana min azwajina wa dhurriyyatina qurrata a'yunin waj'alna lil-muttaqina imama",
+      "englishTranslation": "Our Lord, grant us from our spouses and offspring comfort to our eyes and make us leaders of the righteous",
+      "source": "Quran 25:74",
+      "sourceType": "Quran",
+      "categories": ["hopeful", "grateful", "morning"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "A beautiful dua for family and righteousness. Asking Allah for pious family members and spiritual leadership."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440057",
+      "arabicText": "رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً إِنَّكَ سَمِيعُ الدُّعَاءِ",
+      "transliteration": "Rabbi hab li min ladunka dhurriyyatan tayyibah innaka sami'ud-du'a",
+      "englishTranslation": "My Lord, grant me from Yourself good offspring. Indeed, You are the Hearer of supplication",
+      "source": "Quran 3:38",
+      "sourceType": "Quran",
+      "categories": ["hopeful", "lonely"],
+      "repetitionCount": 7,
+      "audioFileName": null,
+      "benefit": "The dua of Prophet Zakariya (AS) asking for a righteous child. Allah answered and granted him Yahya (AS)."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440058",
+      "arabicText": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، وَأَعُوذُ بِكَ مِنْ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ، وَأَعُوذُ بِكَ مِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ",
+      "transliteration": "Allahumma inni a'udhu bika min 'adhabil-qabr, wa a'udhu bika min fitnatil-masihid-dajjal, wa a'udhu bika min fitnatil-mahya wal-mamat",
+      "englishTranslation": "O Allah, I seek refuge in You from the punishment of the grave, from the trial of the False Messiah, and from the trials of life and death",
+      "source": "Sahih Bukhari 1377",
+      "sourceType": "Hadith",
+      "categories": ["fearful", "after_salah", "evening"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "The Prophet (SAW) would seek refuge from these four things in every prayer. Essential protection from major trials."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440059",
+      "arabicText": "اللَّهُمَّ أَصْلِحْ لِي دِينِي الَّذِي هُوَ عِصْمَةُ أَمْرِي، وَأَصْلِحْ لِي دُنْيَايَ الَّتِي فِيهَا مَعَاشِي، وَأَصْلِحْ لِي آخِرَتِي الَّتِي فِيهَا مَعَادِي",
+      "transliteration": "Allahumma aslih li dini alladhi huwa 'ismatu amri, wa aslih li dunyaya allati fiha ma'ashi, wa aslih li akhirati allati fiha ma'adi",
+      "englishTranslation": "O Allah, set right my religion which is the safeguard of my affairs, set right my worldly life wherein is my livelihood, and set right my Hereafter to which is my return",
+      "source": "Sahih Muslim 2720",
+      "sourceType": "Hadith",
+      "categories": ["morning", "hopeful", "overwhelmed"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "A comprehensive dua asking Allah to rectify all aspects of life - religious, worldly, and eternal."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440060",
+      "arabicText": "اللَّهُمَّ اغْفِرْ لِي ذَنْبِي كُلَّهُ، دِقَّهُ وَجِلَّهُ، وَأَوَّلَهُ وَآخِرَهُ، وَعَلَانِيَتَهُ وَسِرَّهُ",
+      "transliteration": "Allahummaghfir li dhanbi kullahu, diqqahu wa jillahu, wa awwalahu wa akhirahu, wa 'alaniyatahu wa sirrahu",
+      "englishTranslation": "O Allah, forgive all my sins, the small and the great, the first and the last, the public and the private",
+      "source": "Sahih Muslim 483",
+      "sourceType": "Hadith",
+      "categories": ["seeking_forgiveness", "after_salah", "sad"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "The Prophet (SAW) would make this comprehensive dua for forgiveness in his sujud, covering all types of sins."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440061",
+      "arabicText": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّارِ",
+      "transliteration": "Allahumma inni as'alukal-jannata wa a'udhu bika minan-nar",
+      "englishTranslation": "O Allah, I ask You for Paradise and seek refuge in You from the Fire",
+      "source": "Sunan Abu Dawud 792",
+      "sourceType": "Hadith",
+      "categories": ["hopeful", "fearful", "after_salah"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "A concise but powerful dua. The Prophet (SAW) said Paradise says 'O Allah, admit me' and the Fire says 'O Allah, save from me'."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440062",
+      "arabicText": "رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ",
+      "transliteration": "Rabbi inni lima anzalta ilayya min khayrin faqir",
+      "englishTranslation": "My Lord, indeed I am, for whatever good You would send down to me, in need",
+      "source": "Quran 28:24",
+      "sourceType": "Quran",
+      "categories": ["lonely", "hopeful", "facing_difficulty"],
+      "repetitionCount": 7,
+      "audioFileName": null,
+      "benefit": "The dua of Prophet Musa (AS) when he was alone and in need. Shortly after, Allah blessed him with shelter, family, and provision."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440063",
+      "arabicText": "رَبَّنَا اغْفِرْ لَنَا ذُنُوبَنَا وَإِسْرَافَنَا فِي أَمْرِنَا وَثَبِّتْ أَقْدَامَنَا وَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ",
+      "transliteration": "Rabbanaghfir lana dhunubana wa israfana fi amrina wa thabbit aqdamana wansurna 'alal-qawmil-kafirin",
+      "englishTranslation": "Our Lord, forgive us our sins and our excess in our affairs and plant firmly our feet and give us victory",
+      "source": "Quran 3:147",
+      "sourceType": "Quran",
+      "categories": ["seeking_forgiveness", "facing_difficulty", "anxious"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "The dua of the righteous warriors who fought alongside the prophets. Combines repentance with asking for steadfastness."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440064",
+      "arabicText": "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
+      "transliteration": "Rabbana zalamna anfusana wa in lam taghfir lana wa tarhamna lanakoonanna minal-khasirin",
+      "englishTranslation": "Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers",
+      "source": "Quran 7:23",
+      "sourceType": "Quran",
+      "categories": ["seeking_forgiveness", "sad", "overwhelmed"],
+      "repetitionCount": 7,
+      "audioFileName": null,
+      "benefit": "The first dua of repentance by Adam and Hawwa (AS). Allah taught them these words to seek forgiveness."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440065",
+      "arabicText": "اللَّهُمَّ آتِ نَفْسِي تَقْوَاهَا، وَزَكِّهَا أَنْتَ خَيْرُ مَنْ زَكَّاهَا، أَنْتَ وَلِيُّهَا وَمَوْلَاهَا",
+      "transliteration": "Allahumma ati nafsi taqwaha, wa zakkiha anta khayru man zakkaha, anta waliyyuha wa mawlaha",
+      "englishTranslation": "O Allah, grant my soul its piety and purify it. You are the best to purify it. You are its Guardian and Master",
+      "source": "Sahih Muslim 2722",
+      "sourceType": "Hadith",
+      "categories": ["morning", "hopeful", "seeking_forgiveness"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "Asking Allah to purify and elevate the soul. Only Allah can truly purify the heart and grant taqwa."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440066",
+      "arabicText": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْفَقْرِ، وَالْقِلَّةِ، وَالذِّلَّةِ، وَأَعُوذُ بِكَ مِنْ أَنْ أَظْلِمَ أَوْ أُظْلَمَ",
+      "transliteration": "Allahumma inni a'udhu bika minal-faqr, wal-qillah, wadh-dhillah, wa a'udhu bika min an azlima aw uzlam",
+      "englishTranslation": "O Allah, I seek refuge in You from poverty, scarcity, humiliation, and from wronging others or being wronged",
+      "source": "Sunan Abu Dawud 1544",
+      "sourceType": "Hadith",
+      "categories": ["anxious", "overwhelmed", "morning"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "Seeking protection from hardships that affect dignity and from injustice in any form."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440067",
+      "arabicText": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شَرِّ سَمْعِي، وَمِنْ شَرِّ بَصَرِي، وَمِنْ شَرِّ لِسَانِي، وَمِنْ شَرِّ قَلْبِي",
+      "transliteration": "Allahumma inni a'udhu bika min sharri sam'i, wa min sharri basari, wa min sharri lisani, wa min sharri qalbi",
+      "englishTranslation": "O Allah, I seek refuge in You from the evil of my hearing, my sight, my tongue, and my heart",
+      "source": "Sunan Abu Dawud 1551",
+      "sourceType": "Hadith",
+      "categories": ["morning", "seeking_forgiveness", "anxious"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "Seeking protection from sins committed through our senses. The gateway to most sins."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440068",
+      "arabicText": "اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ، فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ",
+      "transliteration": "Allahumma 'Alimal-ghaybi wash-shahadah, Fatiras-samawati wal-ard, Rabba kulli shay'in wa malikah",
+      "englishTranslation": "O Allah, Knower of the unseen and the seen, Creator of the heavens and the earth, Lord and Sovereign of all things",
+      "source": "Sunan Abu Dawud 5067",
+      "sourceType": "Hadith",
+      "categories": ["morning", "evening", "before_sleep"],
+      "repetitionCount": 1,
+      "audioFileName": null,
+      "benefit": "The beginning of a comprehensive morning/evening protection dua, glorifying Allah's complete knowledge and power."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440069",
+      "arabicText": "اللَّهُمَّ رَبَّ السَّمَاوَاتِ وَرَبَّ الْأَرْضِ وَرَبَّ الْعَرْشِ الْعَظِيمِ، رَبَّنَا وَرَبَّ كُلِّ شَيْءٍ",
+      "transliteration": "Allahumma Rabbas-samawati wa Rabbal-ardi wa Rabbal-'Arshil-'Azim, Rabbana wa Rabba kulli shay'",
+      "englishTranslation": "O Allah, Lord of the heavens and Lord of the earth and Lord of the Magnificent Throne, our Lord and Lord of all things",
+      "source": "Sahih Muslim 2713",
+      "sourceType": "Hadith",
+      "categories": ["morning", "evening", "grateful"],
+      "repetitionCount": 1,
+      "audioFileName": null,
+      "benefit": "Part of the comprehensive dua acknowledging Allah's lordship over all creation."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440070",
+      "arabicText": "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ",
+      "transliteration": "Allahummak-fini bi-halalika 'an haramik, wa aghnini bi-fadlika 'amman siwak",
+      "englishTranslation": "O Allah, suffice me with what You have made lawful against what You have made unlawful, and enrich me by Your favor against all others",
+      "source": "Jami at-Tirmidhi 3563",
+      "sourceType": "Hadith",
+      "categories": ["overwhelmed", "hopeful", "anxious"],
+      "repetitionCount": 7,
+      "audioFileName": null,
+      "benefit": "A powerful dua for provision and protection from haram. The Prophet (SAW) taught this to those in debt."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440071",
+      "arabicText": "رَبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ وَأَعُوذُ بِكَ رَبِّ أَن يَحْضُرُونِ",
+      "transliteration": "Rabbi a'udhu bika min hamazatish-shayatin wa a'udhu bika Rabbi an yahdurun",
+      "englishTranslation": "My Lord, I seek refuge in You from the incitements of the devils, and I seek refuge in You, my Lord, from their presence",
+      "source": "Quran 23:97-98",
+      "sourceType": "Quran",
+      "categories": ["fearful", "anxious", "angry"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "A Quranic protection from Shaytan's whispers and his very presence. Allah commanded the Prophet (SAW) to say this."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440072",
+      "arabicText": "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ مِنْهُ نَبِيُّكَ مُحَمَّدٌ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا اسْتَعَاذَ مِنْهُ نَبِيُّكَ مُحَمَّدٌ",
+      "transliteration": "Allahumma inni as'aluka min khayri ma sa'alaka minhu nabiyyuka Muhammad, wa a'udhu bika min sharri masta'adha minhu nabiyyuka Muhammad",
+      "englishTranslation": "O Allah, I ask You for the good that Your Prophet Muhammad asked You for, and I seek refuge in You from the evil that Your Prophet Muhammad sought refuge from",
+      "source": "Jami at-Tirmidhi 3521",
+      "sourceType": "Hadith",
+      "categories": ["morning", "evening", "hopeful"],
+      "repetitionCount": 1,
+      "audioFileName": null,
+      "benefit": "A comprehensive dua that encompasses all the good and protection the Prophet (SAW) ever asked for."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440073",
+      "arabicText": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ، وَشُكْرِكَ، وَحُسْنِ عِبَادَتِكَ",
+      "transliteration": "Allahumma a'inni 'ala dhikrik, wa shukrik, wa husni 'ibadatik",
+      "englishTranslation": "O Allah, help me to remember You, to thank You, and to worship You in the best manner",
+      "source": "Sunan Abu Dawud 1522",
+      "sourceType": "Hadith",
+      "categories": ["after_salah", "grateful", "hopeful"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "The Prophet (SAW) advised Mu'adh ibn Jabal (RA) to never leave this dua after every prayer."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440074",
+      "arabicText": "اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَسْأَلَةِ، وَخَيْرَ الدُّعَاءِ، وَخَيْرَ النَّجَاحِ، وَخَيْرَ الْعَمَلِ، وَخَيْرَ الثَّوَابِ",
+      "transliteration": "Allahumma inni as'aluka khayral-mas'alah, wa khayrad-du'a, wa khayran-najah, wa khayral-'amal, wa khayrath-thawab",
+      "englishTranslation": "O Allah, I ask You for the best request, the best supplication, the best success, the best action, and the best reward",
+      "source": "Sahih al-Jami 1276",
+      "sourceType": "Hadith",
+      "categories": ["morning", "hopeful", "before_decision"],
+      "repetitionCount": 3,
+      "audioFileName": null,
+      "benefit": "Asking Allah for excellence in everything - our duas, our efforts, and their outcomes."
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440075",
+      "arabicText": "اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ",
+      "transliteration": "Allahumma ba'id bayni wa bayna khatayaya kama ba'adta baynal-mashriqi wal-maghrib",
+      "englishTranslation": "O Allah, distance me from my sins as You have distanced the East from the West",
+      "source": "Sahih Bukhari 744",
+      "sourceType": "Hadith",
+      "categories": ["seeking_forgiveness", "after_salah"],
+      "repetitionCount": 1,
+      "audioFileName": null,
+      "benefit": "Part of the opening dua of prayer. A beautiful metaphor asking Allah for complete distance from sin."
     }
   ]
 }
