@@ -9,6 +9,7 @@ struct SettingsView: View {
     @State private var notificationsEnabled: Bool = true
     @State private var notificationTimes: [NotificationTime] = NotificationTime.defaults
     @State private var showingResetAlert = false
+    @State private var showingDisclaimer = false
     @State private var selectedAppearance: AppearanceMode = .system
     @State private var selectedLanguage: SupportedLanguage = .english
 
@@ -38,6 +39,8 @@ struct SettingsView: View {
 
                         aboutSection
 
+                        legalSection
+
                         resetSection
                     }
                     .padding()
@@ -54,6 +57,9 @@ struct SettingsView: View {
                 }
             } message: {
                 Text("This will delete all your favorites, history, and streak progress. This action cannot be undone.")
+            }
+            .sheet(isPresented: $showingDisclaimer) {
+                DisclaimerSheet()
             }
         }
     }
@@ -214,14 +220,49 @@ struct SettingsView: View {
             VStack(spacing: 0) {
                 AboutRow(title: "Version", value: "1.0.0")
                 Divider()
-                AboutRow(title: "Dhikirs", value: "55+")
+                AboutRow(title: "Dhikirs", value: "75+")
                 Divider()
                 AboutRow(title: "Sources", value: "Quran & Hadith")
+                Divider()
+                AboutRow(title: "Languages", value: "7")
             }
             .background(
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color("CardBackground"))
             )
+        }
+    }
+
+    private var legalSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Legal")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(Color("TextPrimary"))
+
+            VStack(spacing: 0) {
+                Button(action: { showingDisclaimer = true }) {
+                    HStack {
+                        Text("Disclaimer")
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundStyle(Color("TextPrimary"))
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(Color("TextSecondary"))
+                    }
+                    .padding()
+                }
+                .buttonStyle(PlainButtonStyle())
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color("CardBackground"))
+            )
+
+            Text("This app is for educational and spiritual purposes only. Content should be verified with qualified Islamic scholars.")
+                .font(.system(size: 12))
+                .foregroundStyle(Color("TextSecondary"))
+                .multilineTextAlignment(.leading)
         }
     }
 
@@ -469,7 +510,102 @@ struct AboutRow: View {
     }
 }
 
+struct DisclaimerSheet: View {
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    disclaimerSection(
+                        title: "Educational Purpose",
+                        icon: "book.fill",
+                        content: "Dhikir is provided for educational and spiritual enrichment purposes only. The content within this application is intended to assist Muslims in their personal practice of dhikir (remembrance of Allah) and is not intended to replace guidance from qualified Islamic scholars, formal Islamic education, or professional counseling."
+                    )
+
+                    disclaimerSection(
+                        title: "No Religious Authority",
+                        icon: "person.fill.questionmark",
+                        content: "The developers of Dhikir do not claim to be Islamic scholars or religious authorities, do not issue religious rulings (fatawa), and do not represent any Islamic school of thought exclusively. Users should consult qualified Islamic scholars for religious guidance."
+                    )
+
+                    disclaimerSection(
+                        title: "Source Accuracy",
+                        icon: "checkmark.shield.fill",
+                        content: "While we have made every effort to ensure accuracy, sources are provided for reference and verification purposes. Users are encouraged to verify all content with primary sources and qualified scholars. Translations are interpretive and may vary from other translations."
+                    )
+
+                    disclaimerSection(
+                        title: "Mental Health",
+                        icon: "heart.fill",
+                        content: "Dhikir is not a substitute for professional mental health care. If you are experiencing a mental health crisis, please contact emergency services or a mental health professional. Content related to emotions is spiritual in nature, not clinical."
+                    )
+
+                    disclaimerSection(
+                        title: "No Warranty",
+                        icon: "exclamationmark.triangle.fill",
+                        content: "The application is provided \"as is\" without warranty of any kind. To the maximum extent permitted by law, the developers shall not be liable for any damages arising from the use of this application."
+                    )
+
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("By using this app, you acknowledge that you have read and understood these disclaimers.")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(Color("TextPrimary"))
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color("AccentGreen").opacity(0.1))
+                    )
+                }
+                .padding()
+            }
+            .background(Color("BackgroundCream").ignoresSafeArea())
+            .navigationTitle("Disclaimer")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                    .fontWeight(.semibold)
+                }
+            }
+        }
+    }
+
+    private func disclaimerSection(title: String, icon: String, content: String) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 8) {
+                Image(systemName: icon)
+                    .font(.system(size: 16))
+                    .foregroundStyle(Color("AccentGreen"))
+
+                Text(title)
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(Color("TextPrimary"))
+            }
+
+            Text(content)
+                .font(.system(size: 14))
+                .foregroundStyle(Color("TextSecondary"))
+                .lineSpacing(4)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color("CardBackground"))
+        )
+    }
+}
+
 #Preview {
     SettingsView()
         .modelContainer(for: [UserSettings.self, UserStreak.self, UserFavorite.self, ReadingHistory.self], inMemory: true)
+}
+
+#Preview("Disclaimer") {
+    DisclaimerSheet()
 }
