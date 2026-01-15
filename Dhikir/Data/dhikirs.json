@@ -270,7 +270,7 @@
       "categories": [
         "hopeful",
         "grateful",
-        "after_salah"
+        "_after_salah"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
@@ -336,7 +336,7 @@
       "source": "Sunan Abu Dawud 5068",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
+        "_morning",
         "upon_waking"
       ],
       "repetitionCount": 1,
@@ -358,7 +358,7 @@
       "source": "Sunan Abu Dawud 5068",
       "sourceType": "Hadith",
       "categories": [
-        "evening"
+        "_evening"
       ],
       "repetitionCount": 1,
       "audioFileName": null,
@@ -379,7 +379,7 @@
       "source": "Sahih Bukhari 6324",
       "sourceType": "Hadith",
       "categories": [
-        "before_sleep"
+        "_before_sleep"
       ],
       "repetitionCount": 1,
       "audioFileName": null,
@@ -401,7 +401,7 @@
       "sourceType": "Hadith",
       "categories": [
         "upon_waking",
-        "morning"
+        "_morning"
       ],
       "repetitionCount": 1,
       "audioFileName": null,
@@ -422,7 +422,7 @@
       "source": "Sunan Abu Dawud 5090",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
+        "_morning",
         "during_illness"
       ],
       "repetitionCount": 3,
@@ -444,8 +444,8 @@
       "source": "Sunan Abu Dawud 5088",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
-        "evening",
+        "_morning",
+        "_evening",
         "fearful",
         "traveling"
       ],
@@ -468,8 +468,8 @@
       "source": "Sunan Ibn Majah 3871",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
-        "evening",
+        "_morning",
+        "_evening",
         "during_illness",
         "seeking_forgiveness"
       ],
@@ -492,10 +492,10 @@
       "source": "Sahih Bukhari 6405",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
-        "evening",
+        "_morning",
+        "_evening",
         "grateful",
-        "after_salah"
+        "_after_salah"
       ],
       "repetitionCount": 100,
       "audioFileName": null,
@@ -516,9 +516,9 @@
       "source": "Sahih Bukhari 6403",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
-        "evening",
-        "after_salah",
+        "_morning",
+        "_evening",
+        "_after_salah",
         "hopeful"
       ],
       "repetitionCount": 10,
@@ -540,10 +540,10 @@
       "source": "Sahih Muslim 2137",
       "sourceType": "Hadith",
       "categories": [
-        "after_salah",
+        "_after_salah",
         "grateful",
-        "morning",
-        "evening"
+        "_morning",
+        "_evening"
       ],
       "repetitionCount": 33,
       "audioFileName": null,
@@ -565,7 +565,7 @@
       "sourceType": "Hadith",
       "categories": [
         "seeking_forgiveness",
-        "after_salah",
+        "_after_salah",
         "sad"
       ],
       "repetitionCount": 100,
@@ -588,7 +588,7 @@
       "sourceType": "Hadith",
       "categories": [
         "grateful",
-        "after_salah",
+        "_after_salah",
         "joyful"
       ],
       "repetitionCount": 10,
@@ -610,7 +610,7 @@
       "source": "Sahih Bukhari 3370",
       "sourceType": "Hadith",
       "categories": [
-        "after_salah",
+        "_after_salah",
         "grateful",
         "hopeful"
       ],
@@ -635,7 +635,7 @@
       "categories": [
         "seeking_forgiveness",
         "sad",
-        "after_salah"
+        "_after_salah"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
@@ -947,7 +947,7 @@
       "categories": [
         "grateful",
         "joyful",
-        "after_salah"
+        "_after_salah"
       ],
       "repetitionCount": 10,
       "audioFileName": null,
@@ -1060,7 +1060,7 @@
       "source": "Sunan Ibn Majah 925",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
+        "_morning",
         "hopeful",
         "before_decision"
       ],
@@ -1083,8 +1083,8 @@
       "source": "Sunan Abu Dawud 5072",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
-        "evening",
+        "_morning",
+        "_evening",
         "grateful",
         "hopeful"
       ],
@@ -1107,7 +1107,7 @@
       "source": "Sunan Abu Dawud 5073",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
+        "_morning",
         "grateful"
       ],
       "repetitionCount": 1,
@@ -1130,7 +1130,7 @@
       "sourceType": "Hadith",
       "categories": [
         "seeking_forgiveness",
-        "after_salah"
+        "_after_salah"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
@@ -1151,8 +1151,8 @@
       "source": "Jami at-Tirmidhi 3391",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
-        "evening"
+        "_morning",
+        "_evening"
       ],
       "repetitionCount": 1,
       "audioFileName": null,
@@ -1173,10 +1173,10 @@
       "source": "Sahih Muslim 2708",
       "sourceType": "Hadith",
       "categories": [
-        "evening",
+        "_evening",
         "fearful",
         "traveling",
-        "before_sleep"
+        "_before_sleep"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
@@ -1197,8 +1197,8 @@
       "source": "Sahih Bukhari 6306",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
-        "evening",
+        "_morning",
+        "_evening",
         "seeking_forgiveness"
       ],
       "repetitionCount": 1,
@@ -1222,7 +1222,7 @@
       "categories": [
         "hopeful",
         "grateful",
-        "morning"
+        "_morning"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
@@ -1266,8 +1266,8 @@
       "sourceType": "Hadith",
       "categories": [
         "fearful",
-        "after_salah",
-        "evening"
+        "_after_salah",
+        "_evening"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
@@ -1288,7 +1288,7 @@
       "source": "Sahih Muslim 2720",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
+        "_morning",
         "hopeful",
         "overwhelmed"
       ],
@@ -1312,7 +1312,7 @@
       "sourceType": "Hadith",
       "categories": [
         "seeking_forgiveness",
-        "after_salah",
+        "_after_salah",
         "sad"
       ],
       "repetitionCount": 3,
@@ -1336,7 +1336,7 @@
       "categories": [
         "hopeful",
         "fearful",
-        "after_salah"
+        "_after_salah"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
@@ -1426,7 +1426,7 @@
       "source": "Sahih Muslim 2722",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
+        "_morning",
         "hopeful",
         "seeking_forgiveness"
       ],
@@ -1451,7 +1451,7 @@
       "categories": [
         "anxious",
         "overwhelmed",
-        "morning"
+        "_morning"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
@@ -1472,7 +1472,7 @@
       "source": "Sunan Abu Dawud 1551",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
+        "_morning",
         "seeking_forgiveness",
         "anxious"
       ],
@@ -1495,9 +1495,9 @@
       "source": "Sunan Abu Dawud 5067",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
-        "evening",
-        "before_sleep"
+        "_morning",
+        "_evening",
+        "_before_sleep"
       ],
       "repetitionCount": 1,
       "audioFileName": null,
@@ -1518,8 +1518,8 @@
       "source": "Sahih Muslim 2713",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
-        "evening",
+        "_morning",
+        "_evening",
         "grateful"
       ],
       "repetitionCount": 1,
@@ -1587,8 +1587,8 @@
       "source": "Jami at-Tirmidhi 3521",
       "sourceType": "Hadith",
       "categories": [
-        "morning",
-        "evening",
+        "_morning",
+        "_evening",
         "hopeful"
       ],
       "repetitionCount": 1,
@@ -1610,7 +1610,7 @@
       "source": "Sunan Abu Dawud 1522",
       "sourceType": "Hadith",
       "categories": [
-        "after_salah",
+        "_after_salah",
         "grateful",
         "hopeful"
       ],
@@ -1634,7 +1634,7 @@
       "sourceType": "Hadith",
       "categories": [
         "seeking_forgiveness",
-        "after_salah"
+        "_after_salah"
       ],
       "repetitionCount": 1,
       "audioFileName": null,
