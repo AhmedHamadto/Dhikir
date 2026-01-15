@@ -1,6 +1,6 @@
 # Dhikir Sources Reference
 
-This document contains all 75 dhikirs used in the app along with their sources and authenticity information.
+This document contains all 74 dhikirs used in the app along with their sources and authenticity information.
 
 ---
 
@@ -14,7 +14,6 @@ This document contains all 75 dhikirs used in the app along with their sources a
 | **Jami at-Tirmidhi** | Imam Abu Isa al-Tirmidhi | 279 AH / 892 CE | Known for grading hadith |
 | **Sunan Ibn Majah** | Imam Ibn Majah al-Qazwini | 273 AH / 887 CE | One of the six major collections |
 | **Sahih Ibn Hibban** | Imam Ibn Hibban al-Busti | 354 AH / 965 CE | Arranged by legal topics |
-| **Shu'ab al-Iman** | Imam al-Bayhaqi | 458 AH / 1066 CE | Branches of faith collection |
 | **Sahih al-Jami** | Shaykh al-Albani | 1420 AH / 1999 CE | Modern authentication compilation |
 
 ---
@@ -148,12 +147,11 @@ This document contains all 75 dhikirs used in the app along with their sources a
 
 ---
 
-### From Other Collections (4 dhikirs)
+### From Other Collections (3 dhikirs)
 
 | # | Arabic | English | Reference | Collection |
 |---|--------|---------|-----------|------------|
 | 9 | اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا | O Allah, there is no ease except what You make easy | Ibn Hibban 2427 | Sahih Ibn Hibban |
-| 46 | اللَّهُمَّ اجْعَلْنِي شَكُورًا | O Allah, make me grateful | Shu'ab al-Iman 4118 | Shu'ab al-Iman |
 | 74 | اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَسْأَلَةِ | O Allah, I ask You for the best request | Sahih al-Jami 1276 | Sahih al-Jami |
 
 ---
@@ -162,20 +160,20 @@ This document contains all 75 dhikirs used in the app along with their sources a
 
 | Category | Count |
 |----------|-------|
-| **Total Dhikirs** | 75 |
+| **Total Dhikirs** | 74 |
 | **From Quran** | 15 (20%) |
-| **From Hadith** | 60 (80%) |
+| **From Hadith** | 59 (80%) |
 
 ### Hadith by Collection
 
 | Collection | Count | Percentage |
 |------------|-------|------------|
-| Sahih Bukhari | 17 | 28% |
-| Sunan Abu Dawud | 14 | 23% |
+| Sahih Bukhari | 17 | 29% |
+| Sunan Abu Dawud | 14 | 24% |
 | Sahih Muslim | 12 | 20% |
-| Jami at-Tirmidhi | 8 | 13% |
+| Jami at-Tirmidhi | 8 | 14% |
 | Sunan Ibn Majah | 4 | 7% |
-| Other | 5 | 8% |
+| Other | 4 | 7% |
 
 ---
 
@@ -184,8 +182,6 @@ This document contains all 75 dhikirs used in the app along with their sources a
 1. **Sahih Bukhari & Sahih Muslim**: All hadith in these collections are considered Sahih (authentic) by consensus of scholars.
 
 2. **Sunan Collections** (Abu Dawud, Tirmidhi, Ibn Majah): These contain hadith of varying grades. The specific hadith used in this app have been selected for their authenticity.
-
-3. **Shu'ab al-Iman #4118** (Dhikir #46): This hadith has been noted as having weakness in its chain. It has been removed from the "sad" category but retained in "grateful" and "hopeful" as the meaning is sound.
 
 ---
 

@@ -220,7 +220,7 @@ struct SettingsView: View {
             VStack(spacing: 0) {
                 AboutRow(title: "Version", value: "1.0.0")
                 Divider()
-                AboutRow(title: "Dhikirs", value: "75+")
+                AboutRow(title: "Dhikirs", value: "74+")
                 Divider()
                 AboutRow(title: "Sources", value: "Quran & Hadith")
                 Divider()
