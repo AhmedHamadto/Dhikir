@@ -49,7 +49,7 @@ final class Dhikir {
     var arabicText: String
     var transliteration: String
     var englishTranslation: String
-    var translations: [String: String]
+    var translations: [String: String] = [:]
     var source: String
     var sourceType: SourceType
     var categories: [String]

@@ -27,12 +27,12 @@ enum AppearanceMode: String, Codable, CaseIterable {
 @Model
 final class UserSettings {
     @Attribute(.unique) var id: UUID
-    var notificationsEnabled: Bool
-    var notificationTimes: [NotificationTime]
-    var hasCompletedOnboarding: Bool
-    var preferredLanguageRaw: String
-    var hapticFeedbackEnabled: Bool
-    var appearanceModeRaw: String
+    var notificationsEnabled: Bool = true
+    var notificationTimes: [NotificationTime] = NotificationTime.defaults
+    var hasCompletedOnboarding: Bool = false
+    var preferredLanguageRaw: String = "en"
+    var hapticFeedbackEnabled: Bool = true
+    var appearanceModeRaw: String = "System"
 
     var appearanceMode: AppearanceMode {
         get { AppearanceMode(rawValue: appearanceModeRaw) ?? .system }
