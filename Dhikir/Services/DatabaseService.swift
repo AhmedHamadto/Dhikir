@@ -9,7 +9,9 @@ final class DatabaseService {
     func seedDatabase(context: ModelContext) {
         guard let url = Bundle.main.url(forResource: "dhikirs", withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
+            #if DEBUG
             print("Failed to load dhikirs.json")
+            #endif
             return
         }
 
@@ -23,9 +25,13 @@ final class DatabaseService {
             }
 
             try context.save()
+            #if DEBUG
             print("Successfully seeded \(container.dhikirs.count) dhikirs")
+            #endif
         } catch {
+            #if DEBUG
             print("Failed to decode dhikirs: \(error)")
+            #endif
         }
     }
 
@@ -36,7 +42,9 @@ final class DatabaseService {
             let allDhikirs = try context.fetch(fetchDescriptor)
             return allDhikirs.filter { $0.categories.contains(category) }
         } catch {
+            #if DEBUG
             print("Failed to fetch dhikirs: \(error)")
+            #endif
             return []
         }
     }
@@ -74,10 +82,14 @@ final class DatabaseService {
 
             if updatedCount > 0 {
                 try context.save()
+                #if DEBUG
                 print("Updated translations for \(updatedCount) dhikirs")
+                #endif
             }
         } catch {
+            #if DEBUG
             print("Failed to refresh translations: \(error)")
+            #endif
         }
     }
 }

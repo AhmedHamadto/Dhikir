@@ -24,7 +24,9 @@ final class NotificationService {
             )
             return granted
         } catch {
+            #if DEBUG
             print("Notification authorization error: \(error)")
+            #endif
             return false
         }
     }
@@ -60,9 +62,11 @@ final class NotificationService {
         )
 
         UNUserNotificationCenter.current().add(request) { error in
+            #if DEBUG
             if let error = error {
                 print("Failed to schedule notification: \(error)")
             }
+            #endif
         }
     }
 

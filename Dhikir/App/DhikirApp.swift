@@ -5,7 +5,12 @@ import SwiftData
 struct DhikirApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
-    var sharedModelContainer: ModelContainer = {
+    @State private var showDatabaseError = false
+    @State private var databaseErrorMessage = ""
+
+    var sharedModelContainer: ModelContainer
+
+    init() {
         let schema = Schema([
             Dhikir.self,
             UserFavorite.self,
@@ -16,11 +21,21 @@ struct DhikirApp: App {
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            sharedModelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            #if DEBUG
+            print("Database error: \(error)")
+            #endif
+            // Fallback to in-memory container
+            let fallbackConfig = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+            do {
+                sharedModelContainer = try ModelContainer(for: schema, configurations: [fallbackConfig])
+            } catch {
+                // This should never happen with in-memory storage
+                fatalError("Could not create fallback ModelContainer: \(error)")
+            }
         }
-    }()
+    }
 
     var body: some Scene {
         WindowGroup {

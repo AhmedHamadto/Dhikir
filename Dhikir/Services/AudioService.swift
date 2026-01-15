@@ -24,7 +24,9 @@ final class AudioService {
             )
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
+            #if DEBUG
             print("Failed to setup audio session: \(error)")
+            #endif
         }
     }
 
@@ -34,7 +36,9 @@ final class AudioService {
             withExtension: nil,
             subdirectory: "Audio"
         ) else {
+            #if DEBUG
             print("Audio file not found: \(fileName)")
+            #endif
             return
         }
 
@@ -47,7 +51,9 @@ final class AudioService {
 
             startTimeUpdates()
         } catch {
+            #if DEBUG
             print("Failed to play audio: \(error)")
+            #endif
         }
     }
 

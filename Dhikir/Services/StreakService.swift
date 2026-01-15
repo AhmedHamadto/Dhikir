@@ -43,7 +43,9 @@ final class StreakService {
 
             try context.save()
         } catch {
+            #if DEBUG
             print("Failed to record activity: \(error)")
+            #endif
         }
     }
 

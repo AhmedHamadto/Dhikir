@@ -11,6 +11,10 @@ struct DhikirDisplayView: View {
         settings.first?.preferredLanguage ?? .english
     }
 
+    private var hapticFeedbackEnabled: Bool {
+        settings.first?.hapticFeedbackEnabled ?? true
+    }
+
     let category: String
 
     @State private var dhikirs: [Dhikir] = []
@@ -359,13 +363,15 @@ struct DhikirDisplayView: View {
     }
 
     private func incrementRepetition(_ dhikir: Dhikir) {
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.impactOccurred()
+        if hapticFeedbackEnabled {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+        }
 
         if repetitionCount < dhikir.repetitionCount {
             repetitionCount += 1
 
-            if repetitionCount == dhikir.repetitionCount {
+            if repetitionCount == dhikir.repetitionCount && hapticFeedbackEnabled {
                 let successGenerator = UINotificationFeedbackGenerator()
                 successGenerator.notificationOccurred(.success)
             }
@@ -373,8 +379,10 @@ struct DhikirDisplayView: View {
     }
 
     private func toggleFavorite(_ dhikir: Dhikir) {
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
+        if hapticFeedbackEnabled {
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.impactOccurred()
+        }
 
         if let existing = favorites.first(where: { $0.dhikirId == dhikir.id }) {
             modelContext.delete(existing)
@@ -406,8 +414,10 @@ struct DhikirDisplayView: View {
         if let dhikir = currentDhikir {
             saveToHistory(dhikir)
         }
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.impactOccurred()
+        if hapticFeedbackEnabled {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+        }
     }
 }
 
