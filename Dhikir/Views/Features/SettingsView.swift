@@ -12,6 +12,7 @@ struct SettingsView: View {
     @State private var showingDisclaimer = false
     @State private var selectedAppearance: AppearanceMode = .system
     @State private var selectedLanguage: SupportedLanguage = .english
+    @State private var hapticFeedbackEnabled: Bool = true
 
     private var currentSettings: UserSettings? {
         settings.first
@@ -34,6 +35,8 @@ struct SettingsView: View {
                         notificationSection
 
                         appearanceSection
+
+                        hapticSection
 
                         languageSection
 
@@ -171,6 +174,32 @@ struct SettingsView: View {
         }
     }
 
+    private var hapticSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Feedback")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(Color("TextPrimary"))
+
+            Toggle(isOn: $hapticFeedbackEnabled) {
+                HStack {
+                    Image(systemName: "iphone.radiowaves.left.and.right")
+                        .foregroundStyle(Color("AccentGreen"))
+                    Text("Haptic Feedback")
+                        .font(.system(size: 16, weight: .medium))
+                }
+            }
+            .tint(Color("AccentGreen"))
+            .onChange(of: hapticFeedbackEnabled) { _, newValue in
+                updateHapticSetting(enabled: newValue)
+            }
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color("CardBackground"))
+            )
+        }
+    }
+
     private var languageSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Translation Language")
@@ -296,6 +325,7 @@ struct SettingsView: View {
             notificationTimes = settings.notificationTimes
             selectedAppearance = settings.appearanceMode
             selectedLanguage = settings.preferredLanguage
+            hapticFeedbackEnabled = settings.hapticFeedbackEnabled
         }
     }
 
@@ -309,6 +339,13 @@ struct SettingsView: View {
     private func updateLanguage(_ language: SupportedLanguage) {
         if let settings = currentSettings {
             settings.preferredLanguage = language
+            try? modelContext.save()
+        }
+    }
+
+    private func updateHapticSetting(enabled: Bool) {
+        if let settings = currentSettings {
+            settings.hapticFeedbackEnabled = enabled
             try? modelContext.save()
         }
     }

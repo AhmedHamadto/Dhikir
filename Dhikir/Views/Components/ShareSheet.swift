@@ -1,8 +1,14 @@
 import SwiftUI
+import SwiftData
 
 struct ShareSheet: View {
     @Environment(\.dismiss) private var dismiss
+    @Query private var settings: [UserSettings]
     let dhikir: Dhikir
+
+    private var hapticEnabled: Bool {
+        settings.first?.hapticFeedbackEnabled ?? true
+    }
 
     var body: some View {
         NavigationStack {
@@ -106,8 +112,10 @@ struct ShareSheet: View {
 
         UIPasteboard.general.string = text
 
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
+        if hapticEnabled {
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
+        }
 
         dismiss()
     }
@@ -131,8 +139,13 @@ struct ShareSheet: View {
         )
 
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let rootVC = windowScene.windows.first?.rootViewController {
-            rootVC.present(activityVC, animated: true)
+           let window = windowScene.windows.first {
+            // Find the topmost presented view controller
+            var topVC = window.rootViewController
+            while let presented = topVC?.presentedViewController {
+                topVC = presented
+            }
+            topVC?.present(activityVC, animated: true)
         }
     }
 }

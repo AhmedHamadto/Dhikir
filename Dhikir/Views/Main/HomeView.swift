@@ -4,12 +4,17 @@ import SwiftData
 struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var streaks: [UserStreak]
+    @Query private var settings: [UserSettings]
     @Binding var showEmotionSelection: Bool
     @State private var selectedCategory: String?
     @State private var showDhikir = false
 
     private var currentStreak: Int {
         streaks.first?.currentStreak ?? 0
+    }
+
+    private var hapticEnabled: Bool {
+        settings.first?.hapticFeedbackEnabled ?? true
     }
 
     var body: some View {
@@ -102,7 +107,8 @@ struct HomeView: View {
                         arabicTitle: emotion.arabicName,
                         icon: emotion.icon,
                         color: emotion.color,
-                        description: emotion.description
+                        description: emotion.description,
+                        hapticEnabled: hapticEnabled
                     ) {
                         selectCategory(emotion.rawValue)
                     }
@@ -127,7 +133,8 @@ struct HomeView: View {
                         arabicTitle: situation.arabicName,
                         icon: situation.icon,
                         color: situation.color,
-                        description: situation.description
+                        description: situation.description,
+                        hapticEnabled: hapticEnabled
                     ) {
                         selectCategory(situation.rawValue)
                     }

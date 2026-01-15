@@ -6,14 +6,17 @@ struct EmotionButton: View {
     let icon: String
     let color: Color
     let description: String
+    var hapticEnabled: Bool = true
     let action: () -> Void
 
     @State private var isPressed = false
 
     var body: some View {
         Button(action: {
-            let generator = UIImpactFeedbackGenerator(style: .medium)
-            generator.impactOccurred()
+            if hapticEnabled {
+                let generator = UIImpactFeedbackGenerator(style: .medium)
+                generator.impactOccurred()
+            }
             action()
         }) {
             VStack(spacing: 8) {

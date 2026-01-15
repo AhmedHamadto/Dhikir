@@ -20,7 +20,7 @@ final class AudioService {
             try AVAudioSession.sharedInstance().setCategory(
                 .playback,
                 mode: .default,
-                options: [.allowAirPlay, .allowBluetooth]
+                options: [.allowAirPlay, .allowBluetoothA2DP]
             )
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
