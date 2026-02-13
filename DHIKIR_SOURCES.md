@@ -1,6 +1,6 @@
 # Dhikir Sources Reference
 
-This document contains all 74 dhikirs used in the app along with their sources and authenticity information.
+This document contains all 73 dhikirs used in the app along with their sources and authenticity information.
 
 ---
 
@@ -14,7 +14,6 @@ This document contains all 74 dhikirs used in the app along with their sources a
 | **Jami at-Tirmidhi** | Imam Abu Isa al-Tirmidhi | 279 AH / 892 CE | Known for grading hadith |
 | **Sunan Ibn Majah** | Imam Ibn Majah al-Qazwini | 273 AH / 887 CE | One of the six major collections |
 | **Sahih Ibn Hibban** | Imam Ibn Hibban al-Busti | 354 AH / 965 CE | Arranged by legal topics |
-| **Sahih al-Jami** | Shaykh al-Albani | 1420 AH / 1999 CE | Modern authentication compilation |
 
 ---
 
@@ -147,12 +146,11 @@ This document contains all 74 dhikirs used in the app along with their sources a
 
 ---
 
-### From Other Collections (3 dhikirs)
+### From Other Collections (1 dhikir)
 
 | # | Arabic | English | Reference | Collection |
 |---|--------|---------|-----------|------------|
 | 9 | اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا | O Allah, there is no ease except what You make easy | Ibn Hibban 2427 | Sahih Ibn Hibban |
-| 74 | اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَسْأَلَةِ | O Allah, I ask You for the best request | Sahih al-Jami 1276 | Sahih al-Jami |
 
 ---
 

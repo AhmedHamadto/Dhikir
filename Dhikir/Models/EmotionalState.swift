@@ -47,16 +47,16 @@ enum EmotionalState: String, CaseIterable, Identifiable {
 
     var icon: String {
         switch self {
-        case .anxious: return "wind"
-        case .sad: return "cloud.rain"
-        case .angry: return "flame"
-        case .grateful: return "hands.clap"
-        case .hopeful: return "sun.horizon"
-        case .lonely: return "person.wave.2"
-        case .overwhelmed: return "waveform.path.ecg"
-        case .fearful: return "exclamationmark.shield"
-        case .joyful: return "sparkles"
-        case .lost: return "questionmark.circle"
+        case .anxious: return "leaf.fill"
+        case .sad: return "drop.fill"
+        case .angry: return "flame.fill"
+        case .grateful: return "hand.raised.fill"
+        case .hopeful: return "sunrise.fill"
+        case .lonely: return "moon.stars.fill"
+        case .overwhelmed: return "water.waves"
+        case .fearful: return "shield.lefthalf.filled"
+        case .joyful: return "star.fill"
+        case .lost: return "safari"
         }
     }
 

@@ -36,12 +36,12 @@ enum LifeSituation: String, CaseIterable, Identifiable {
 
     var icon: String {
         switch self {
-        case .uponWaking: return "sun.and.horizon"
-        case .duringIllness: return "heart.text.square"
-        case .traveling: return "airplane"
-        case .facingDifficulty: return "mountain.2"
-        case .beforeDecision: return "arrow.triangle.branch"
-        case .seekingForgiveness: return "arrow.uturn.backward.circle"
+        case .uponWaking: return "sun.max.fill"
+        case .duringIllness: return "heart.circle.fill"
+        case .traveling: return "airplane.departure"
+        case .facingDifficulty: return "mountain.2.fill"
+        case .beforeDecision: return "hand.raised.fill"
+        case .seekingForgiveness: return "arrow.trianglehead.counterclockwise"
         }
     }
 

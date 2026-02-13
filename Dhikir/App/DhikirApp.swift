@@ -31,9 +31,12 @@ struct DhikirApp: App {
             do {
                 sharedModelContainer = try ModelContainer(for: schema, configurations: [fallbackConfig])
             } catch {
-                // This should never happen with in-memory storage
-                fatalError("Could not create fallback ModelContainer: \(error)")
+                // Last resort: try default in-memory configuration
+                // This should never realistically fail, but we avoid fatalError for App Store safety
+                sharedModelContainer = try! ModelContainer(for: schema)
             }
+            _showDatabaseError = State(initialValue: true)
+            _databaseErrorMessage = State(initialValue: "Using temporary storage. Your data won't be saved between app launches.")
         }
     }
 
@@ -42,6 +45,11 @@ struct DhikirApp: App {
             ContentView()
                 .onAppear {
                     seedDatabaseIfNeeded()
+                }
+                .alert("Storage Notice", isPresented: $showDatabaseError) {
+                    Button("OK", role: .cancel) { }
+                } message: {
+                    Text(databaseErrorMessage)
                 }
         }
         .modelContainer(sharedModelContainer)
