@@ -38,3 +38,18 @@ fastlane/test_output
 
 # Code Injection
 iOSInjectionProject/
+
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Internal docs (kept locally only)
+context.md
+project.yml
+SECURITY_AUDIT.md
+APP_STORE_CHECKLIST.md
+APP_STORE_CONTENT.md
+ICON_DESIGN_BRIEF.md
+PROPOSED_DHIKIR_CURATION.md
+PROPOSED_CATEGORIES.md
+docs/plans/
