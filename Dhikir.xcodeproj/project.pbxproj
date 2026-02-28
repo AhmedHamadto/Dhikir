@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -69,11 +69,11 @@
 		1E69C4BFF27125249FF72067 /* UserFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavorite.swift; sourceTree = "<group>"; };
 		334A49921F6260F15C504C81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35A846E29F5E49C00A371F02 /* StreakService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakService.swift; sourceTree = "<group>"; };
-		3D05D11FB59460CB631567A5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		3D05D11FB59460CB631567A5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		43D3DEAEEC29670EF55AFFDA /* EmotionalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalState.swift; sourceTree = "<group>"; };
 		47CCA4A0C63BA3098200D568 /* dhikirs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dhikirs.json; sourceTree = "<group>"; };
 		511252A6E9FFC3DF72A94D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		54A778659338BD0011015F28 /* Dhikir.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Dhikir.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54A778659338BD0011015F28 /* Dhikir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dhikir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C785EE20150A8023F986F8C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5C9CA3AD2191F28125576830 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		6AC9A12A2E744E43447E978A /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
@@ -367,7 +367,6 @@
 						TestTargetID = B4E5424FDD3F674257C56A53;
 					};
 					B4E5424FDD3F674257C56A53 = {
-						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -382,7 +381,6 @@
 			);
 			mainGroup = FDC132FCA06BDC601A18434C;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -483,6 +481,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentGreen;
 				CODE_SIGN_ENTITLEMENTS = Dhikir/Dhikir.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = PSZB6QTMX7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Dhikir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -569,6 +568,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentGreen;
 				CODE_SIGN_ENTITLEMENTS = Dhikir/Dhikir.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = PSZB6QTMX7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Dhikir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
