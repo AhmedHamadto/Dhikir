@@ -62,6 +62,21 @@ https://github.com/AhmedHamadto/Dhikir/issues
 ## Privacy Policy URL
 https://ahmedhamadto.github.io/dhikir-privacy
 
+## App Review Information
+
+### Notes for Reviewer
+
+Dhikir is a simple, offline Islamic remembrance app. No account or login is required. Here is a quick walkthrough:
+
+1. Launch the app. You will see the Home screen with emotion and life situation categories.
+2. Tap any category (e.g. "Anxious" or "Grateful") to view curated duas (supplications) from the Quran and Hadith.
+3. Swipe left/right to browse through the duas. Tap the counter button at the bottom to track repetitions.
+4. Tap the heart icon to save a dua to Favorites. Tap the share icon to share it.
+5. Use the bottom tab bar to navigate to Favorites, History, and Settings.
+6. In Settings you can toggle haptic feedback, enable daily reminder notifications, and switch between light/dark mode.
+
+The app is entirely offline. It does not connect to any server, collect any data, or require any sign-in. All content is bundled within the app and sourced from the Quran and authenticated Hadith collections.
+
 ---
 
 ## Screenshots Needed
