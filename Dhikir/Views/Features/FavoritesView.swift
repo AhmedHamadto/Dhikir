@@ -110,6 +110,7 @@ struct FavoriteCard: View {
                         .font(.system(size: 20))
                         .foregroundStyle(Color.red)
                 }
+                .accessibilityLabel("Remove from favorites")
             }
             .padding()
             .background(

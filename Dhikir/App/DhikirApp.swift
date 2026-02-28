@@ -28,12 +28,13 @@ struct DhikirApp: App {
             #endif
             // Fallback to in-memory container
             let fallbackConfig = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
-            do {
-                sharedModelContainer = try ModelContainer(for: schema, configurations: [fallbackConfig])
-            } catch {
-                // Last resort: try default in-memory configuration
-                // This should never realistically fail, but we avoid fatalError for App Store safety
-                sharedModelContainer = try! ModelContainer(for: schema)
+            if let fallbackContainer = try? ModelContainer(for: schema, configurations: [fallbackConfig]) {
+                sharedModelContainer = fallbackContainer
+            } else if let defaultContainer = try? ModelContainer(for: schema) {
+                sharedModelContainer = defaultContainer
+            } else {
+                // Absolute last resort — in-memory default config (cannot realistically fail)
+                sharedModelContainer = try! ModelContainer(for: schema, configurations: [ModelConfiguration(isStoredInMemoryOnly: true)])
             }
             _showDatabaseError = State(initialValue: true)
             _databaseErrorMessage = State(initialValue: "Using temporary storage. Your data won't be saved between app launches.")

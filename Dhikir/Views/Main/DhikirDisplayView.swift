@@ -93,6 +93,7 @@ struct DhikirDisplayView: View {
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color("AccentGreen"))
                 }
+                .accessibilityLabel("Share dhikir")
 
                 Button(action: {
                     if let dhikir = currentDhikir {
@@ -103,6 +104,7 @@ struct DhikirDisplayView: View {
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(isFavorite ? Color.red : Color("AccentGreen"))
                 }
+                .accessibilityLabel(isFavorite ? "Remove from favorites" : "Add to favorites")
             }
         }
         .onAppear {
@@ -278,6 +280,8 @@ struct DhikirDisplayView: View {
                 }
             }
             .buttonStyle(PlainButtonStyle())
+            .accessibilityLabel("Repetition counter, \(repetitionCount) of \(dhikir.repetitionCount)")
+            .accessibilityHint("Tap to increment count")
 
             if repetitionCount >= dhikir.repetitionCount {
                 Text("Completed!")

@@ -89,6 +89,8 @@ struct HomeView: View {
                 .fill(Color("CardBackground"))
                 .shadow(color: .black.opacity(0.05), radius: 10, y: 5)
         )
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(currentStreak) day streak")
     }
 
     private var emotionsSection: some View {

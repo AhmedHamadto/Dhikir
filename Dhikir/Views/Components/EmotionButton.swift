@@ -48,6 +48,7 @@ struct EmotionButton: View {
             .scaleEffect(isPressed ? 0.95 : 1.0)
         }
         .buttonStyle(PlainButtonStyle())
+        .accessibilityLabel("\(title) — \(description)")
         .onLongPressGesture(minimumDuration: .infinity, pressing: { pressing in
             withAnimation(.easeInOut(duration: 0.15)) {
                 isPressed = pressing

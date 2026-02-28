@@ -803,7 +803,9 @@
       "englishTranslation": "And say: My Lord, increase me in knowledge",
       "source": "Quran 20:114",
       "sourceType": "Quran",
-      "categories": [],
+      "categories": [
+        "upon_waking"
+      ],
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "Allah commanded the Prophet (SAW) to ask for increase only in knowledge. Knowledge is the greatest treasure.",
@@ -844,7 +846,9 @@
       "englishTranslation": "O Allah, inspire me with guidance and protect me from the evil of my own self",
       "source": "Jami at-Tirmidhi 3483",
       "sourceType": "Hadith",
-      "categories": [],
+      "categories": [
+        "lonely"
+      ],
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A beautiful dua asking for inspiration and protection from one's own nafs (self).",
@@ -863,7 +867,9 @@
       "englishTranslation": "O Allah, I seek refuge in You from laziness and old age, from sin and debt",
       "source": "Sahih Bukhari 6368",
       "sourceType": "Hadith",
-      "categories": [],
+      "categories": [
+        "angry"
+      ],
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) frequently sought refuge from these four things that weaken a person.",
@@ -973,7 +979,9 @@
       "englishTranslation": "Our Lord, pour upon us patience and plant firmly our feet and give us victory over the disbelieving people",
       "source": "Quran 2:250",
       "sourceType": "Quran",
-      "categories": [],
+      "categories": [
+        "during_illness"
+      ],
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The dua of the believers when facing Goliath. Asking for patience and steadfastness.",
@@ -992,7 +1000,9 @@
       "englishTranslation": "O Allah, I seek refuge in You from the withdrawal of Your blessing, the change of Your protection, Your sudden punishment, and all Your displeasure",
       "source": "Sahih Muslim 2739",
       "sourceType": "Hadith",
-      "categories": [],
+      "categories": [
+        "upon_waking"
+      ],
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A comprehensive dua seeking protection from losing Allah's favors and blessings.",
@@ -1315,7 +1325,9 @@
       "englishTranslation": "Our Lord, forgive us our sins and our excess in our affairs and plant firmly our feet and give us victory",
       "source": "Quran 3:147",
       "sourceType": "Quran",
-      "categories": [],
+      "categories": [
+        "angry"
+      ],
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The dua of the righteous warriors who fought alongside the prophets. Combines repentance with asking for steadfastness.",
@@ -1463,7 +1475,9 @@
       "englishTranslation": "O Allah, suffice me with what You have made lawful against what You have made unlawful, and enrich me by Your favor against all others",
       "source": "Jami at-Tirmidhi 3563",
       "sourceType": "Hadith",
-      "categories": [],
+      "categories": [
+        "joyful"
+      ],
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "A powerful dua for provision and protection from haram. The Prophet (SAW) taught this to those in debt.",
