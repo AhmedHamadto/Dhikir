@@ -297,18 +297,12 @@ struct DhikirDisplayView: View {
     }
 
     private var progressIndicator: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: AppTokens.Spacing.sm) {
             Text("\(currentIndex + 1) \(L(.ofCount, preferredLanguage)) \(dhikirs.count)")
-                .font(.system(size: 14, weight: .medium))
+                .font(AppTokens.Typography.caption)
                 .foregroundStyle(Color("TextSecondary"))
 
-            HStack(spacing: 4) {
-                ForEach(0..<dhikirs.count, id: \.self) { index in
-                    Circle()
-                        .fill(index == currentIndex ? Color("AccentGreen") : Color.gray.opacity(0.3))
-                        .frame(width: 8, height: 8)
-                }
-            }
+            PillProgressIndicator(count: dhikirs.count, current: currentIndex)
         }
     }
 

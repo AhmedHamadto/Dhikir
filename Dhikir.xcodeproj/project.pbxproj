@@ -45,6 +45,7 @@
 		F41E6E3DF3CC4B2C9140F86A /* EmotionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9700E2E88E6824B3DBBFE3 /* EmotionButton.swift */; };
 		F4795D780DBAE22F670A6B0C /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC24EDE58738B8CD1F839E7 /* ShareSheet.swift */; };
 		FACB278FB3ADFD8E85DDFDA7 /* StreakServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA7A069799152E503461D7 /* StreakServiceTests.swift */; };
+		BB11CC22DD33EE44FF550011 /* PillProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11CC22DD33EE44FF550012 /* PillProgressIndicator.swift */; };
 		AA11BB22CC33DD44EE55FF01 /* AppTokensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF02 /* AppTokensTests.swift */; };
 		AA11BB22CC33DD44EE55FF03 /* AppTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF04 /* AppTokens.swift */; };
 		AA11BB22CC33DD44EE55FF06 /* CardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF07 /* CardModifier.swift */; };
@@ -113,6 +114,7 @@
 		EC9700E2E88E6824B3DBBFE3 /* EmotionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButton.swift; sourceTree = "<group>"; };
 		EFB522750215C8DD29FD33FF /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		F43997DB99D3F59E0161E749 /* ReadingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingHistory.swift; sourceTree = "<group>"; };
+		BB11CC22DD33EE44FF550012 /* PillProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillProgressIndicator.swift; sourceTree = "<group>"; };
 		AA11BB22CC33DD44EE55FF02 /* AppTokensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTokensTests.swift; sourceTree = "<group>"; };
 		AA11BB22CC33DD44EE55FF04 /* AppTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTokens.swift; sourceTree = "<group>"; };
 		AA11BB22CC33DD44EE55FF07 /* CardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModifier.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				EC9700E2E88E6824B3DBBFE3 /* EmotionButton.swift */,
+				BB11CC22DD33EE44FF550012 /* PillProgressIndicator.swift */,
 				0EC24EDE58738B8CD1F839E7 /* ShareSheet.swift */,
 			);
 			path = Components;
@@ -460,6 +463,7 @@
 				AF53CFB4B9669D9CD8FBCC44 /* ReadingHistory.swift in Sources */,
 				E5E1FFC62D3290EAD06B07C0 /* SettingsView.swift in Sources */,
 				F4795D780DBAE22F670A6B0C /* ShareSheet.swift in Sources */,
+				BB11CC22DD33EE44FF550011 /* PillProgressIndicator.swift in Sources */,
 				4D4F11E474E528E8EFE36DAF /* StreakService.swift in Sources */,
 				1B7B7BFF060FCD2554011A62 /* UserFavorite.swift in Sources */,
 				236636DD0FA2EB3F84BD3A36 /* UserSettings.swift in Sources */,
