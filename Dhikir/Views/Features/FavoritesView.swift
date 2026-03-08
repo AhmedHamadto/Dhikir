@@ -5,9 +5,14 @@ struct FavoritesView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \UserFavorite.dateAdded, order: .reverse) private var favorites: [UserFavorite]
     @Query private var allDhikirs: [Dhikir]
+    @Query private var settings: [UserSettings]
 
     @State private var selectedDhikir: Dhikir?
     @State private var showDhikirDetail = false
+
+    private var preferredLanguage: SupportedLanguage {
+        settings.first?.preferredLanguage ?? .english
+    }
 
     private var favoriteDhikirs: [Dhikir] {
         let favoriteIds = Set(favorites.map { $0.dhikirId })
@@ -38,7 +43,7 @@ struct FavoritesView: View {
                     }
                 }
             }
-            .navigationTitle("Favorites")
+            .navigationTitle(L(.tabFavorites, preferredLanguage))
             .sheet(isPresented: $showDhikirDetail) {
                 if let dhikir = selectedDhikir {
                     DhikirDetailSheet(dhikir: dhikir)
@@ -53,11 +58,11 @@ struct FavoritesView: View {
                 .font(.system(size: 60))
                 .foregroundStyle(Color("TextSecondary").opacity(0.5))
 
-            Text("No Favorites Yet")
+            Text(L(.noFavoritesYet, preferredLanguage))
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
-            Text("Dhikirs you love will appear here.\nTap the heart icon to save them.")
+            Text(L(.favoritesHint, preferredLanguage))
                 .font(.system(size: 14))
                 .foregroundStyle(Color("TextSecondary"))
                 .multilineTextAlignment(.center)
@@ -93,7 +98,7 @@ struct FavoriteCard: View {
                         .lineLimit(2)
 
                     HStack {
-                        Image(systemName: sourceIcon(for: dhikir.sourceType))
+                        Image(systemName: dhikir.sourceType.icon)
                             .font(.system(size: 12))
                             .foregroundStyle(Color("AccentGold"))
 
@@ -122,18 +127,16 @@ struct FavoriteCard: View {
         .buttonStyle(PlainButtonStyle())
     }
 
-    private func sourceIcon(for type: SourceType) -> String {
-        switch type {
-        case .quran: return "book.fill"
-        case .hadith: return "text.book.closed.fill"
-        case .sunnah: return "person.fill"
-        }
-    }
 }
 
 struct DhikirDetailSheet: View {
     @Environment(\.dismiss) private var dismiss
+    @Query private var settings: [UserSettings]
     let dhikir: Dhikir
+
+    private var preferredLanguage: SupportedLanguage {
+        settings.first?.preferredLanguage ?? .english
+    }
 
     var body: some View {
         NavigationStack {
@@ -151,11 +154,11 @@ struct DhikirDetailSheet: View {
                         .foregroundStyle(Color("TextSecondary"))
 
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Translation")
+                        Text(L(.translation, preferredLanguage))
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundStyle(Color("AccentGreen"))
 
-                        Text(dhikir.englishTranslation)
+                        Text(dhikir.translation(for: preferredLanguage))
                             .font(.system(size: 16))
                             .foregroundStyle(Color("TextPrimary"))
                     }
@@ -188,12 +191,12 @@ struct DhikirDetailSheet: View {
                             .fill(Color("CardBackground"))
                     )
 
-                    if let benefit = dhikir.benefit {
+                    if let benefit = dhikir.benefit(for: preferredLanguage) {
                         VStack(alignment: .leading, spacing: 8) {
                             HStack {
                                 Image(systemName: "lightbulb.fill")
                                     .foregroundStyle(Color("AccentGold"))
-                                Text("Benefit")
+                                Text(L(.benefit, preferredLanguage))
                                     .font(.system(size: 14, weight: .semibold))
                                     .foregroundStyle(Color("AccentGold"))
                             }
@@ -210,21 +213,31 @@ struct DhikirDetailSheet: View {
                         )
                     }
 
-                    Text("Repeat \(dhikir.repetitionCount) time(s)")
+                    Text("\(dhikir.repetitionCount) \(L(.repeatTimes, preferredLanguage))")
                         .font(.system(size: 14, weight: .medium))
                         .foregroundStyle(Color("TextSecondary"))
                 }
                 .padding()
             }
             .background(Color("BackgroundCream").ignoresSafeArea())
-            .navigationTitle("Dhikir Details")
+            .navigationTitle(L(.dhikirDetails, preferredLanguage))
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
+                #if os(iOS)
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Done") {
+                    Button(L(.done, preferredLanguage)) {
                         dismiss()
                     }
                 }
+                #else
+                ToolbarItem {
+                    Button(L(.done, preferredLanguage)) {
+                        dismiss()
+                    }
+                }
+                #endif
             }
         }
     }

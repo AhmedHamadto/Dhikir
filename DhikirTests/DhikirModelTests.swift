@@ -87,6 +87,14 @@ final class DhikirModelTests: XCTestCase {
         XCTAssertEqual(dhikir.benefit, "This is a test benefit")
     }
 
+    // MARK: - SourceType Tests
+
+    func testSourceTypeIcons() {
+        XCTAssertEqual(SourceType.quran.icon, "book.fill")
+        XCTAssertEqual(SourceType.hadith.icon, "text.book.closed.fill")
+        XCTAssertEqual(SourceType.sunnah.icon, "person.fill")
+    }
+
     // MARK: - UserFavorite Tests
 
     func testUserFavoriteCreation() throws {

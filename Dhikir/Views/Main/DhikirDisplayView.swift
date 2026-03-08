@@ -22,6 +22,10 @@ struct DhikirDisplayView: View {
     @State private var repetitionCount: Int = 0
     @State private var showShareSheet = false
 
+    #if os(macOS)
+    @FocusState private var isDetailFocused: Bool
+    #endif
+
     private var currentDhikir: Dhikir? {
         guard !dhikirs.isEmpty, currentIndex < dhikirs.count else { return nil }
         return dhikirs[currentIndex]
@@ -45,67 +49,29 @@ struct DhikirDisplayView: View {
             if dhikirs.isEmpty {
                 emptyState
             } else {
-                TabView(selection: $currentIndex) {
-                    ForEach(Array(dhikirs.enumerated()), id: \.element.id) { index, dhikir in
-                        ScrollView {
-                            VStack(spacing: 24) {
-                                progressIndicator
-
-                                arabicTextSection(dhikir)
-
-                                transliterationSection(dhikir)
-
-                                translationSection(dhikir)
-
-                                sourceSection(dhikir)
-
-                                if let benefit = dhikir.benefit {
-                                    benefitSection(benefit)
-                                }
-
-                                repetitionSection(dhikir)
-
-                                if dhikir.audioFileName != nil {
-                                    audioButton(dhikir)
-                                }
-
-                                swipeHint
-                            }
-                            .padding()
-                        }
-                        .tag(index)
-                    }
-                }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .onChange(of: currentIndex) { oldValue, newValue in
-                    if oldValue != newValue {
-                        onDhikirChanged()
-                    }
-                }
+                #if os(iOS)
+                iOSPageView
+                #elseif os(macOS)
+                macOSScrollView
+                #endif
             }
         }
         .navigationTitle(categoryTitle)
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
         .toolbar {
+            #if os(iOS)
             ToolbarItemGroup(placement: .topBarTrailing) {
-                Button(action: { showShareSheet = true }) {
-                    Image(systemName: "square.and.arrow.up")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(Color("AccentGreen"))
-                }
-                .accessibilityLabel("Share dhikir")
-
-                Button(action: {
-                    if let dhikir = currentDhikir {
-                        toggleFavorite(dhikir)
-                    }
-                }) {
-                    Image(systemName: isFavorite ? "heart.fill" : "heart")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(isFavorite ? Color.red : Color("AccentGreen"))
-                }
-                .accessibilityLabel(isFavorite ? "Remove from favorites" : "Add to favorites")
+                shareButton
+                favoriteButton
             }
+            #else
+            ToolbarItemGroup(placement: .automatic) {
+                shareButton
+                favoriteButton
+            }
+            #endif
         }
         .onAppear {
             loadDhikirs()
@@ -117,18 +83,222 @@ struct DhikirDisplayView: View {
         }
     }
 
+    private var shareButton: some View {
+        Button(action: { showShareSheet = true }) {
+            Image(systemName: "square.and.arrow.up")
+                .font(.system(size: 16, weight: .medium))
+                .foregroundStyle(Color("AccentGreen"))
+        }
+        .accessibilityLabel(L(.shareDhikir, preferredLanguage))
+    }
+
+    private var favoriteButton: some View {
+        Button(action: {
+            if let dhikir = currentDhikir {
+                toggleFavorite(dhikir)
+            }
+        }) {
+            Image(systemName: isFavorite ? "heart.fill" : "heart")
+                .font(.system(size: 16, weight: .medium))
+                .foregroundStyle(isFavorite ? Color.red : Color("AccentGreen"))
+        }
+        .accessibilityLabel(isFavorite ? L(.removeFromFavorites, preferredLanguage) : L(.addToFavorites, preferredLanguage))
+    }
+
+    // MARK: - iOS Page View
+
+    #if os(iOS)
+    private var iOSPageView: some View {
+        TabView(selection: $currentIndex) {
+            ForEach(Array(dhikirs.enumerated()), id: \.element.id) { index, dhikir in
+                ScrollView {
+                    dhikirContent(dhikir)
+                }
+                .tag(index)
+            }
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .onChange(of: currentIndex) { oldValue, newValue in
+            if oldValue != newValue {
+                onDhikirChanged()
+            }
+        }
+    }
+    #endif
+
+    // MARK: - macOS Scroll View
+
+    #if os(macOS)
+    private var macOSScrollView: some View {
+        VStack(spacing: 0) {
+            ScrollView {
+                if let dhikir = currentDhikir {
+                    dhikirContent(dhikir)
+                }
+            }
+
+            if let dhikir = currentDhikir {
+                macOSCounterArea(dhikir)
+            }
+
+            macOSNavigationBar
+        }
+        .focusable()
+        .focused($isDetailFocused)
+        .onKeyPress(.leftArrow) {
+            goToPrevious()
+            return .handled
+        }
+        .onKeyPress(.rightArrow) {
+            goToNext()
+            return .handled
+        }
+        .onKeyPress(.space) {
+            if let dhikir = currentDhikir {
+                incrementRepetition(dhikir)
+            }
+            return .handled
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                isDetailFocused = true
+            }
+        }
+        .onChange(of: currentIndex) { _, _ in
+            isDetailFocused = true
+        }
+    }
+
+    private func macOSCounterArea(_ dhikir: Dhikir) -> some View {
+        VStack(spacing: 8) {
+            Button(action: {
+                incrementRepetition(dhikir)
+            }) {
+                VStack(spacing: 12) {
+                    ZStack {
+                        Circle()
+                            .stroke(Color("AccentGreen").opacity(0.3), lineWidth: 8)
+                            .frame(width: 120, height: 120)
+
+                        Circle()
+                            .trim(from: 0, to: progress)
+                            .stroke(Color("AccentGreen"), style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                            .frame(width: 120, height: 120)
+                            .rotationEffect(.degrees(-90))
+                            .animation(.easeInOut(duration: 0.3), value: progress)
+
+                        VStack(spacing: 4) {
+                            Text("\(repetitionCount)")
+                                .font(.system(size: 36, weight: .bold))
+                                .foregroundStyle(Color("TextPrimary"))
+
+                            Text("/ \(dhikir.repetitionCount)")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundStyle(Color("TextSecondary"))
+                        }
+                    }
+
+                    if repetitionCount >= dhikir.repetitionCount {
+                        Text(L(.completed, preferredLanguage))
+                            .font(.system(size: 16, weight: .semibold))
+                            .foregroundStyle(Color("AccentGreen"))
+                    }
+
+                    Text(L(.clickOrSpaceToCount, preferredLanguage))
+                        .font(.system(size: 12, weight: .medium))
+                        .foregroundStyle(Color("TextSecondary").opacity(0.6))
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(PlainButtonStyle())
+            .accessibilityLabel("Repetition counter, \(repetitionCount) of \(dhikir.repetitionCount)")
+            .accessibilityHint("Click to increment count")
+        }
+        .frame(maxHeight: .infinity)
+        .padding(.vertical, 8)
+    }
+
+    private var macOSNavigationBar: some View {
+        HStack(spacing: 16) {
+            Button(action: goToPrevious) {
+                Label(L(.previous, preferredLanguage), systemImage: "chevron.left")
+            }
+            .disabled(currentIndex <= 0)
+
+            Text("\(currentIndex + 1) \(L(.ofCount, preferredLanguage)) \(dhikirs.count)")
+                .font(.system(size: 14, weight: .medium))
+                .foregroundStyle(Color("TextSecondary"))
+
+            Button(action: goToNext) {
+                Label(L(.next, preferredLanguage), systemImage: "chevron.right")
+            }
+            .disabled(currentIndex >= dhikirs.count - 1)
+        }
+        .padding()
+        .background(Color("CardBackground"))
+    }
+
+    private func goToPrevious() {
+        if currentIndex > 0 {
+            currentIndex -= 1
+            onDhikirChanged()
+        }
+    }
+
+    private func goToNext() {
+        if currentIndex < dhikirs.count - 1 {
+            currentIndex += 1
+            onDhikirChanged()
+        }
+    }
+    #endif
+
+    // MARK: - Shared Content
+
+    private func dhikirContent(_ dhikir: Dhikir) -> some View {
+        VStack(spacing: 24) {
+            progressIndicator
+
+            arabicTextSection(dhikir)
+
+            transliterationSection(dhikir)
+
+            translationSection(dhikir)
+
+            sourceSection(dhikir)
+
+            if let benefit = dhikir.benefit(for: preferredLanguage) {
+                benefitSection(benefit)
+            }
+
+            #if os(iOS)
+            repetitionSection(dhikir)
+            #endif
+
+            if dhikir.audioFileName != nil {
+                audioButton(dhikir)
+            }
+
+            #if os(iOS)
+            swipeHint
+            #endif
+        }
+        .padding()
+    }
+
     private var categoryTitle: String {
         if let emotion = EmotionalState(rawValue: category) {
-            return emotion.displayName
+            return emotion.displayName(for: preferredLanguage)
         } else if let situation = LifeSituation(rawValue: category) {
-            return situation.displayName
+            return situation.displayName(for: preferredLanguage)
         }
-        return "Dhikir"
+        return L(.appName, preferredLanguage)
     }
 
     private var progressIndicator: some View {
         VStack(spacing: 8) {
-            Text("\(currentIndex + 1) of \(dhikirs.count)")
+            Text("\(currentIndex + 1) \(L(.ofCount, preferredLanguage)) \(dhikirs.count)")
                 .font(.system(size: 14, weight: .medium))
                 .foregroundStyle(Color("TextSecondary"))
 
@@ -170,7 +340,7 @@ struct DhikirDisplayView: View {
     private func translationSection(_ dhikir: Dhikir) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                Text("Translation")
+                Text(L(.translation, preferredLanguage))
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(Color("AccentGreen"))
 
@@ -197,7 +367,7 @@ struct DhikirDisplayView: View {
 
     private func sourceSection(_ dhikir: Dhikir) -> some View {
         HStack {
-            Image(systemName: sourceIcon(for: dhikir.sourceType))
+            Image(systemName: dhikir.sourceType.icon)
                 .foregroundStyle(Color("AccentGold"))
 
             Text(dhikir.source)
@@ -229,7 +399,7 @@ struct DhikirDisplayView: View {
                 Image(systemName: "lightbulb.fill")
                     .foregroundStyle(Color("AccentGold"))
 
-                Text("Benefit")
+                Text(L(.benefit, preferredLanguage))
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(Color("AccentGold"))
             }
@@ -249,7 +419,7 @@ struct DhikirDisplayView: View {
 
     private func repetitionSection(_ dhikir: Dhikir) -> some View {
         VStack(spacing: 16) {
-            Text("Tap to Count")
+            Text(L(.tapToCount, preferredLanguage))
                 .font(.system(size: 14, weight: .medium))
                 .foregroundStyle(Color("TextSecondary"))
 
@@ -284,7 +454,7 @@ struct DhikirDisplayView: View {
             .accessibilityHint("Tap to increment count")
 
             if repetitionCount >= dhikir.repetitionCount {
-                Text("Completed!")
+                Text(L(.completed, preferredLanguage))
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(Color("AccentGreen"))
             }
@@ -299,7 +469,7 @@ struct DhikirDisplayView: View {
                     .font(.system(size: 20))
                     .foregroundStyle(Color("AccentGreen"))
 
-                Text("Listen to Recitation")
+                Text(L(.listenToRecitation, preferredLanguage))
                     .font(.system(size: 16, weight: .medium))
                     .foregroundStyle(Color("TextPrimary"))
             }
@@ -314,6 +484,7 @@ struct DhikirDisplayView: View {
         .buttonStyle(PlainButtonStyle())
     }
 
+    #if os(iOS)
     private var swipeHint: some View {
         HStack(spacing: 8) {
             if currentIndex > 0 {
@@ -321,7 +492,7 @@ struct DhikirDisplayView: View {
                     .font(.system(size: 12, weight: .medium))
             }
 
-            Text("Swipe to navigate")
+            Text(L(.swipeToNavigate, preferredLanguage))
                 .font(.system(size: 14, weight: .medium))
 
             if currentIndex < dhikirs.count - 1 {
@@ -332,6 +503,7 @@ struct DhikirDisplayView: View {
         .foregroundStyle(Color("TextSecondary").opacity(0.6))
         .padding(.vertical, 8)
     }
+    #endif
 
     private var emptyState: some View {
         VStack(spacing: 16) {
@@ -339,23 +511,15 @@ struct DhikirDisplayView: View {
                 .font(.system(size: 60))
                 .foregroundStyle(Color("TextSecondary"))
 
-            Text("No dhikirs found")
+            Text(L(.noDhikirsFound, preferredLanguage))
                 .font(.system(size: 18, weight: .medium))
                 .foregroundStyle(Color("TextSecondary"))
 
-            Button("Go Back") {
+            Button(L(.goBack, preferredLanguage)) {
                 dismiss()
             }
             .font(.system(size: 16, weight: .semibold))
             .foregroundStyle(Color("AccentGreen"))
-        }
-    }
-
-    private func sourceIcon(for type: SourceType) -> String {
-        switch type {
-        case .quran: return "book.fill"
-        case .hadith: return "text.book.closed.fill"
-        case .sunnah: return "person.fill"
         }
     }
 
@@ -368,24 +532,21 @@ struct DhikirDisplayView: View {
 
     private func incrementRepetition(_ dhikir: Dhikir) {
         if hapticFeedbackEnabled {
-            let generator = UIImpactFeedbackGenerator(style: .light)
-            generator.impactOccurred()
+            triggerHaptic(.light)
         }
 
         if repetitionCount < dhikir.repetitionCount {
             repetitionCount += 1
 
             if repetitionCount == dhikir.repetitionCount && hapticFeedbackEnabled {
-                let successGenerator = UINotificationFeedbackGenerator()
-                successGenerator.notificationOccurred(.success)
+                triggerHaptic(.success)
             }
         }
     }
 
     private func toggleFavorite(_ dhikir: Dhikir) {
         if hapticFeedbackEnabled {
-            let generator = UIImpactFeedbackGenerator(style: .medium)
-            generator.impactOccurred()
+            triggerHaptic(.medium)
         }
 
         if let existing = favorites.first(where: { $0.dhikirId == dhikir.id }) {
@@ -419,8 +580,7 @@ struct DhikirDisplayView: View {
             saveToHistory(dhikir)
         }
         if hapticFeedbackEnabled {
-            let generator = UIImpactFeedbackGenerator(style: .light)
-            generator.impactOccurred()
+            triggerHaptic(.light)
         }
     }
 }

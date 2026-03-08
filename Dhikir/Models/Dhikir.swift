@@ -5,6 +5,14 @@ enum SourceType: String, Codable, CaseIterable {
     case quran = "Quran"
     case hadith = "Hadith"
     case sunnah = "Sunnah"
+
+    var icon: String {
+        switch self {
+        case .quran: return "book.fill"
+        case .hadith: return "text.book.closed.fill"
+        case .sunnah: return "person.fill"
+        }
+    }
 }
 
 enum SupportedLanguage: String, Codable, CaseIterable, Identifiable {
@@ -56,6 +64,7 @@ final class Dhikir {
     var repetitionCount: Int
     var audioFileName: String?
     var benefit: String?
+    var benefitTranslations: [String: String] = [:]
 
     init(
         id: UUID = UUID(),
@@ -68,7 +77,8 @@ final class Dhikir {
         categories: [String],
         repetitionCount: Int = 1,
         audioFileName: String? = nil,
-        benefit: String? = nil
+        benefit: String? = nil,
+        benefitTranslations: [String: String] = [:]
     ) {
         self.id = id
         self.arabicText = arabicText
@@ -81,6 +91,7 @@ final class Dhikir {
         self.repetitionCount = repetitionCount
         self.audioFileName = audioFileName
         self.benefit = benefit
+        self.benefitTranslations = benefitTranslations
     }
 
     func translation(for language: SupportedLanguage) -> String {
@@ -93,6 +104,16 @@ final class Dhikir {
             return arabicText
         default:
             return translations[language.rawValue] ?? englishTranslation
+        }
+    }
+
+    func benefit(for language: SupportedLanguage) -> String? {
+        guard let benefit else { return nil }
+        switch language {
+        case .english:
+            return benefit
+        default:
+            return benefitTranslations[language.rawValue] ?? benefit
         }
     }
 }
@@ -109,6 +130,7 @@ struct DhikirData: Codable {
     let repetitionCount: Int
     let audioFileName: String?
     let benefit: String?
+    let benefitTranslations: [String: String]?
 
     func toModel() -> Dhikir {
         Dhikir(
@@ -122,7 +144,8 @@ struct DhikirData: Codable {
             categories: categories,
             repetitionCount: repetitionCount,
             audioFileName: audioFileName,
-            benefit: benefit
+            benefit: benefit,
+            benefitTranslations: benefitTranslations ?? [:]
         )
     }
 }
