@@ -5,9 +5,15 @@ struct HistoryView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \ReadingHistory.dateRead, order: .reverse) private var history: [ReadingHistory]
     @Query private var allDhikirs: [Dhikir]
+    @Query private var settings: [UserSettings]
 
     @State private var selectedDhikir: Dhikir?
     @State private var showDhikirDetail = false
+    @State private var showingClearAlert = false
+
+    private var preferredLanguage: SupportedLanguage {
+        settings.first?.preferredLanguage ?? .english
+    }
 
     private var groupedHistory: [(String, [ReadingHistory])] {
         let grouped = Dictionary(grouping: history) { item in
@@ -51,16 +57,33 @@ struct HistoryView: View {
                     }
                 }
             }
-            .navigationTitle("History")
+            .navigationTitle(L(.tabHistory, preferredLanguage))
             .toolbar {
                 if !history.isEmpty {
+                    #if os(iOS)
                     ToolbarItem(placement: .topBarTrailing) {
-                        Button("Clear") {
-                            clearHistory()
+                        Button(L(.clear, preferredLanguage)) {
+                            showingClearAlert = true
                         }
                         .foregroundStyle(Color.red)
                     }
+                    #else
+                    ToolbarItem {
+                        Button(L(.clear, preferredLanguage)) {
+                            showingClearAlert = true
+                        }
+                        .foregroundStyle(Color.red)
+                    }
+                    #endif
                 }
+            }
+            .alert(L(.clearHistory, preferredLanguage), isPresented: $showingClearAlert) {
+                Button(L(.cancel, preferredLanguage), role: .cancel) {}
+                Button(L(.clear, preferredLanguage), role: .destructive) {
+                    clearHistory()
+                }
+            } message: {
+                Text(L(.clearHistoryWarning, preferredLanguage))
             }
             .sheet(isPresented: $showDhikirDetail) {
                 if let dhikir = selectedDhikir {
@@ -76,11 +99,11 @@ struct HistoryView: View {
                 .font(.system(size: 60))
                 .foregroundStyle(Color("TextSecondary").opacity(0.5))
 
-            Text("No History Yet")
+            Text(L(.noHistoryYet, preferredLanguage))
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
-            Text("Your reading history will appear here\nas you explore dhikirs.")
+            Text(L(.historyHint, preferredLanguage))
                 .font(.system(size: 14))
                 .foregroundStyle(Color("TextSecondary"))
                 .multilineTextAlignment(.center)
@@ -91,9 +114,9 @@ struct HistoryView: View {
     private func formatDate(_ date: Date) -> String {
         let calendar = Calendar.current
         if calendar.isDateInToday(date) {
-            return "Today"
+            return L(.today, preferredLanguage)
         } else if calendar.isDateInYesterday(date) {
-            return "Yesterday"
+            return L(.yesterday, preferredLanguage)
         } else {
             let formatter = DateFormatter()
             formatter.dateFormat = "MMMM d, yyyy"
@@ -114,15 +137,20 @@ struct HistoryView: View {
 }
 
 struct HistoryCard: View {
+    @Query private var settings: [UserSettings]
     let dhikir: Dhikir
     let history: ReadingHistory
     let onTap: () -> Void
 
+    private var preferredLanguage: SupportedLanguage {
+        settings.first?.preferredLanguage ?? .english
+    }
+
     private var categoryName: String {
         if let emotion = EmotionalState(rawValue: history.category) {
-            return emotion.displayName
+            return emotion.displayName(for: preferredLanguage)
         } else if let situation = LifeSituation(rawValue: history.category) {
-            return situation.displayName
+            return situation.displayName(for: preferredLanguage)
         }
         return history.category
     }
@@ -136,7 +164,7 @@ struct HistoryCard: View {
                         .foregroundStyle(Color("TextPrimary"))
                         .lineLimit(1)
 
-                    Text(dhikir.englishTranslation)
+                    Text(dhikir.translation(for: preferredLanguage))
                         .font(.system(size: 13))
                         .foregroundStyle(Color("TextSecondary"))
                         .lineLimit(1)

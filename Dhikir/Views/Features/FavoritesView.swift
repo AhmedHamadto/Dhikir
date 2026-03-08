@@ -31,7 +31,7 @@ struct FavoritesView: View {
                     ScrollView {
                         LazyVStack(spacing: 12) {
                             ForEach(favoriteDhikirs, id: \.id) { dhikir in
-                                FavoriteCard(dhikir: dhikir) {
+                                FavoriteCard(dhikir: dhikir, preferredLanguage: preferredLanguage) {
                                     selectedDhikir = dhikir
                                     showDhikirDetail = true
                                 } onRemove: {
@@ -80,6 +80,7 @@ struct FavoritesView: View {
 
 struct FavoriteCard: View {
     let dhikir: Dhikir
+    let preferredLanguage: SupportedLanguage
     let onTap: () -> Void
     let onRemove: () -> Void
 
@@ -92,7 +93,7 @@ struct FavoriteCard: View {
                         .foregroundStyle(Color("TextPrimary"))
                         .lineLimit(2)
 
-                    Text(dhikir.englishTranslation)
+                    Text(dhikir.translation(for: preferredLanguage))
                         .font(.system(size: 14))
                         .foregroundStyle(Color("TextSecondary"))
                         .lineLimit(2)

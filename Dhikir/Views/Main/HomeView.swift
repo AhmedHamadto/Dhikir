@@ -9,6 +9,10 @@ struct HomeView: View {
     @State private var selectedCategory: String?
     @State private var showDhikir = false
 
+    private var preferredLanguage: SupportedLanguage {
+        settings.first?.preferredLanguage ?? .english
+    }
+
     private var currentStreak: Int {
         streaks.first?.currentStreak ?? 0
     }
@@ -48,11 +52,11 @@ struct HomeView: View {
 
     private var headerSection: some View {
         VStack(spacing: 8) {
-            Text("Dhikir")
+            Text(L(.appName, preferredLanguage))
                 .font(.system(size: 36, weight: .bold, design: .serif))
                 .foregroundStyle(Color("TextPrimary"))
 
-            Text("How are you feeling?")
+            Text(L(.howAreYouFeeling, preferredLanguage))
                 .font(.system(size: 18, weight: .medium))
                 .foregroundStyle(Color("TextSecondary"))
         }
@@ -66,7 +70,7 @@ struct HomeView: View {
                 .foregroundStyle(Color.orange)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text("\(currentStreak) Day Streak")
+                Text("\(currentStreak) \(L(.dayStreak, preferredLanguage))")
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(Color("TextPrimary"))
 
@@ -75,7 +79,7 @@ struct HomeView: View {
                         .font(.system(size: 14))
                         .foregroundStyle(Color("AccentGold"))
                 } else {
-                    Text("Keep going!")
+                    Text(L(.keepGoing, preferredLanguage))
                         .font(.system(size: 14))
                         .foregroundStyle(Color("TextSecondary"))
                 }
@@ -95,7 +99,7 @@ struct HomeView: View {
 
     private var emotionsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("How I Feel")
+            Text(L(.howIFeel, preferredLanguage))
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
@@ -105,11 +109,11 @@ struct HomeView: View {
             ], spacing: 12) {
                 ForEach(EmotionalState.allCases) { emotion in
                     EmotionButton(
-                        title: emotion.displayName,
+                        title: emotion.displayName(for: preferredLanguage),
                         arabicTitle: emotion.arabicName,
                         icon: emotion.icon,
                         color: emotion.color,
-                        description: emotion.description,
+                        description: emotion.description(for: preferredLanguage),
                         hapticEnabled: hapticEnabled
                     ) {
                         selectCategory(emotion.rawValue)
@@ -121,7 +125,7 @@ struct HomeView: View {
 
     private var situationsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("What I'm Doing")
+            Text(L(.whatImDoing, preferredLanguage))
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
@@ -131,11 +135,11 @@ struct HomeView: View {
             ], spacing: 12) {
                 ForEach(LifeSituation.allCases) { situation in
                     EmotionButton(
-                        title: situation.displayName,
+                        title: situation.displayName(for: preferredLanguage),
                         arabicTitle: situation.arabicName,
                         icon: situation.icon,
                         color: situation.color,
-                        description: situation.description,
+                        description: situation.description(for: preferredLanguage),
                         hapticEnabled: hapticEnabled
                     ) {
                         selectCategory(situation.rawValue)
@@ -146,6 +150,9 @@ struct HomeView: View {
     }
 
     private func selectCategory(_ category: String) {
+        if hapticEnabled {
+            triggerHaptic(.light)
+        }
         selectedCategory = category
         StreakService.shared.recordActivity(context: modelContext)
         showDhikir = true

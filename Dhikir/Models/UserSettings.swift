@@ -22,6 +22,14 @@ enum AppearanceMode: String, Codable, CaseIterable {
         case .dark: return "moon.fill"
         }
     }
+
+    func displayName(for language: SupportedLanguage) -> String {
+        switch self {
+        case .system: return L(.appearanceSystem, language)
+        case .light: return L(.appearanceLight, language)
+        case .dark: return L(.appearanceDark, language)
+        }
+    }
 }
 
 @Model

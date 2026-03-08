@@ -14,12 +14,23 @@ struct SettingsView: View {
     @State private var selectedLanguage: SupportedLanguage = .english
     @State private var hapticFeedbackEnabled: Bool = true
 
+    private var preferredLanguage: SupportedLanguage {
+        settings.first?.preferredLanguage ?? .english
+    }
+
     private var currentSettings: UserSettings? {
         settings.first
     }
 
     private var currentStreak: UserStreak? {
         streaks.first
+    }
+
+    private var uniqueEnabledDhikirCount: Int {
+        let allDhikirs = (try? modelContext.fetch(FetchDescriptor<Dhikir>())) ?? []
+        return allDhikirs.filter { dhikir in
+            dhikir.categories.contains { !$0.hasPrefix("_") }
+        }.count
     }
 
     var body: some View {
@@ -36,7 +47,9 @@ struct SettingsView: View {
 
                         appearanceSection
 
+                        #if os(iOS)
                         hapticSection
+                        #endif
 
                         languageSection
 
@@ -49,17 +62,17 @@ struct SettingsView: View {
                     .padding()
                 }
             }
-            .navigationTitle("Settings")
+            .navigationTitle(L(.settings, preferredLanguage))
             .onAppear {
                 loadSettings()
             }
-            .alert("Reset All Data", isPresented: $showingResetAlert) {
-                Button("Cancel", role: .cancel) {}
-                Button("Reset", role: .destructive) {
+            .alert(L(.resetAllData, preferredLanguage), isPresented: $showingResetAlert) {
+                Button(L(.cancel, preferredLanguage), role: .cancel) {}
+                Button(L(.reset, preferredLanguage), role: .destructive) {
                     resetAllData()
                 }
             } message: {
-                Text("This will delete all your favorites, history, and streak progress. This action cannot be undone.")
+                Text(L(.resetWarning, preferredLanguage))
             }
             .sheet(isPresented: $showingDisclaimer) {
                 DisclaimerSheet()
@@ -69,27 +82,27 @@ struct SettingsView: View {
 
     private var streakSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Your Progress")
+            Text(L(.yourProgress, preferredLanguage))
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
             HStack(spacing: 20) {
                 StatCard(
-                    title: "Current Streak",
+                    title: L(.currentStreak, preferredLanguage),
                     value: "\(currentStreak?.currentStreak ?? 0)",
                     icon: "flame.fill",
                     color: .orange
                 )
 
                 StatCard(
-                    title: "Longest Streak",
+                    title: L(.longestStreak, preferredLanguage),
                     value: "\(currentStreak?.longestStreak ?? 0)",
                     icon: "trophy.fill",
                     color: Color("AccentGold")
                 )
 
                 StatCard(
-                    title: "Total Days",
+                    title: L(.totalDays, preferredLanguage),
                     value: "\(currentStreak?.totalDaysActive ?? 0)",
                     icon: "calendar",
                     color: Color("AccentGreen")
@@ -100,7 +113,7 @@ struct SettingsView: View {
 
     private var notificationSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Notifications")
+            Text(L(.notifications, preferredLanguage))
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
@@ -109,7 +122,7 @@ struct SettingsView: View {
                     HStack {
                         Image(systemName: "bell.fill")
                             .foregroundStyle(Color("AccentGreen"))
-                        Text("Enable Notifications")
+                        Text(L(.enableNotifications, preferredLanguage))
                             .font(.system(size: 16, weight: .medium))
                     }
                 }
@@ -138,7 +151,7 @@ struct SettingsView: View {
 
     private var appearanceSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Appearance")
+            Text(L(.appearance, preferredLanguage))
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
@@ -153,7 +166,7 @@ struct SettingsView: View {
                                 .font(.system(size: 24))
                                 .foregroundStyle(selectedAppearance == mode ? Color("AccentGreen") : Color("TextSecondary"))
 
-                            Text(mode.rawValue)
+                            Text(mode.displayName(for: preferredLanguage))
                                 .font(.system(size: 12, weight: .medium))
                                 .foregroundStyle(selectedAppearance == mode ? Color("AccentGreen") : Color("TextSecondary"))
                         }
@@ -176,7 +189,7 @@ struct SettingsView: View {
 
     private var hapticSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Feedback")
+            Text(L(.feedback, preferredLanguage))
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
@@ -184,7 +197,7 @@ struct SettingsView: View {
                 HStack {
                     Image(systemName: "iphone.radiowaves.left.and.right")
                         .foregroundStyle(Color("AccentGreen"))
-                    Text("Haptic Feedback")
+                    Text(L(.hapticFeedback, preferredLanguage))
                         .font(.system(size: 16, weight: .medium))
                 }
             }
@@ -202,7 +215,7 @@ struct SettingsView: View {
 
     private var languageSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Translation Language")
+            Text(L(.translationLanguage, preferredLanguage))
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
@@ -242,18 +255,18 @@ struct SettingsView: View {
 
     private var aboutSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("About")
+            Text(L(.about, preferredLanguage))
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
             VStack(spacing: 0) {
-                AboutRow(title: "Version", value: "1.0.0")
+                AboutRow(title: L(.version, preferredLanguage), value: "1.0.0")
                 Divider()
-                AboutRow(title: "Dhikirs", value: "74+")
+                AboutRow(title: L(.dhikirs, preferredLanguage), value: "\(uniqueEnabledDhikirCount)")
                 Divider()
-                AboutRow(title: "Sources", value: "Quran & Hadith")
+                AboutRow(title: L(.sources, preferredLanguage), value: L(.quranAndHadith, preferredLanguage))
                 Divider()
-                AboutRow(title: "Languages", value: "7")
+                AboutRow(title: L(.languages, preferredLanguage), value: "7")
             }
             .background(
                 RoundedRectangle(cornerRadius: 12)
@@ -264,14 +277,14 @@ struct SettingsView: View {
 
     private var legalSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Legal")
+            Text(L(.legal, preferredLanguage))
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
             VStack(spacing: 0) {
                 Button(action: { showingDisclaimer = true }) {
                     HStack {
-                        Text("Disclaimer")
+                        Text(L(.disclaimer, preferredLanguage))
                             .font(.system(size: 16, weight: .medium))
                             .foregroundStyle(Color("TextPrimary"))
                         Spacer()
@@ -288,7 +301,7 @@ struct SettingsView: View {
                     .fill(Color("CardBackground"))
             )
 
-            Text("This app is for educational and spiritual purposes only. Content should be verified with qualified Islamic scholars.")
+            Text(L(.disclaimerNote, preferredLanguage))
                 .font(.system(size: 12))
                 .foregroundStyle(Color("TextSecondary"))
                 .multilineTextAlignment(.leading)
@@ -297,7 +310,7 @@ struct SettingsView: View {
 
     private var resetSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Data")
+            Text(L(.data, preferredLanguage))
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(Color("TextPrimary"))
 
@@ -305,7 +318,7 @@ struct SettingsView: View {
                 HStack {
                     Image(systemName: "trash")
                         .foregroundStyle(Color.red)
-                    Text("Reset All Data")
+                    Text(L(.resetAllData, preferredLanguage))
                         .foregroundStyle(Color.red)
                     Spacer()
                 }
@@ -491,15 +504,20 @@ struct TimePickerSheet: View {
                     selection: $selectedDate,
                     displayedComponents: .hourAndMinute
                 )
+                #if os(iOS)
                 .datePickerStyle(.wheel)
+                #endif
                 .labelsHidden()
 
                 Spacer()
             }
             .padding()
             .navigationTitle("Set Time")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
+                #if os(iOS)
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
                         dismiss()
@@ -515,6 +533,23 @@ struct TimePickerSheet: View {
                     }
                     .fontWeight(.semibold)
                 }
+                #else
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") {
+                        let calendar = Calendar.current
+                        time.hour = calendar.component(.hour, from: selectedDate)
+                        time.minute = calendar.component(.minute, from: selectedDate)
+                        onDone()
+                        dismiss()
+                    }
+                    .fontWeight(.semibold)
+                }
+                #endif
             }
             .onAppear {
                 let calendar = Calendar.current
@@ -600,14 +635,25 @@ struct DisclaimerSheet: View {
             }
             .background(Color("BackgroundCream").ignoresSafeArea())
             .navigationTitle("Disclaimer")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
+                #if os(iOS)
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") {
                         dismiss()
                     }
                     .fontWeight(.semibold)
                 }
+                #else
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                    .fontWeight(.semibold)
+                }
+                #endif
             }
         }
     }
