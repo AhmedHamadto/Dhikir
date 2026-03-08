@@ -51,6 +51,7 @@ enum AppString: String {
 
     // Settings
     case settings = "settings"
+    case preferences = "preferences"
     case yourProgress = "your_progress"
     case currentStreak = "current_streak"
     case longestStreak = "longest_streak"
@@ -204,6 +205,7 @@ struct LocalizationService {
 
             // Settings
             "settings": "Settings",
+            "preferences": "Preferences",
             "your_progress": "Your Progress",
             "current_streak": "Current Streak",
             "longest_streak": "Longest Streak",
@@ -340,6 +342,7 @@ struct LocalizationService {
             "today": "اليوم",
             "yesterday": "أمس",
             "settings": "الإعدادات",
+            "preferences": "التفضيلات",
             "your_progress": "تقدمك",
             "current_streak": "السلسلة الحالية",
             "longest_streak": "أطول سلسلة",
@@ -464,6 +467,7 @@ struct LocalizationService {
             "today": "آج",
             "yesterday": "کل",
             "settings": "ترتیبات",
+            "preferences": "ترجیحات",
             "your_progress": "آپ کی پیشرفت",
             "current_streak": "موجودہ سلسلہ",
             "longest_streak": "طویل ترین سلسلہ",
@@ -588,6 +592,7 @@ struct LocalizationService {
             "today": "Hari Ini",
             "yesterday": "Kemarin",
             "settings": "Pengaturan",
+            "preferences": "Preferensi",
             "your_progress": "Kemajuan Anda",
             "current_streak": "Streak Saat Ini",
             "longest_streak": "Streak Terpanjang",
@@ -712,6 +717,7 @@ struct LocalizationService {
             "today": "Bugün",
             "yesterday": "Dün",
             "settings": "Ayarlar",
+            "preferences": "Tercihler",
             "your_progress": "İlerlemeniz",
             "current_streak": "Mevcut Seri",
             "longest_streak": "En Uzun Seri",
@@ -836,6 +842,7 @@ struct LocalizationService {
             "today": "Aujourd'hui",
             "yesterday": "Hier",
             "settings": "Paramètres",
+            "preferences": "Préférences",
             "your_progress": "Votre progression",
             "current_streak": "Série actuelle",
             "longest_streak": "Plus longue série",
@@ -960,6 +967,7 @@ struct LocalizationService {
             "today": "Hari Ini",
             "yesterday": "Semalam",
             "settings": "Tetapan",
+            "preferences": "Keutamaan",
             "your_progress": "Kemajuan Anda",
             "current_streak": "Streak Semasa",
             "longest_streak": "Streak Terpanjang",

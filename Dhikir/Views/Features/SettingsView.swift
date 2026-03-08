@@ -40,24 +40,12 @@ struct SettingsView: View {
                     .ignoresSafeArea()
 
                 ScrollView {
-                    VStack(spacing: 24) {
-                        streakSection
+                    VStack(spacing: AppTokens.Spacing.xl) {
+                        progressSection
 
-                        notificationSection
+                        preferencesSection
 
-                        appearanceSection
-
-                        #if os(iOS)
-                        hapticSection
-                        #endif
-
-                        languageSection
-
-                        aboutSection
-
-                        legalSection
-
-                        resetSection
+                        aboutAndLegalSection
                     }
                     .padding()
                 }
@@ -80,10 +68,12 @@ struct SettingsView: View {
         }
     }
 
-    private var streakSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
+    // MARK: - Section 1: Your Progress
+
+    private var progressSection: some View {
+        VStack(alignment: .leading, spacing: AppTokens.Spacing.lg) {
             Text(L(.yourProgress, preferredLanguage))
-                .font(.system(size: 18, weight: .semibold))
+                .font(AppTokens.Typography.heading)
                 .foregroundStyle(Color("TextPrimary"))
 
             HStack(spacing: 20) {
@@ -111,121 +101,127 @@ struct SettingsView: View {
         }
     }
 
-    private var notificationSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(L(.notifications, preferredLanguage))
-                .font(.system(size: 18, weight: .semibold))
+    // MARK: - Section 2: Preferences
+
+    private var preferencesSection: some View {
+        VStack(alignment: .leading, spacing: AppTokens.Spacing.lg) {
+            Text(L(.preferences, preferredLanguage))
+                .font(AppTokens.Typography.heading)
                 .foregroundStyle(Color("TextPrimary"))
 
-            VStack(spacing: 12) {
-                Toggle(isOn: $notificationsEnabled) {
-                    HStack {
-                        Image(systemName: "bell.fill")
-                            .foregroundStyle(Color("AccentGreen"))
-                        Text(L(.enableNotifications, preferredLanguage))
-                            .font(.system(size: 16, weight: .medium))
-                    }
-                }
-                .tint(Color("AccentGreen"))
-                .onChange(of: notificationsEnabled) { _, newValue in
-                    updateNotificationSetting(enabled: newValue)
-                }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color("CardBackground"))
-                )
+            // Notifications
+            notificationContent
 
-                if notificationsEnabled {
-                    VStack(spacing: 8) {
-                        ForEach($notificationTimes) { $time in
-                            NotificationTimeRow(time: $time) {
-                                updateNotificationTimes()
-                            }
-                        }
-                    }
-                }
-            }
+            // Appearance
+            appearanceContent
+
+            // Haptic Feedback
+            #if os(iOS)
+            hapticContent
+            #endif
+
+            // Language
+            languageContent
         }
     }
 
-    private var appearanceSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(L(.appearance, preferredLanguage))
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(Color("TextPrimary"))
-
-            HStack(spacing: 12) {
-                ForEach(AppearanceMode.allCases, id: \.self) { mode in
-                    Button(action: {
-                        selectedAppearance = mode
-                        updateAppearance(mode)
-                    }) {
-                        VStack(spacing: 8) {
-                            Image(systemName: mode.icon)
-                                .font(.system(size: 24))
-                                .foregroundStyle(selectedAppearance == mode ? Color("AccentGreen") : Color("TextSecondary"))
-
-                            Text(mode.displayName(for: preferredLanguage))
-                                .font(.system(size: 12, weight: .medium))
-                                .foregroundStyle(selectedAppearance == mode ? Color("AccentGreen") : Color("TextSecondary"))
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 16)
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color("CardBackground"))
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .stroke(selectedAppearance == mode ? Color("AccentGreen") : Color.clear, lineWidth: 2)
-                                )
-                        )
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                }
-            }
-        }
-    }
-
-    private var hapticSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(L(.feedback, preferredLanguage))
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(Color("TextPrimary"))
-
-            Toggle(isOn: $hapticFeedbackEnabled) {
+    private var notificationContent: some View {
+        VStack(spacing: AppTokens.Spacing.md) {
+            Toggle(isOn: $notificationsEnabled) {
                 HStack {
-                    Image(systemName: "iphone.radiowaves.left.and.right")
+                    Image(systemName: "bell.fill")
                         .foregroundStyle(Color("AccentGreen"))
-                    Text(L(.hapticFeedback, preferredLanguage))
-                        .font(.system(size: 16, weight: .medium))
+                    Text(L(.enableNotifications, preferredLanguage))
+                        .font(AppTokens.Typography.body)
                 }
             }
             .tint(Color("AccentGreen"))
-            .onChange(of: hapticFeedbackEnabled) { _, newValue in
-                updateHapticSetting(enabled: newValue)
+            .onChange(of: notificationsEnabled) { _, newValue in
+                updateNotificationSetting(enabled: newValue)
             }
             .padding()
             .background(
-                RoundedRectangle(cornerRadius: 12)
+                RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                     .fill(Color("CardBackground"))
             )
+
+            if notificationsEnabled {
+                VStack(spacing: AppTokens.Spacing.sm) {
+                    ForEach($notificationTimes) { $time in
+                        NotificationTimeRow(time: $time) {
+                            updateNotificationTimes()
+                        }
+                    }
+                }
+            }
         }
     }
 
-    private var languageSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(L(.translationLanguage, preferredLanguage))
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(Color("TextPrimary"))
+    private var appearanceContent: some View {
+        HStack(spacing: AppTokens.Spacing.md) {
+            ForEach(AppearanceMode.allCases, id: \.self) { mode in
+                Button(action: {
+                    selectedAppearance = mode
+                    updateAppearance(mode)
+                }) {
+                    VStack(spacing: AppTokens.Spacing.sm) {
+                        Image(systemName: mode.icon)
+                            .font(.system(size: 24))
+                            .foregroundStyle(selectedAppearance == mode ? Color("AccentGreen") : Color("TextSecondary"))
 
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                        Text(mode.displayName(for: preferredLanguage))
+                            .font(AppTokens.Typography.small)
+                            .foregroundStyle(selectedAppearance == mode ? Color("AccentGreen") : Color("TextSecondary"))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, AppTokens.Spacing.lg)
+                    .background(
+                        RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
+                            .fill(Color("CardBackground"))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
+                                    .stroke(selectedAppearance == mode ? Color("AccentGreen") : Color.clear, lineWidth: 2)
+                            )
+                    )
+                }
+                .buttonStyle(PlainButtonStyle())
+            }
+        }
+    }
+
+    private var hapticContent: some View {
+        Toggle(isOn: $hapticFeedbackEnabled) {
+            HStack {
+                Image(systemName: "iphone.radiowaves.left.and.right")
+                    .foregroundStyle(Color("AccentGreen"))
+                Text(L(.hapticFeedback, preferredLanguage))
+                    .font(AppTokens.Typography.body)
+            }
+        }
+        .tint(Color("AccentGreen"))
+        .onChange(of: hapticFeedbackEnabled) { _, newValue in
+            updateHapticSetting(enabled: newValue)
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
+                .fill(Color("CardBackground"))
+        )
+    }
+
+    private var languageContent: some View {
+        VStack(alignment: .leading, spacing: AppTokens.Spacing.sm) {
+            Text(L(.translationLanguage, preferredLanguage))
+                .font(AppTokens.Typography.caption)
+                .foregroundStyle(Color("TextSecondary"))
+
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: AppTokens.Spacing.sm) {
                 ForEach(SupportedLanguage.allCases) { language in
                     Button(action: {
                         selectedLanguage = language
                         updateLanguage(language)
                     }) {
-                        HStack(spacing: 8) {
+                        HStack(spacing: AppTokens.Spacing.sm) {
                             Text(language.flag)
                                 .font(.system(size: 20))
 
@@ -236,13 +232,13 @@ struct SettingsView: View {
 
                             Spacer()
                         }
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 10)
+                        .padding(.horizontal, AppTokens.Spacing.md)
+                        .padding(.vertical, AppTokens.Spacing.sm)
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: AppTokens.Radius.small)
                                 .fill(Color("CardBackground"))
                                 .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
+                                    RoundedRectangle(cornerRadius: AppTokens.Radius.small)
                                         .stroke(selectedLanguage == language ? Color("AccentGreen") : Color.clear, lineWidth: 2)
                                 )
                         )
@@ -253,12 +249,15 @@ struct SettingsView: View {
         }
     }
 
-    private var aboutSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
+    // MARK: - Section 3: About & Legal
+
+    private var aboutAndLegalSection: some View {
+        VStack(alignment: .leading, spacing: AppTokens.Spacing.lg) {
             Text(L(.about, preferredLanguage))
-                .font(.system(size: 18, weight: .semibold))
+                .font(AppTokens.Typography.heading)
                 .foregroundStyle(Color("TextPrimary"))
 
+            // About info rows
             VStack(spacing: 0) {
                 AboutRow(title: L(.version, preferredLanguage), value: "1.0.0")
                 Divider()
@@ -269,27 +268,20 @@ struct SettingsView: View {
                 AboutRow(title: L(.languages, preferredLanguage), value: "7")
             }
             .background(
-                RoundedRectangle(cornerRadius: 12)
+                RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                     .fill(Color("CardBackground"))
             )
-        }
-    }
 
-    private var legalSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(L(.legal, preferredLanguage))
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(Color("TextPrimary"))
-
+            // Disclaimer
             VStack(spacing: 0) {
                 Button(action: { showingDisclaimer = true }) {
                     HStack {
                         Text(L(.disclaimer, preferredLanguage))
-                            .font(.system(size: 16, weight: .medium))
+                            .font(AppTokens.Typography.body)
                             .foregroundStyle(Color("TextPrimary"))
                         Spacer()
                         Image(systemName: "chevron.right")
-                            .font(.system(size: 14, weight: .medium))
+                            .font(AppTokens.Typography.caption)
                             .foregroundStyle(Color("TextSecondary"))
                     }
                     .padding()
@@ -297,7 +289,7 @@ struct SettingsView: View {
                 .buttonStyle(PlainButtonStyle())
             }
             .background(
-                RoundedRectangle(cornerRadius: 12)
+                RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                     .fill(Color("CardBackground"))
             )
 
@@ -305,15 +297,8 @@ struct SettingsView: View {
                 .font(.system(size: 12))
                 .foregroundStyle(Color("TextSecondary"))
                 .multilineTextAlignment(.leading)
-        }
-    }
 
-    private var resetSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(L(.data, preferredLanguage))
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(Color("TextPrimary"))
-
+            // Reset
             Button(action: { showingResetAlert = true }) {
                 HStack {
                     Image(systemName: "trash")
@@ -322,15 +307,17 @@ struct SettingsView: View {
                         .foregroundStyle(Color.red)
                     Spacer()
                 }
-                .font(.system(size: 16, weight: .medium))
+                .font(AppTokens.Typography.body)
                 .padding()
                 .background(
-                    RoundedRectangle(cornerRadius: 12)
+                    RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                         .fill(Color("CardBackground"))
                 )
             }
         }
     }
+
+    // MARK: - Settings Logic
 
     private func loadSettings() {
         if let settings = currentSettings {
@@ -419,6 +406,8 @@ struct SettingsView: View {
     }
 }
 
+// MARK: - Supporting Views
+
 struct StatCard: View {
     let title: String
     let value: String
@@ -426,7 +415,7 @@ struct StatCard: View {
     let color: Color
 
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: AppTokens.Spacing.sm) {
             Image(systemName: icon)
                 .font(.system(size: 20))
                 .foregroundStyle(color)
@@ -441,11 +430,15 @@ struct StatCard: View {
                 .multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, 16)
+        .padding(.vertical, AppTokens.Spacing.lg)
         .background(
-            RoundedRectangle(cornerRadius: 12)
+            RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                 .fill(Color("CardBackground"))
-                .shadow(color: .black.opacity(0.03), radius: 6, y: 3)
+                .shadow(
+                    color: .black.opacity(AppTokens.Shadow.light.opacity),
+                    radius: AppTokens.Shadow.light.radius,
+                    y: AppTokens.Shadow.light.y
+                )
         )
     }
 }
@@ -461,14 +454,14 @@ struct NotificationTimeRow: View {
             Toggle(isOn: $time.isEnabled) {
                 HStack {
                     Text(time.label)
-                        .font(.system(size: 16, weight: .medium))
+                        .font(AppTokens.Typography.body)
                         .foregroundStyle(Color("TextPrimary"))
 
                     Spacer()
 
                     Button(action: { showTimePicker = true }) {
                         Text(time.timeString)
-                            .font(.system(size: 14, weight: .medium))
+                            .font(AppTokens.Typography.caption)
                             .foregroundStyle(Color("AccentGreen"))
                     }
                 }
@@ -480,7 +473,7 @@ struct NotificationTimeRow: View {
         }
         .padding()
         .background(
-            RoundedRectangle(cornerRadius: 12)
+            RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                 .fill(Color("CardBackground"))
         )
         .sheet(isPresented: $showTimePicker) {
@@ -569,7 +562,7 @@ struct AboutRow: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.system(size: 16, weight: .medium))
+                .font(AppTokens.Typography.body)
                 .foregroundStyle(Color("TextPrimary"))
 
             Spacer()
@@ -588,7 +581,7 @@ struct DisclaimerSheet: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: AppTokens.Spacing.xl) {
                     disclaimerSection(
                         title: "Educational Purpose",
                         icon: "book.fill",
@@ -619,15 +612,15 @@ struct DisclaimerSheet: View {
                         content: "The application is provided \"as is\" without warranty of any kind. To the maximum extent permitted by law, the developers shall not be liable for any damages arising from the use of this application."
                     )
 
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: AppTokens.Spacing.sm) {
                         Text("By using this app, you acknowledge that you have read and understood these disclaimers.")
-                            .font(.system(size: 14, weight: .medium))
+                            .font(AppTokens.Typography.caption)
                             .foregroundStyle(Color("TextPrimary"))
                     }
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(
-                        RoundedRectangle(cornerRadius: 12)
+                        RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                             .fill(Color("AccentGreen").opacity(0.1))
                     )
                 }
@@ -659,10 +652,10 @@ struct DisclaimerSheet: View {
     }
 
     private func disclaimerSection(title: String, icon: String, content: String) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 8) {
+        VStack(alignment: .leading, spacing: AppTokens.Spacing.md) {
+            HStack(spacing: AppTokens.Spacing.sm) {
                 Image(systemName: icon)
-                    .font(.system(size: 16))
+                    .font(AppTokens.Typography.body)
                     .foregroundStyle(Color("AccentGreen"))
 
                 Text(title)
@@ -673,12 +666,12 @@ struct DisclaimerSheet: View {
             Text(content)
                 .font(.system(size: 14))
                 .foregroundStyle(Color("TextSecondary"))
-                .lineSpacing(4)
+                .lineSpacing(AppTokens.Spacing.xs)
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
-            RoundedRectangle(cornerRadius: 12)
+            RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                 .fill(Color("CardBackground"))
         )
     }
