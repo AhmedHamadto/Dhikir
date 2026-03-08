@@ -72,8 +72,7 @@ struct DhikirApp: App {
         if existingCount == 0 {
             DatabaseService.shared.seedDatabase(context: context)
         } else {
-            // Refresh translations for existing dhikirs
-            DatabaseService.shared.refreshTranslations(context: context)
+            DatabaseService.shared.syncDatabase(context: context)
         }
 
         let settingsDescriptor = FetchDescriptor<UserSettings>()

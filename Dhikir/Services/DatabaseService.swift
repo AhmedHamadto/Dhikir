@@ -54,7 +54,7 @@ final class DatabaseService {
         return dhikirs.randomElement()
     }
 
-    func refreshTranslations(context: ModelContext) {
+    func syncDatabase(context: ModelContext) {
         guard let url = Bundle.main.url(forResource: "dhikirs", withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
             return
@@ -66,29 +66,78 @@ final class DatabaseService {
 
             let fetchDescriptor = FetchDescriptor<Dhikir>()
             let existingDhikirs = try context.fetch(fetchDescriptor)
+            let existingById = Dictionary(uniqueKeysWithValues: existingDhikirs.compactMap { dhikir in
+                (dhikir.id, dhikir)
+            })
 
             var updatedCount = 0
+            var insertedCount = 0
+
             for dhikirData in container.dhikirs {
                 guard let uuid = UUID(uuidString: dhikirData.id) else { continue }
 
-                if let existing = existingDhikirs.first(where: { $0.id == uuid }) {
+                if let existing = existingById[uuid] {
+                    var changed = false
+                    if existing.arabicText != dhikirData.arabicText {
+                        existing.arabicText = dhikirData.arabicText; changed = true
+                    }
+                    if existing.transliteration != dhikirData.transliteration {
+                        existing.transliteration = dhikirData.transliteration; changed = true
+                    }
+                    if existing.englishTranslation != dhikirData.englishTranslation {
+                        existing.englishTranslation = dhikirData.englishTranslation; changed = true
+                    }
+                    if existing.source != dhikirData.source {
+                        existing.source = dhikirData.source; changed = true
+                    }
+                    let newSourceType = SourceType(rawValue: dhikirData.sourceType) ?? .hadith
+                    if existing.sourceType != newSourceType {
+                        existing.sourceType = newSourceType; changed = true
+                    }
+                    if existing.categories != dhikirData.categories {
+                        existing.categories = dhikirData.categories; changed = true
+                    }
+                    if existing.repetitionCount != dhikirData.repetitionCount {
+                        existing.repetitionCount = dhikirData.repetitionCount; changed = true
+                    }
                     let newTranslations = dhikirData.translations ?? [:]
                     if existing.translations != newTranslations {
-                        existing.translations = newTranslations
-                        updatedCount += 1
+                        existing.translations = newTranslations; changed = true
                     }
+                    let newBenefit = dhikirData.benefit
+                    if existing.benefit != newBenefit {
+                        existing.benefit = newBenefit; changed = true
+                    }
+                    let newBenefitTranslations = dhikirData.benefitTranslations ?? [:]
+                    if existing.benefitTranslations != newBenefitTranslations {
+                        existing.benefitTranslations = newBenefitTranslations; changed = true
+                    }
+                    if changed { updatedCount += 1 }
+                } else {
+                    context.insert(dhikirData.toModel())
+                    insertedCount += 1
                 }
             }
 
-            if updatedCount > 0 {
+            // Remove dhikirs that are no longer in the JSON
+            let currentJsonIds = Set(container.dhikirs.compactMap { UUID(uuidString: $0.id) })
+            var deletedCount = 0
+            for existing in existingDhikirs {
+                if !currentJsonIds.contains(existing.id) {
+                    context.delete(existing)
+                    deletedCount += 1
+                }
+            }
+
+            if updatedCount > 0 || insertedCount > 0 || deletedCount > 0 {
                 try context.save()
                 #if DEBUG
-                print("Updated translations for \(updatedCount) dhikirs")
+                print("Database sync: \(updatedCount) updated, \(insertedCount) inserted, \(deletedCount) removed")
                 #endif
             }
         } catch {
             #if DEBUG
-            print("Failed to refresh translations: \(error)")
+            print("Failed to sync database: \(error)")
             #endif
         }
     }

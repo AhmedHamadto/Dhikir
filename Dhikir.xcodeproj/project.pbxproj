@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A1E4884C892758BB6E8F8FD /* Info-macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCA5C4E08D5185F21D56DFB1 /* Info-macOS.plist */; };
+
 		0B91F607C0E65BA3685B7FEA /* DhikirModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C1AA89B18876B3EFAB07 /* DhikirModelTests.swift */; };
 		0E077771DDFDA183E594C94E /* Dhikir.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE12DD01B086919E0D4CF46 /* Dhikir.swift */; };
 		17E7CEE7EEB8A4434BC7DA4F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB522750215C8DD29FD33FF /* Date+Extensions.swift */; };
@@ -430,7 +430,7 @@
 			files = (
 				67646EBF785E0A03A73C5D62 /* Assets.xcassets in Resources */,
 				4A1EE1851524BD94E51529FE /* Colors.xcassets in Resources */,
-				0A1E4884C892758BB6E8F8FD /* Info-macOS.plist in Resources */,
+
 				43EB60F13D06CE8B314D7563 /* PrivacyInfo.xcprivacy in Resources */,
 				49EF31EB08A6004163598B0C /* dhikirs.json in Resources */,
 			);
