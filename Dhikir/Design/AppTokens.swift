@@ -6,14 +6,22 @@ enum AppTokens {
         static let callToAction = Font.system(size: 22, weight: .semibold)
         static let heading = Font.system(size: 18, weight: .semibold)
         static let body = Font.system(size: 16)
+        static let bodyMedium = Font.system(size: 16, weight: .medium)
+        static let bodySemibold = Font.system(size: 16, weight: .semibold)
         static let caption = Font.system(size: 14, weight: .medium)
+        static let captionSemibold = Font.system(size: 14, weight: .semibold)
         static let small = Font.system(size: 12, weight: .medium)
+        static let smallSemibold = Font.system(size: 12, weight: .semibold)
         static let arabic = Font.system(size: 32, weight: .medium)
         static let arabicSmall = Font.system(size: 18, weight: .medium)
         static let transliteration = Font.system(size: 18, weight: .medium, design: .serif)
         static let counter = Font.system(size: 28, weight: .bold)
+        static let counterLarge = Font.system(size: 36, weight: .bold)
         static let counterSmall = Font.system(size: 14, weight: .medium)
         static let bodySmall = Font.system(size: 14)
+        static let icon = Font.system(size: 20)
+        static let iconSmall = Font.system(size: 16, weight: .medium)
+        static let emptyStateIcon = Font.system(size: 60)
     }
 
     enum IconSize {
@@ -46,5 +54,6 @@ enum AppTokens {
         static let floatingSize: CGFloat = 80
         static let inlineSize: CGFloat = 120
         static let strokeWidth: CGFloat = 6
+        static let inlineStrokeWidth: CGFloat = 8
     }
 }

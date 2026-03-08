@@ -4,6 +4,7 @@ import SwiftData
 struct DhikirDisplayView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Query private var favorites: [UserFavorite]
     @Query private var settings: [UserSettings]
 
@@ -90,7 +91,7 @@ struct DhikirDisplayView: View {
     private var shareButton: some View {
         Button(action: { showShareSheet = true }) {
             Image(systemName: "square.and.arrow.up")
-                .font(.system(size: 16, weight: .medium))
+                .font(AppTokens.Typography.iconSmall)
                 .foregroundStyle(Color("AccentGreen"))
         }
         .accessibilityLabel(L(.shareDhikir, preferredLanguage))
@@ -103,7 +104,7 @@ struct DhikirDisplayView: View {
             }
         }) {
             Image(systemName: isFavorite ? "heart.fill" : "heart")
-                .font(.system(size: 16, weight: .medium))
+                .font(AppTokens.Typography.iconSmall)
                 .foregroundStyle(isFavorite ? Color.red : Color("AccentGreen"))
         }
         .accessibilityLabel(isFavorite ? L(.removeFromFavorites, preferredLanguage) : L(.addToFavorites, preferredLanguage))
@@ -118,11 +119,13 @@ struct DhikirDisplayView: View {
                 ForEach(Array(dhikirs.enumerated()), id: \.element.id) { index, dhikir in
                     ScrollView {
                         dhikirContent(dhikir)
+                            .transition(reduceMotion ? .identity : .opacity)
                     }
                     .tag(index)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
+            .animation(reduceMotion ? .none : .easeInOut(duration: 0.3), value: currentIndex)
             .onChange(of: currentIndex) { oldValue, newValue in
                 if oldValue != newValue {
                     hasSeenSwipeHint = true
@@ -159,8 +162,10 @@ struct DhikirDisplayView: View {
             ScrollView {
                 if let dhikir = currentDhikir {
                     dhikirContent(dhikir)
+                        .transition(reduceMotion ? .identity : .opacity)
                 }
             }
+            .animation(reduceMotion ? .none : .easeInOut(duration: 0.3), value: currentIndex)
 
             if let dhikir = currentDhikir {
                 macOSCounterArea(dhikir)
@@ -195,42 +200,43 @@ struct DhikirDisplayView: View {
     }
 
     private func macOSCounterArea(_ dhikir: Dhikir) -> some View {
-        VStack(spacing: 8) {
+        VStack(spacing: AppTokens.Spacing.sm) {
             Button(action: {
                 incrementRepetition(dhikir)
             }) {
-                VStack(spacing: 12) {
+                VStack(spacing: AppTokens.Spacing.md) {
                     ZStack {
                         Circle()
-                            .stroke(Color("AccentGreen").opacity(0.3), lineWidth: 8)
-                            .frame(width: 120, height: 120)
+                            .stroke(Color("AccentGreen").opacity(0.3), lineWidth: AppTokens.Counter.inlineStrokeWidth)
+                            .frame(width: AppTokens.Counter.inlineSize, height: AppTokens.Counter.inlineSize)
 
                         Circle()
                             .trim(from: 0, to: progress)
-                            .stroke(Color("AccentGreen"), style: StrokeStyle(lineWidth: 8, lineCap: .round))
-                            .frame(width: 120, height: 120)
+                            .stroke(Color("AccentGreen"), style: StrokeStyle(lineWidth: AppTokens.Counter.inlineStrokeWidth, lineCap: .round))
+                            .frame(width: AppTokens.Counter.inlineSize, height: AppTokens.Counter.inlineSize)
                             .rotationEffect(.degrees(-90))
                             .animation(.easeInOut(duration: 0.3), value: progress)
 
-                        VStack(spacing: 4) {
+                        VStack(spacing: AppTokens.Spacing.xs) {
                             Text("\(repetitionCount)")
-                                .font(.system(size: 36, weight: .bold))
+                                .font(AppTokens.Typography.counterLarge)
                                 .foregroundStyle(Color("TextPrimary"))
 
                             Text("/ \(dhikir.repetitionCount)")
-                                .font(.system(size: 14, weight: .medium))
+                                .font(AppTokens.Typography.counterSmall)
                                 .foregroundStyle(Color("TextSecondary"))
                         }
                     }
 
                     if repetitionCount >= dhikir.repetitionCount {
                         Text(L(.completed, preferredLanguage))
-                            .font(.system(size: 16, weight: .semibold))
+                            .font(AppTokens.Typography.bodySemibold)
                             .foregroundStyle(Color("AccentGreen"))
+                            .transition(reduceMotion ? .identity : .scale.combined(with: .opacity))
                     }
 
                     Text(L(.clickOrSpaceToCount, preferredLanguage))
-                        .font(.system(size: 12, weight: .medium))
+                        .font(AppTokens.Typography.small)
                         .foregroundStyle(Color("TextSecondary").opacity(0.6))
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -241,18 +247,18 @@ struct DhikirDisplayView: View {
             .accessibilityHint("Click to increment count")
         }
         .frame(maxHeight: .infinity)
-        .padding(.vertical, 8)
+        .padding(.vertical, AppTokens.Spacing.sm)
     }
 
     private var macOSNavigationBar: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: AppTokens.Spacing.lg) {
             Button(action: goToPrevious) {
                 Label(L(.previous, preferredLanguage), systemImage: "chevron.left")
             }
             .disabled(currentIndex <= 0)
 
             Text("\(currentIndex + 1) \(L(.ofCount, preferredLanguage)) \(dhikirs.count)")
-                .font(.system(size: 14, weight: .medium))
+                .font(AppTokens.Typography.caption)
                 .foregroundStyle(Color("TextSecondary"))
 
             Button(action: goToNext) {
@@ -282,7 +288,7 @@ struct DhikirDisplayView: View {
     // MARK: - Shared Content
 
     private func dhikirContent(_ dhikir: Dhikir) -> some View {
-        VStack(spacing: 24) {
+        VStack(spacing: AppTokens.Spacing.xl) {
             progressIndicator
 
             arabicTextSection(dhikir)
@@ -334,24 +340,24 @@ struct DhikirDisplayView: View {
     }
 
     private func arabicTextSection(_ dhikir: Dhikir) -> some View {
-        VStack(spacing: 16) {
+        VStack(spacing: AppTokens.Spacing.lg) {
             Text(dhikir.arabicText)
-                .font(.system(size: 32, weight: .medium))
+                .font(AppTokens.Typography.arabic)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(Color("TextPrimary"))
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: AppTokens.Radius.xl)
                         .fill(Color("CardBackground"))
-                        .shadow(color: .black.opacity(0.05), radius: 10, y: 5)
+                        .shadow(color: .black.opacity(AppTokens.Shadow.heavy.opacity), radius: AppTokens.Shadow.heavy.radius, y: AppTokens.Shadow.heavy.y)
                 )
         }
     }
 
     private func transliterationSection(_ dhikir: Dhikir) -> some View {
         Text(dhikir.transliteration)
-            .font(.system(size: 18, weight: .medium, design: .serif))
+            .font(AppTokens.Typography.transliteration)
             .italic()
             .multilineTextAlignment(.center)
             .foregroundStyle(Color("TextSecondary"))
@@ -359,30 +365,30 @@ struct DhikirDisplayView: View {
     }
 
     private func translationSection(_ dhikir: Dhikir) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: AppTokens.Spacing.sm) {
             HStack {
                 Text(L(.translation, preferredLanguage))
-                    .font(.system(size: 14, weight: .semibold))
+                    .font(AppTokens.Typography.captionSemibold)
                     .foregroundStyle(Color("AccentGreen"))
 
                 Spacer()
 
                 Text("\(preferredLanguage.flag) \(preferredLanguage.displayName)")
-                    .font(.system(size: 12, weight: .medium))
+                    .font(AppTokens.Typography.small)
                     .foregroundStyle(Color("TextSecondary"))
             }
 
             Text(dhikir.translation(for: preferredLanguage))
-                .font(.system(size: 16, weight: .regular))
+                .font(AppTokens.Typography.body)
                 .foregroundStyle(Color("TextPrimary"))
                 .multilineTextAlignment(.leading)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
         .background(
-            RoundedRectangle(cornerRadius: 16)
+            RoundedRectangle(cornerRadius: AppTokens.Radius.large)
                 .fill(Color("CardBackground"))
-                .shadow(color: .black.opacity(0.03), radius: 8, y: 4)
+                .shadow(color: .black.opacity(AppTokens.Shadow.medium.opacity), radius: AppTokens.Shadow.medium.radius, y: AppTokens.Shadow.medium.y)
         )
     }
 
@@ -392,16 +398,16 @@ struct DhikirDisplayView: View {
                 .foregroundStyle(Color("AccentGold"))
 
             Text(dhikir.source)
-                .font(.system(size: 14, weight: .medium))
+                .font(AppTokens.Typography.caption)
                 .foregroundStyle(Color("TextSecondary"))
 
             Spacer()
 
             Text(dhikir.sourceType.rawValue)
-                .font(.system(size: 12, weight: .semibold))
+                .font(AppTokens.Typography.smallSemibold)
                 .foregroundStyle(Color("AccentGreen"))
-                .padding(.horizontal, 12)
-                .padding(.vertical, 4)
+                .padding(.horizontal, AppTokens.Spacing.md)
+                .padding(.vertical, AppTokens.Spacing.xs)
                 .background(
                     Capsule()
                         .fill(Color("AccentGreen").opacity(0.1))
@@ -409,52 +415,52 @@ struct DhikirDisplayView: View {
         }
         .padding()
         .background(
-            RoundedRectangle(cornerRadius: 12)
+            RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                 .fill(Color("CardBackground"))
         )
     }
 
     private func benefitSection(_ benefit: String) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: AppTokens.Spacing.sm) {
             HStack {
                 Image(systemName: "lightbulb.fill")
                     .foregroundStyle(Color("AccentGold"))
 
                 Text(L(.benefit, preferredLanguage))
-                    .font(.system(size: 14, weight: .semibold))
+                    .font(AppTokens.Typography.captionSemibold)
                     .foregroundStyle(Color("AccentGold"))
             }
 
             Text(benefit)
-                .font(.system(size: 14, weight: .regular))
+                .font(AppTokens.Typography.bodySmall)
                 .foregroundStyle(Color("TextSecondary"))
                 .multilineTextAlignment(.leading)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
         .background(
-            RoundedRectangle(cornerRadius: 16)
+            RoundedRectangle(cornerRadius: AppTokens.Radius.large)
                 .fill(Color("AccentGold").opacity(0.1))
         )
     }
 
     private func audioButton(_ dhikir: Dhikir) -> some View {
         Button(action: { playAudio(dhikir) }) {
-            HStack(spacing: 12) {
+            HStack(spacing: AppTokens.Spacing.md) {
                 Image(systemName: "speaker.wave.2.fill")
-                    .font(.system(size: 20))
+                    .font(AppTokens.Typography.icon)
                     .foregroundStyle(Color("AccentGreen"))
 
                 Text(L(.listenToRecitation, preferredLanguage))
-                    .font(.system(size: 16, weight: .medium))
+                    .font(AppTokens.Typography.bodyMedium)
                     .foregroundStyle(Color("TextPrimary"))
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 14)
             .background(
-                RoundedRectangle(cornerRadius: 12)
+                RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                     .fill(Color("CardBackground"))
-                    .shadow(color: .black.opacity(0.03), radius: 6, y: 3)
+                    .shadow(color: .black.opacity(AppTokens.Shadow.light.opacity), radius: AppTokens.Shadow.light.radius, y: AppTokens.Shadow.light.y)
             )
         }
         .buttonStyle(PlainButtonStyle())
@@ -462,39 +468,39 @@ struct DhikirDisplayView: View {
 
     #if os(iOS)
     private var swipeHint: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: AppTokens.Spacing.sm) {
             if currentIndex > 0 {
                 Image(systemName: "chevron.left")
-                    .font(.system(size: 12, weight: .medium))
+                    .font(AppTokens.Typography.small)
             }
 
             Text(L(.swipeToNavigate, preferredLanguage))
-                .font(.system(size: 14, weight: .medium))
+                .font(AppTokens.Typography.caption)
 
             if currentIndex < dhikirs.count - 1 {
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 12, weight: .medium))
+                    .font(AppTokens.Typography.small)
             }
         }
         .foregroundStyle(Color("TextSecondary").opacity(0.6))
-        .padding(.vertical, 8)
+        .padding(.vertical, AppTokens.Spacing.sm)
     }
     #endif
 
     private var emptyState: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: AppTokens.Spacing.lg) {
             Image(systemName: "book.closed")
-                .font(.system(size: 60))
+                .font(AppTokens.Typography.emptyStateIcon)
                 .foregroundStyle(Color("TextSecondary"))
 
             Text(L(.noDhikirsFound, preferredLanguage))
-                .font(.system(size: 18, weight: .medium))
+                .font(AppTokens.Typography.heading)
                 .foregroundStyle(Color("TextSecondary"))
 
             Button(L(.goBack, preferredLanguage)) {
                 dismiss()
             }
-            .font(.system(size: 16, weight: .semibold))
+            .font(AppTokens.Typography.bodySemibold)
             .foregroundStyle(Color("AccentGreen"))
         }
     }
