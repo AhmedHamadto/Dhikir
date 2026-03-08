@@ -22,6 +22,10 @@ struct DhikirDisplayView: View {
     @State private var repetitionCount: Int = 0
     @State private var showShareSheet = false
 
+    #if os(iOS)
+    @AppStorage("hasSeenSwipeHint") private var hasSeenSwipeHint = false
+    #endif
+
     #if os(macOS)
     @FocusState private var isDetailFocused: Bool
     #endif
@@ -109,18 +113,39 @@ struct DhikirDisplayView: View {
 
     #if os(iOS)
     private var iOSPageView: some View {
-        TabView(selection: $currentIndex) {
-            ForEach(Array(dhikirs.enumerated()), id: \.element.id) { index, dhikir in
-                ScrollView {
-                    dhikirContent(dhikir)
+        ZStack(alignment: .bottom) {
+            TabView(selection: $currentIndex) {
+                ForEach(Array(dhikirs.enumerated()), id: \.element.id) { index, dhikir in
+                    ScrollView {
+                        dhikirContent(dhikir)
+                    }
+                    .tag(index)
                 }
-                .tag(index)
             }
-        }
-        .tabViewStyle(.page(indexDisplayMode: .never))
-        .onChange(of: currentIndex) { oldValue, newValue in
-            if oldValue != newValue {
-                onDhikirChanged()
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .onChange(of: currentIndex) { oldValue, newValue in
+                if oldValue != newValue {
+                    hasSeenSwipeHint = true
+                    onDhikirChanged()
+                }
+            }
+
+            if let dhikir = currentDhikir {
+                FloatingCounter(
+                    count: repetitionCount,
+                    target: dhikir.repetitionCount,
+                    onTap: { incrementRepetition(dhikir) },
+                    onNext: {
+                        if currentIndex < dhikirs.count - 1 {
+                            withAnimation {
+                                currentIndex += 1
+                            }
+                            onDhikirChanged()
+                        }
+                    },
+                    hasNext: currentIndex < dhikirs.count - 1
+                )
+                .padding(.bottom, AppTokens.Spacing.lg)
             }
         }
     }
@@ -272,16 +297,18 @@ struct DhikirDisplayView: View {
                 benefitSection(benefit)
             }
 
-            #if os(iOS)
-            repetitionSection(dhikir)
-            #endif
-
             if dhikir.audioFileName != nil {
                 audioButton(dhikir)
             }
 
             #if os(iOS)
-            swipeHint
+            if !hasSeenSwipeHint {
+                swipeHint
+            }
+
+            // Extra space so content isn't hidden behind the floating counter
+            Spacer()
+                .frame(height: AppTokens.Counter.floatingSize + AppTokens.Spacing.xxl * 2)
             #endif
         }
         .padding()
@@ -409,51 +436,6 @@ struct DhikirDisplayView: View {
             RoundedRectangle(cornerRadius: 16)
                 .fill(Color("AccentGold").opacity(0.1))
         )
-    }
-
-    private func repetitionSection(_ dhikir: Dhikir) -> some View {
-        VStack(spacing: 16) {
-            Text(L(.tapToCount, preferredLanguage))
-                .font(.system(size: 14, weight: .medium))
-                .foregroundStyle(Color("TextSecondary"))
-
-            Button(action: {
-                incrementRepetition(dhikir)
-            }) {
-                ZStack {
-                    Circle()
-                        .stroke(Color("AccentGreen").opacity(0.3), lineWidth: 8)
-                        .frame(width: 120, height: 120)
-
-                    Circle()
-                        .trim(from: 0, to: progress)
-                        .stroke(Color("AccentGreen"), style: StrokeStyle(lineWidth: 8, lineCap: .round))
-                        .frame(width: 120, height: 120)
-                        .rotationEffect(.degrees(-90))
-                        .animation(.easeInOut(duration: 0.3), value: progress)
-
-                    VStack(spacing: 4) {
-                        Text("\(repetitionCount)")
-                            .font(.system(size: 36, weight: .bold))
-                            .foregroundStyle(Color("TextPrimary"))
-
-                        Text("/ \(dhikir.repetitionCount)")
-                            .font(.system(size: 14, weight: .medium))
-                            .foregroundStyle(Color("TextSecondary"))
-                    }
-                }
-            }
-            .buttonStyle(PlainButtonStyle())
-            .accessibilityLabel("Repetition counter, \(repetitionCount) of \(dhikir.repetitionCount)")
-            .accessibilityHint("Tap to increment count")
-
-            if repetitionCount >= dhikir.repetitionCount {
-                Text(L(.completed, preferredLanguage))
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundStyle(Color("AccentGreen"))
-            }
-        }
-        .padding(.vertical)
     }
 
     private func audioButton(_ dhikir: Dhikir) -> some View {
