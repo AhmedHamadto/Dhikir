@@ -158,7 +158,7 @@ final class DhikirModelTests: XCTestCase {
 
         XCTAssertTrue(settings.notificationsEnabled)
         XCTAssertFalse(settings.hasCompletedOnboarding)
-        XCTAssertEqual(settings.preferredLanguage, "en")
+        XCTAssertEqual(settings.preferredLanguage, .english)
         XCTAssertTrue(settings.hapticFeedbackEnabled)
         XCTAssertEqual(settings.notificationTimes.count, 5) // Default times
     }

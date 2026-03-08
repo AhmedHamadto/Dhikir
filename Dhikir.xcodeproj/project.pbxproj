@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1E4884C892758BB6E8F8FD /* Info-macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCA5C4E08D5185F21D56DFB1 /* Info-macOS.plist */; };
 		0B91F607C0E65BA3685B7FEA /* DhikirModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C1AA89B18876B3EFAB07 /* DhikirModelTests.swift */; };
 		0E077771DDFDA183E594C94E /* Dhikir.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE12DD01B086919E0D4CF46 /* Dhikir.swift */; };
 		17E7CEE7EEB8A4434BC7DA4F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB522750215C8DD29FD33FF /* Date+Extensions.swift */; };
@@ -20,6 +21,8 @@
 		49EF31EB08A6004163598B0C /* dhikirs.json in Resources */ = {isa = PBXBuildFile; fileRef = 47CCA4A0C63BA3098200D568 /* dhikirs.json */; };
 		4A1EE1851524BD94E51529FE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AF3C247D76C20B241E58257 /* Colors.xcassets */; };
 		4D4F11E474E528E8EFE36DAF /* StreakService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A846E29F5E49C00A371F02 /* StreakService.swift */; };
+		5091D845E68C937CB00061BA /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32B3D19E01934D90965998 /* HapticService.swift */; };
+		A1B2C3D4E5F60718900A1B2C /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718900A1B2D /* LocalizationService.swift */; };
 		5B6025D8410C26871D1FD1B7 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CA3AD2191F28125576830 /* AudioService.swift */; };
 		67646EBF785E0A03A73C5D62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3D03227A0112D8C6335605 /* Assets.xcassets */; };
 		7231EC938AB0CD3AE0646F83 /* DhikirDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321DED22C78AB513BB4D83F /* DhikirDisplayView.swift */; };
@@ -42,6 +45,8 @@
 		F41E6E3DF3CC4B2C9140F86A /* EmotionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9700E2E88E6824B3DBBFE3 /* EmotionButton.swift */; };
 		F4795D780DBAE22F670A6B0C /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC24EDE58738B8CD1F839E7 /* ShareSheet.swift */; };
 		FACB278FB3ADFD8E85DDFDA7 /* StreakServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA7A069799152E503461D7 /* StreakServiceTests.swift */; };
+		AA11BB22CC33DD44EE55FF01 /* AppTokensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF02 /* AppTokensTests.swift */; };
+		AA11BB22CC33DD44EE55FF03 /* AppTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF04 /* AppTokens.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,12 +93,15 @@
 		943218CF9660316FD84A8782 /* Dhikir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dhikir.entitlements; sourceTree = "<group>"; };
 		95527B339DE6454F1B723D03 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		A5BEBE06BAF4C708FDE9978D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		AB32B3D19E01934D90965998 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718900A1B2D /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		B8BC6ED7EA6CFA5DE301963F /* DhikirApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikirApp.swift; sourceTree = "<group>"; };
 		BAA7C1AA89B18876B3EFAB07 /* DhikirModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikirModelTests.swift; sourceTree = "<group>"; };
 		C00048F4DB7E451433CE6F06 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		C5AA7A069799152E503461D7 /* StreakServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakServiceTests.swift; sourceTree = "<group>"; };
 		C722ECC69DAEDBF8E25FE276 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		CA83BCA85B8363B46F19BDD8 /* UserStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStreak.swift; sourceTree = "<group>"; };
+		CCA5C4E08D5185F21D56DFB1 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		CEE12DD01B086919E0D4CF46 /* Dhikir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dhikir.swift; sourceTree = "<group>"; };
 		D6357F3F838947A3D048018A /* DhikirUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikirUITests.swift; sourceTree = "<group>"; };
 		DCB5C28ED065CFDD2992DD2D /* DatabaseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceTests.swift; sourceTree = "<group>"; };
@@ -104,6 +112,8 @@
 		EC9700E2E88E6824B3DBBFE3 /* EmotionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButton.swift; sourceTree = "<group>"; };
 		EFB522750215C8DD29FD33FF /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		F43997DB99D3F59E0161E749 /* ReadingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingHistory.swift; sourceTree = "<group>"; };
+		AA11BB22CC33DD44EE55FF02 /* AppTokensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTokensTests.swift; sourceTree = "<group>"; };
+		AA11BB22CC33DD44EE55FF04 /* AppTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTokens.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -137,10 +147,12 @@
 			isa = PBXGroup;
 			children = (
 				943218CF9660316FD84A8782 /* Dhikir.entitlements */,
+				CCA5C4E08D5185F21D56DFB1 /* Info-macOS.plist */,
 				191621B07D7A7225157895C6 /* Info.plist */,
 				3D05D11FB59460CB631567A5 /* PrivacyInfo.xcprivacy */,
 				55BCED47A64E77D4D9F4BD09 /* App */,
 				EF28ADCB45EFEDFD43F43C10 /* Data */,
+				AA11BB22CC33DD44EE55FF05 /* Design */,
 				E07969316B4221CB2FB3AFD6 /* Extensions */,
 				A132278AB08AA83011D3865B /* Models */,
 				BE25621C4BB421FACFD94F3F /* Resources */,
@@ -185,6 +197,8 @@
 			children = (
 				5C9CA3AD2191F28125576830 /* AudioService.swift */,
 				6AC9A12A2E744E43447E978A /* DatabaseService.swift */,
+				AB32B3D19E01934D90965998 /* HapticService.swift */,
+				A1B2C3D4E5F60718900A1B2D /* LocalizationService.swift */,
 				C00048F4DB7E451433CE6F06 /* NotificationService.swift */,
 				35A846E29F5E49C00A371F02 /* StreakService.swift */,
 			);
@@ -225,6 +239,7 @@
 		A501A2367095EC38E3F88B62 /* DhikirTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA11BB22CC33DD44EE55FF02 /* AppTokensTests.swift */,
 				DCB5C28ED065CFDD2992DD2D /* DatabaseServiceTests.swift */,
 				7653B97EC90AB3A7D34EE31A /* DateExtensionTests.swift */,
 				7A405A4918AF8FD7F3CD6776 /* DhikirDataTests.swift */,
@@ -271,6 +286,14 @@
 				8C097552F6A28D6B0F3FAF10 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		AA11BB22CC33DD44EE55FF05 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				AA11BB22CC33DD44EE55FF04 /* AppTokens.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 		EF28ADCB45EFEDFD43F43C10 /* Data */ = {
@@ -398,6 +421,7 @@
 			files = (
 				67646EBF785E0A03A73C5D62 /* Assets.xcassets in Resources */,
 				4A1EE1851524BD94E51529FE /* Colors.xcassets in Resources */,
+				0A1E4884C892758BB6E8F8FD /* Info-macOS.plist in Resources */,
 				43EB60F13D06CE8B314D7563 /* PrivacyInfo.xcprivacy in Resources */,
 				49EF31EB08A6004163598B0C /* dhikirs.json in Resources */,
 			);
@@ -411,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F48B6EC196174055F155FAE /* AppDelegate.swift in Sources */,
+				AA11BB22CC33DD44EE55FF03 /* AppTokens.swift in Sources */,
 				5B6025D8410C26871D1FD1B7 /* AudioService.swift in Sources */,
 				A9B6DB76B5AB4788C1B83615 /* ContentView.swift in Sources */,
 				A57B957E2ECF90C95B04A412 /* DatabaseService.swift in Sources */,
@@ -421,9 +446,11 @@
 				F41E6E3DF3CC4B2C9140F86A /* EmotionButton.swift in Sources */,
 				1BB95E006772CFB67C0E140B /* EmotionalState.swift in Sources */,
 				D209D423A52AB7426B04B2EC /* FavoritesView.swift in Sources */,
+				5091D845E68C937CB00061BA /* HapticService.swift in Sources */,
 				904E92766E4DE458014D2AC4 /* HistoryView.swift in Sources */,
 				C0FF24F7C18DF709B883BBC5 /* HomeView.swift in Sources */,
 				AE504410F9B36AAC3BFBE710 /* LifeSituation.swift in Sources */,
+				A1B2C3D4E5F60718900A1B2C /* LocalizationService.swift in Sources */,
 				B6AD25D510743071AFE3C5BF /* NotificationService.swift in Sources */,
 				F1815DF12D80DDE8913FDC8B /* OnboardingView.swift in Sources */,
 				AF53CFB4B9669D9CD8FBCC44 /* ReadingHistory.swift in Sources */,
@@ -449,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA11BB22CC33DD44EE55FF01 /* AppTokensTests.swift in Sources */,
 				2C185ECF258E90C0896D6BEA /* DatabaseServiceTests.swift in Sources */,
 				34EE498986E71EA600FE55AC /* DateExtensionTests.swift in Sources */,
 				C5893B049974B0C00C98947F /* DhikirDataTests.swift in Sources */,
@@ -489,7 +517,11 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.Dhikir;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -529,7 +561,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -549,12 +581,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
@@ -576,7 +609,11 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.Dhikir;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -592,7 +629,11 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.DhikirTests;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dhikir.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dhikir";
 			};
@@ -609,7 +650,11 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.DhikirTests;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dhikir.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dhikir";
 			};
@@ -626,7 +671,11 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.DhikirUITests;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Dhikir;
 			};
@@ -667,7 +716,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -681,11 +730,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.9;
@@ -703,7 +753,11 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmedhamadto.DhikirUITests;
-				SDKROOT = iphoneos;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Dhikir;
 			};

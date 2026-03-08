@@ -36,10 +36,10 @@ final class EmotionalStateTests: XCTestCase {
     }
 
     func testEmotionalStateIcons() {
-        XCTAssertEqual(EmotionalState.anxious.icon, "wind")
-        XCTAssertEqual(EmotionalState.sad.icon, "cloud.rain")
-        XCTAssertEqual(EmotionalState.angry.icon, "flame")
-        XCTAssertEqual(EmotionalState.grateful.icon, "hands.clap")
+        XCTAssertEqual(EmotionalState.anxious.icon, "leaf.fill")
+        XCTAssertEqual(EmotionalState.sad.icon, "drop.fill")
+        XCTAssertEqual(EmotionalState.angry.icon, "flame.fill")
+        XCTAssertEqual(EmotionalState.grateful.icon, "hand.raised.fill")
     }
 
     func testEmotionalStateHasDescriptions() {
@@ -56,39 +56,33 @@ final class EmotionalStateTests: XCTestCase {
     // MARK: - Life Situation Tests
 
     func testLifeSituationCount() {
-        XCTAssertEqual(LifeSituation.allCases.count, 10)
+        XCTAssertEqual(LifeSituation.allCases.count, 5)
     }
 
     func testLifeSituationRawValues() {
-        XCTAssertEqual(LifeSituation.morning.rawValue, "morning")
-        XCTAssertEqual(LifeSituation.evening.rawValue, "evening")
-        XCTAssertEqual(LifeSituation.beforeSleep.rawValue, "before_sleep")
-        XCTAssertEqual(LifeSituation.uponWaking.rawValue, "upon_waking")
         XCTAssertEqual(LifeSituation.duringIllness.rawValue, "during_illness")
         XCTAssertEqual(LifeSituation.traveling.rawValue, "traveling")
         XCTAssertEqual(LifeSituation.facingDifficulty.rawValue, "facing_difficulty")
         XCTAssertEqual(LifeSituation.beforeDecision.rawValue, "before_decision")
-        XCTAssertEqual(LifeSituation.afterSalah.rawValue, "after_salah")
         XCTAssertEqual(LifeSituation.seekingForgiveness.rawValue, "seeking_forgiveness")
     }
 
     func testLifeSituationDisplayNames() {
-        XCTAssertEqual(LifeSituation.morning.displayName, "Morning")
-        XCTAssertEqual(LifeSituation.beforeSleep.displayName, "Before Sleep")
-        XCTAssertEqual(LifeSituation.afterSalah.displayName, "After Salah")
+        XCTAssertEqual(LifeSituation.duringIllness.displayName, "During Illness")
+        XCTAssertEqual(LifeSituation.traveling.displayName, "Traveling")
+        XCTAssertEqual(LifeSituation.seekingForgiveness.displayName, "Seeking Forgiveness")
     }
 
     func testLifeSituationArabicNames() {
-        XCTAssertEqual(LifeSituation.morning.arabicName, "الصباح")
-        XCTAssertEqual(LifeSituation.evening.arabicName, "المساء")
+        XCTAssertEqual(LifeSituation.duringIllness.arabicName, "عند المرض")
+        XCTAssertEqual(LifeSituation.traveling.arabicName, "السفر")
         XCTAssertEqual(LifeSituation.seekingForgiveness.arabicName, "الاستغفار")
     }
 
     func testLifeSituationIcons() {
-        XCTAssertEqual(LifeSituation.morning.icon, "sunrise")
-        XCTAssertEqual(LifeSituation.evening.icon, "sunset")
-        XCTAssertEqual(LifeSituation.beforeSleep.icon, "moon.stars")
-        XCTAssertEqual(LifeSituation.traveling.icon, "airplane")
+        XCTAssertEqual(LifeSituation.duringIllness.icon, "heart.circle.fill")
+        XCTAssertEqual(LifeSituation.traveling.icon, "airplane.departure")
+        XCTAssertEqual(LifeSituation.facingDifficulty.icon, "mountain.2.fill")
     }
 
     func testLifeSituationHasDescriptions() {
@@ -98,7 +92,7 @@ final class EmotionalStateTests: XCTestCase {
     }
 
     func testLifeSituationIdentifiable() {
-        let situation = LifeSituation.morning
+        let situation = LifeSituation.duringIllness
         XCTAssertEqual(situation.id, situation.rawValue)
     }
 }
