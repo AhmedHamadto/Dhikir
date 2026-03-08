@@ -146,7 +146,8 @@ struct DhikirDisplayView: View {
                             onDhikirChanged()
                         }
                     },
-                    hasNext: currentIndex < dhikirs.count - 1
+                    hasNext: currentIndex < dhikirs.count - 1,
+                    language: preferredLanguage
                 )
                 .padding(.bottom, AppTokens.Spacing.lg)
             }

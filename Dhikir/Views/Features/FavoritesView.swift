@@ -85,53 +85,51 @@ struct FavoriteCard: View {
     let onRemove: () -> Void
 
     var body: some View {
-        Button(action: onTap) {
-            HStack(spacing: AppTokens.Spacing.lg) {
-                VStack(alignment: .leading, spacing: AppTokens.Spacing.sm) {
-                    Text(dhikir.arabicText)
-                        .font(AppTokens.Typography.arabicSmall)
-                        .foregroundStyle(Color("TextPrimary"))
-                        .lineLimit(2)
+        HStack(spacing: AppTokens.Spacing.lg) {
+            VStack(alignment: .leading, spacing: AppTokens.Spacing.sm) {
+                Text(dhikir.arabicText)
+                    .font(AppTokens.Typography.arabicSmall)
+                    .foregroundStyle(Color("TextPrimary"))
+                    .lineLimit(2)
 
-                    Text(dhikir.translation(for: preferredLanguage))
-                        .font(AppTokens.Typography.bodySmall)
+                Text(dhikir.translation(for: preferredLanguage))
+                    .font(AppTokens.Typography.bodySmall)
+                    .foregroundStyle(Color("TextSecondary"))
+                    .lineLimit(2)
+
+                HStack {
+                    Image(systemName: dhikir.sourceType.icon)
+                        .font(AppTokens.Typography.small)
+                        .foregroundStyle(Color("AccentGold"))
+
+                    Text(dhikir.source)
+                        .font(AppTokens.Typography.small)
                         .foregroundStyle(Color("TextSecondary"))
-                        .lineLimit(2)
-
-                    HStack {
-                        Image(systemName: dhikir.sourceType.icon)
-                            .font(AppTokens.Typography.small)
-                            .foregroundStyle(Color("AccentGold"))
-
-                        Text(dhikir.source)
-                            .font(AppTokens.Typography.small)
-                            .foregroundStyle(Color("TextSecondary"))
-                    }
                 }
-
-                Spacer()
-
-                Button(action: onRemove) {
-                    Image(systemName: "heart.fill")
-                        .font(AppTokens.Typography.icon)
-                        .foregroundStyle(Color.red)
-                }
-                .accessibilityLabel("Remove from favorites")
             }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: AppTokens.Radius.large)
-                    .fill(Color("CardBackground"))
-                    .shadow(
-                        color: .black.opacity(AppTokens.Shadow.medium.opacity),
-                        radius: AppTokens.Shadow.medium.radius,
-                        y: AppTokens.Shadow.medium.y
-                    )
-            )
+            .accessibilityLabel(dhikir.arabicText)
+
+            Spacer()
+
+            Button(action: onRemove) {
+                Image(systemName: "heart.fill")
+                    .font(AppTokens.Typography.icon)
+                    .foregroundStyle(Color.red)
+            }
+            .accessibilityLabel(L(.removeFromFavorites, preferredLanguage))
         }
-        .buttonStyle(PlainButtonStyle())
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel("Favorite dhikir: \(dhikir.arabicText)")
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: AppTokens.Radius.large)
+                .fill(Color("CardBackground"))
+                .shadow(
+                    color: .black.opacity(AppTokens.Shadow.medium.opacity),
+                    radius: AppTokens.Shadow.medium.radius,
+                    y: AppTokens.Shadow.medium.y
+                )
+        )
+        .contentShape(Rectangle())
+        .onTapGesture { onTap() }
     }
 
 }

@@ -212,7 +212,7 @@ struct HistoryCard: View {
         }
         .buttonStyle(PlainButtonStyle())
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("History: \(dhikir.arabicText), read on \(formattedDate)")
+        .accessibilityLabel("\(dhikir.arabicText), \(formattedDate)")
     }
 
     private func formatTime(_ date: Date) -> String {

@@ -185,9 +185,6 @@ struct HomeView: View {
     }
 
     private func selectCategory(_ category: String) {
-        if hapticEnabled {
-            triggerHaptic(.light)
-        }
         selectedCategory = category
         StreakService.shared.recordActivity(context: modelContext)
         showDhikir = true

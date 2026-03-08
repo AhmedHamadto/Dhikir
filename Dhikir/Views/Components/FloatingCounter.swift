@@ -6,6 +6,7 @@ struct FloatingCounter: View {
     let onTap: () -> Void
     var onNext: (() -> Void)?
     var hasNext: Bool = false
+    var language: SupportedLanguage = .english
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var pulseScale: CGFloat = 1.0
@@ -56,12 +57,12 @@ struct FloatingCounter: View {
                 .scaleEffect(pulseScale)
             }
             .buttonStyle(PlainButtonStyle())
-            .accessibilityLabel("Repetition counter")
-            .accessibilityValue("\(count) of \(target)")
-            .accessibilityHint("Tap to increment count")
+            .accessibilityLabel(L(.tapToCount, language))
+            .accessibilityValue("\(count) / \(target)")
+            .accessibilityHint(L(.tapToCount, language))
 
             if isComplete {
-                Text(L(.completed, .english))
+                Text(L(.completed, language))
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(Color("AccentGreen"))
                     .transition(reduceMotion ? .opacity : .scale.combined(with: .opacity))
@@ -70,7 +71,7 @@ struct FloatingCounter: View {
             if isComplete && hasNext && showNext {
                 Button(action: { onNext?() }) {
                     HStack(spacing: AppTokens.Spacing.xs) {
-                        Text(L(.next, .english))
+                        Text(L(.next, language))
                             .font(AppTokens.Typography.caption)
                         Image(systemName: "chevron.right")
                             .font(.system(size: 12))
@@ -83,6 +84,9 @@ struct FloatingCounter: View {
         .padding()
         .background(.ultraThinMaterial)
         .clipShape(RoundedRectangle(cornerRadius: AppTokens.Radius.xl))
+        .onChange(of: count) { _, _ in
+            showNext = false
+        }
         .onChange(of: isComplete) { _, newValue in
             if newValue && hasNext {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
