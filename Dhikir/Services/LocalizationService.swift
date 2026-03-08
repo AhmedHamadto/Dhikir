@@ -99,8 +99,11 @@ enum AppString: String {
     case buildYourPractice = "build_your_practice"
     case buildYourPracticeArabic = "build_your_practice_arabic"
     case buildYourPracticeDescription = "build_your_practice_description"
+    case chooseYourLanguage = "choose_your_language"
+    case chooseLanguageDescription = "choose_language_description"
     case beginYourJourney = "begin_your_journey"
     case enableNotificationsButton = "enable_notifications_button"
+    case notificationDeniedMessage = "notification_denied_message"
     case continueButton = "continue_button"
     case skip = "skip"
     case previousButton = "previous_button"
@@ -249,8 +252,11 @@ struct LocalizationService {
             "build_your_practice": "Build Your Practice",
             "build_your_practice_arabic": "بناء ممارستك",
             "build_your_practice_description": "Track your daily streak, save favorites, and build a consistent habit of remembrance.",
+            "choose_your_language": "Choose Your Language",
+            "choose_language_description": "Select the language you'd like to use. You can change this anytime in Settings.",
             "begin_your_journey": "Begin Your Journey",
             "enable_notifications_button": "Enable Notifications",
+            "notification_denied_message": "No worries — you can enable this later in Settings.",
             "continue_button": "Continue",
             "skip": "Skip",
             "previous_button": "Previous",
@@ -378,8 +384,11 @@ struct LocalizationService {
             "build_your_practice": "ابنِ عادتك",
             "build_your_practice_arabic": "بناء ممارستك",
             "build_your_practice_description": "تتبع سلسلتك اليومية، احفظ المفضلة، وابنِ عادة ذكر مستمرة.",
+            "choose_your_language": "اختر لغتك",
+            "choose_language_description": "اختر اللغة التي تريد استخدامها. يمكنك تغييرها في أي وقت من الإعدادات.",
             "begin_your_journey": "ابدأ رحلتك",
             "enable_notifications_button": "تفعيل الإشعارات",
+            "notification_denied_message": "لا بأس — يمكنك تفعيل هذا لاحقاً من الإعدادات.",
             "continue_button": "متابعة",
             "skip": "تخطي",
             "previous_button": "السابق",
@@ -499,8 +508,11 @@ struct LocalizationService {
             "build_your_practice": "اپنی عادت بنائیں",
             "build_your_practice_arabic": "بناء ممارستک",
             "build_your_practice_description": "اپنے روزانہ سلسلے کو ٹریک کریں، پسندیدہ محفوظ کریں، اور ذکر کی مستقل عادت بنائیں۔",
+            "choose_your_language": "اپنی زبان منتخب کریں",
+            "choose_language_description": "وہ زبان منتخب کریں جو آپ استعمال کرنا چاہتے ہیں۔ آپ اسے کسی بھی وقت سیٹنگز میں تبدیل کر سکتے ہیں۔",
             "begin_your_journey": "اپنا سفر شروع کریں",
             "enable_notifications_button": "اطلاعات فعال کریں",
+            "notification_denied_message": "کوئی بات نہیں — آپ اسے بعد میں سیٹنگز سے فعال کر سکتے ہیں۔",
             "continue_button": "جاری رکھیں",
             "skip": "چھوڑیں",
             "previous_button": "پچھلا",
@@ -620,8 +632,11 @@ struct LocalizationService {
             "build_your_practice": "Bangun Kebiasaan Anda",
             "build_your_practice_arabic": "بناء ممارستك",
             "build_your_practice_description": "Lacak streak harian Anda, simpan favorit, dan bangun kebiasaan berdzikir yang konsisten.",
+            "choose_your_language": "Pilih Bahasa Anda",
+            "choose_language_description": "Pilih bahasa yang ingin Anda gunakan. Anda bisa mengubahnya kapan saja di Pengaturan.",
             "begin_your_journey": "Mulai Perjalanan Anda",
             "enable_notifications_button": "Aktifkan Notifikasi",
+            "notification_denied_message": "Tidak masalah — Anda bisa mengaktifkannya nanti di Pengaturan.",
             "continue_button": "Lanjutkan",
             "skip": "Lewati",
             "previous_button": "Sebelumnya",
@@ -741,8 +756,11 @@ struct LocalizationService {
             "build_your_practice": "Alışkanlığınızı Oluşturun",
             "build_your_practice_arabic": "بناء ممارستك",
             "build_your_practice_description": "Günlük serinizi takip edin, favorileri kaydedin ve sürekli bir zikir alışkanlığı oluşturun.",
+            "choose_your_language": "Dilinizi Seçin",
+            "choose_language_description": "Kullanmak istediğiniz dili seçin. Bunu istediğiniz zaman Ayarlar'dan değiştirebilirsiniz.",
             "begin_your_journey": "Yolculuğunuza Başlayın",
             "enable_notifications_button": "Bildirimleri Etkinleştir",
+            "notification_denied_message": "Sorun değil — bunu daha sonra Ayarlar'dan etkinleştirebilirsiniz.",
             "continue_button": "Devam",
             "skip": "Atla",
             "previous_button": "Önceki",
@@ -862,8 +880,11 @@ struct LocalizationService {
             "build_your_practice": "Construisez votre pratique",
             "build_your_practice_arabic": "بناء ممارستك",
             "build_your_practice_description": "Suivez votre série quotidienne, sauvegardez vos favoris et construisez une habitude de dhikir.",
+            "choose_your_language": "Choisissez votre langue",
+            "choose_language_description": "Sélectionnez la langue que vous souhaitez utiliser. Vous pouvez la changer à tout moment dans les Réglages.",
             "begin_your_journey": "Commencez votre voyage",
             "enable_notifications_button": "Activer les notifications",
+            "notification_denied_message": "Pas de souci — vous pourrez l'activer plus tard dans les Réglages.",
             "continue_button": "Continuer",
             "skip": "Passer",
             "previous_button": "Précédent",
@@ -983,8 +1004,11 @@ struct LocalizationService {
             "build_your_practice": "Bina Amalan Anda",
             "build_your_practice_arabic": "بناء ممارستك",
             "build_your_practice_description": "Jejak streak harian anda, simpan kegemaran, dan bina tabiat zikir yang konsisten.",
+            "choose_your_language": "Pilih Bahasa Anda",
+            "choose_language_description": "Pilih bahasa yang anda mahu gunakan. Anda boleh menukarnya pada bila-bila masa dalam Tetapan.",
             "begin_your_journey": "Mulakan Perjalanan Anda",
             "enable_notifications_button": "Aktifkan Pemberitahuan",
+            "notification_denied_message": "Tidak mengapa — anda boleh mengaktifkannya kemudian dalam Tetapan.",
             "continue_button": "Teruskan",
             "skip": "Langkau",
             "previous_button": "Sebelumnya",

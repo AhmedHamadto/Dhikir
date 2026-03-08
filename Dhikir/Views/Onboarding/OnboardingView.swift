@@ -6,38 +6,48 @@ struct OnboardingView: View {
     @Query private var settings: [UserSettings]
 
     @State private var currentPage = 0
+    @State private var selectedLanguage: SupportedLanguage = .english
+    @State private var notificationDenied = false
     @Binding var hasCompletedOnboarding: Bool
 
-    private let pages: [OnboardingPage] = [
-        OnboardingPage(
-            title: "Salaam",
-            subtitle: "السلام عليكم",
-            description: "Welcome to Dhikir, your companion for remembrance of Allah throughout the day.",
-            imageName: "heart.text.square.fill",
-            color: Color("AccentGreen")
-        ),
-        OnboardingPage(
-            title: "How Are You Feeling?",
-            subtitle: "كيف حالك",
-            description: "Tell us your emotional state or what you're doing, and we'll show you relevant dhikirs from the Quran and Sunnah.",
-            imageName: "face.smiling.inverse",
-            color: Color("AccentGold")
-        ),
-        OnboardingPage(
-            title: "Gentle Reminders",
-            subtitle: "تذكير لطيف",
-            description: "Receive warm, personal notifications throughout the day asking how you're feeling.",
-            imageName: "bell.badge.fill",
-            color: Color(red: 0.6, green: 0.7, blue: 0.8)
-        ),
-        OnboardingPage(
-            title: "Build Your Practice",
-            subtitle: "بناء ممارستك",
-            description: "Track your daily streak, save favorites, and build a consistent habit of remembrance.",
-            imageName: "flame.fill",
-            color: .orange
-        )
-    ]
+    private let totalPages = 5
+
+    private var preferredLanguage: SupportedLanguage {
+        settings.first?.preferredLanguage ?? .english
+    }
+
+    private var contentPages: [OnboardingPage] {
+        [
+            OnboardingPage(
+                title: L(.salaam, preferredLanguage),
+                subtitle: L(.salaamArabic, preferredLanguage),
+                description: L(.welcomeDescription, preferredLanguage),
+                imageName: "heart.text.square.fill",
+                color: Color("AccentGreen")
+            ),
+            OnboardingPage(
+                title: L(.howAreYouFeelingTitle, preferredLanguage),
+                subtitle: L(.howAreYouFeelingArabic, preferredLanguage),
+                description: L(.howAreYouFeelingDescription, preferredLanguage),
+                imageName: "face.smiling.inverse",
+                color: Color("AccentGold")
+            ),
+            OnboardingPage(
+                title: L(.gentleReminders, preferredLanguage),
+                subtitle: L(.gentleRemindersArabic, preferredLanguage),
+                description: L(.gentleRemindersDescription, preferredLanguage),
+                imageName: "bell.badge.fill",
+                color: Color(red: 0.6, green: 0.7, blue: 0.8)
+            ),
+            OnboardingPage(
+                title: L(.buildYourPractice, preferredLanguage),
+                subtitle: L(.buildYourPracticeArabic, preferredLanguage),
+                description: L(.buildYourPracticeDescription, preferredLanguage),
+                imageName: "flame.fill",
+                color: .orange
+            )
+        ]
+    }
 
     var body: some View {
         ZStack {
@@ -45,25 +55,116 @@ struct OnboardingView: View {
                 .ignoresSafeArea()
 
             VStack(spacing: 0) {
+                #if os(iOS)
                 TabView(selection: $currentPage) {
-                    ForEach(0..<pages.count, id: \.self) { index in
-                        OnboardingPageView(page: pages[index])
-                            .tag(index)
+                    languageSelectionPage
+                        .tag(0)
+
+                    ForEach(0..<contentPages.count, id: \.self) { index in
+                        OnboardingPageView(page: contentPages[index])
+                            .tag(index + 1)
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .animation(.easeInOut, value: currentPage)
+                #else
+                if currentPage == 0 {
+                    languageSelectionPage
+                        .animation(.easeInOut, value: currentPage)
+                } else {
+                    OnboardingPageView(page: contentPages[currentPage - 1])
+                        .animation(.easeInOut, value: currentPage)
+                }
+                #endif
 
                 bottomSection
             }
         }
+        .onAppear {
+            selectedLanguage = preferredLanguage
+        }
     }
 
+    // MARK: - Language Selection Page
+
+    private var languageSelectionPage: some View {
+        VStack(spacing: AppTokens.Spacing.xxl) {
+            Spacer()
+
+            // Icon
+            ZStack {
+                Circle()
+                    .fill(Color("AccentGreen").opacity(0.15))
+                    .frame(width: 160, height: 160)
+
+                Circle()
+                    .fill(Color("AccentGreen").opacity(0.3))
+                    .frame(width: 120, height: 120)
+
+                Image(systemName: "globe")
+                    .font(.system(size: 50))
+                    .foregroundStyle(Color("AccentGreen"))
+            }
+
+            VStack(spacing: AppTokens.Spacing.lg) {
+                Text(L(.chooseYourLanguage, preferredLanguage))
+                    .font(AppTokens.Typography.appTitle)
+                    .foregroundStyle(Color("TextPrimary"))
+                    .multilineTextAlignment(.center)
+
+                Text(L(.chooseLanguageDescription, preferredLanguage))
+                    .font(AppTokens.Typography.body)
+                    .foregroundStyle(Color("TextSecondary"))
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(4)
+                    .padding(.horizontal, AppTokens.Spacing.xxl)
+            }
+
+            // Language grid
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: AppTokens.Spacing.md) {
+                ForEach(SupportedLanguage.allCases) { language in
+                    Button(action: {
+                        selectedLanguage = language
+                        updateLanguage(language)
+                    }) {
+                        HStack(spacing: AppTokens.Spacing.sm) {
+                            Text(language.flag)
+                                .font(.system(size: 20))
+
+                            Text(language.displayName)
+                                .font(.system(size: 13, weight: .medium))
+                                .foregroundStyle(selectedLanguage == language ? Color("AccentGreen") : Color("TextPrimary"))
+                                .lineLimit(1)
+
+                            Spacer()
+                        }
+                        .padding(.horizontal, AppTokens.Spacing.md)
+                        .padding(.vertical, AppTokens.Spacing.md)
+                        .background(
+                            RoundedRectangle(cornerRadius: AppTokens.Radius.small)
+                                .fill(Color("CardBackground"))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: AppTokens.Radius.small)
+                                        .stroke(selectedLanguage == language ? Color("AccentGreen") : Color.clear, lineWidth: 2)
+                                )
+                        )
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+            .padding(.horizontal, AppTokens.Spacing.xxl)
+
+            Spacer()
+        }
+    }
+
+    // MARK: - Bottom Section
+
     private var bottomSection: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: AppTokens.Spacing.xl) {
             // Page indicators
-            HStack(spacing: 8) {
-                ForEach(0..<pages.count, id: \.self) { index in
+            HStack(spacing: AppTokens.Spacing.sm) {
+                ForEach(0..<totalPages, id: \.self) { index in
                     Circle()
                         .fill(index == currentPage ? Color("AccentGreen") : Color.gray.opacity(0.3))
                         .frame(width: 8, height: 8)
@@ -72,63 +173,104 @@ struct OnboardingView: View {
                 }
             }
 
+            // Notification denied message
+            if currentPage == 3 && notificationDenied {
+                Text(L(.notificationDeniedMessage, preferredLanguage))
+                    .font(AppTokens.Typography.caption)
+                    .foregroundStyle(Color("TextSecondary"))
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, AppTokens.Spacing.xxl)
+                    .transition(.opacity.combined(with: .move(edge: .top)))
+            }
+
+            #if os(macOS)
+            // Previous button on macOS
+            if currentPage > 0 {
+                Button(action: {
+                    withAnimation {
+                        currentPage -= 1
+                    }
+                }) {
+                    Text(L(.previousButton, preferredLanguage))
+                        .font(AppTokens.Typography.body)
+                        .foregroundStyle(Color("AccentGreen"))
+                }
+                .buttonStyle(PlainButtonStyle())
+            }
+            #endif
+
             // Action button
             Button(action: handleButtonTap) {
                 Text(buttonTitle)
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 16)
+                    .padding(.vertical, AppTokens.Spacing.lg)
                     .background(
-                        RoundedRectangle(cornerRadius: 16)
+                        RoundedRectangle(cornerRadius: AppTokens.Radius.large)
                             .fill(Color("AccentGreen"))
                     )
             }
-            .padding(.horizontal, 32)
+            .padding(.horizontal, AppTokens.Spacing.xxl)
 
-            if currentPage < pages.count - 1 {
-                Button("Skip") {
+            if currentPage < totalPages - 1 {
+                Button(L(.skip, preferredLanguage)) {
                     completeOnboarding()
                 }
-                .font(.system(size: 14, weight: .medium))
+                .font(AppTokens.Typography.caption)
                 .foregroundStyle(Color("TextSecondary"))
             }
         }
         .padding(.bottom, 40)
     }
 
+    // MARK: - Button Title
+
     private var buttonTitle: String {
-        if currentPage == pages.count - 1 {
-            return "Begin Your Journey"
-        } else if currentPage == 2 {
-            return "Enable Notifications"
+        if currentPage == totalPages - 1 {
+            return L(.beginYourJourney, preferredLanguage)
+        } else if currentPage == 3 && !notificationDenied {
+            return L(.enableNotificationsButton, preferredLanguage)
         } else {
-            return "Continue"
+            return L(.continueButton, preferredLanguage)
         }
     }
 
+    // MARK: - Actions
+
     private func handleButtonTap() {
-        if currentPage == 2 {
+        if currentPage == 3 && !notificationDenied {
             // Request notification permission
             Task {
                 let granted = await NotificationService.shared.requestAuthorization()
-                if granted {
-                    if let settings = settings.first {
-                        NotificationService.shared.scheduleNotifications(times: settings.notificationTimes)
-                    }
-                }
                 await MainActor.run {
-                    withAnimation {
-                        currentPage += 1
+                    if granted {
+                        if let settings = settings.first {
+                            NotificationService.shared.scheduleNotifications(times: settings.notificationTimes)
+                        }
+                        withAnimation {
+                            currentPage += 1
+                        }
+                    } else {
+                        withAnimation {
+                            notificationDenied = true
+                        }
                     }
                 }
             }
-        } else if currentPage == pages.count - 1 {
+        } else if currentPage == totalPages - 1 {
             completeOnboarding()
         } else {
             withAnimation {
                 currentPage += 1
             }
+        }
+    }
+
+    private func updateLanguage(_ language: SupportedLanguage) {
+        if let settings = settings.first {
+            settings.preferredLanguage = language
+            try? modelContext.save()
         }
     }
 
@@ -156,7 +298,7 @@ struct OnboardingPageView: View {
     let page: OnboardingPage
 
     var body: some View {
-        VStack(spacing: 32) {
+        VStack(spacing: AppTokens.Spacing.xxl) {
             Spacer()
 
             // Icon
@@ -174,22 +316,22 @@ struct OnboardingPageView: View {
                     .foregroundStyle(page.color)
             }
 
-            VStack(spacing: 16) {
+            VStack(spacing: AppTokens.Spacing.lg) {
                 Text(page.subtitle)
                     .font(.system(size: 20, weight: .medium))
                     .foregroundStyle(page.color)
 
                 Text(page.title)
-                    .font(.system(size: 32, weight: .bold, design: .serif))
+                    .font(AppTokens.Typography.appTitle)
                     .foregroundStyle(Color("TextPrimary"))
                     .multilineTextAlignment(.center)
 
                 Text(page.description)
-                    .font(.system(size: 16))
+                    .font(AppTokens.Typography.body)
                     .foregroundStyle(Color("TextSecondary"))
                     .multilineTextAlignment(.center)
                     .lineSpacing(4)
-                    .padding(.horizontal, 32)
+                    .padding(.horizontal, AppTokens.Spacing.xxl)
             }
 
             Spacer()
