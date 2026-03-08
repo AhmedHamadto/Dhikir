@@ -32,11 +32,11 @@ struct HistoryView: View {
                     emptyState
                 } else {
                     ScrollView {
-                        LazyVStack(spacing: 20) {
+                        LazyVStack(spacing: AppTokens.Spacing.xl) {
                             ForEach(groupedHistory, id: \.0) { date, items in
-                                VStack(alignment: .leading, spacing: 12) {
+                                VStack(alignment: .leading, spacing: AppTokens.Spacing.md) {
                                     Text(date)
-                                        .font(.system(size: 16, weight: .semibold))
+                                        .font(AppTokens.Typography.bodySemibold)
                                         .foregroundStyle(Color("TextPrimary"))
 
                                     ForEach(items, id: \.id) { item in
@@ -94,17 +94,17 @@ struct HistoryView: View {
     }
 
     private var emptyState: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: AppTokens.Spacing.lg) {
             Image(systemName: "clock.arrow.circlepath")
-                .font(.system(size: 60))
+                .font(AppTokens.Typography.emptyStateIcon)
                 .foregroundStyle(Color("TextSecondary").opacity(0.5))
 
             Text(L(.noHistoryYet, preferredLanguage))
-                .font(.system(size: 20, weight: .semibold))
+                .font(AppTokens.Typography.heading)
                 .foregroundStyle(Color("TextPrimary"))
 
             Text(L(.historyHint, preferredLanguage))
-                .font(.system(size: 14))
+                .font(AppTokens.Typography.bodySmall)
                 .foregroundStyle(Color("TextSecondary"))
                 .multilineTextAlignment(.center)
         }
@@ -155,12 +155,19 @@ struct HistoryCard: View {
         return history.category
     }
 
+    private var formattedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: history.dateRead)
+    }
+
     var body: some View {
         Button(action: onTap) {
-            HStack(spacing: 12) {
+            HStack(spacing: AppTokens.Spacing.md) {
                 VStack(alignment: .leading, spacing: 6) {
                     Text(dhikir.arabicText)
-                        .font(.system(size: 16, weight: .medium))
+                        .font(AppTokens.Typography.bodyMedium)
                         .foregroundStyle(Color("TextPrimary"))
                         .lineLimit(1)
 
@@ -169,11 +176,11 @@ struct HistoryCard: View {
                         .foregroundStyle(Color("TextSecondary"))
                         .lineLimit(1)
 
-                    HStack(spacing: 8) {
+                    HStack(spacing: AppTokens.Spacing.sm) {
                         Text(categoryName)
                             .font(.system(size: 11, weight: .semibold))
                             .foregroundStyle(Color("AccentGreen"))
-                            .padding(.horizontal, 8)
+                            .padding(.horizontal, AppTokens.Spacing.sm)
                             .padding(.vertical, 2)
                             .background(
                                 Capsule()
@@ -189,17 +196,23 @@ struct HistoryCard: View {
                 Spacer()
 
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 14))
+                    .font(AppTokens.Typography.bodySmall)
                     .foregroundStyle(Color("TextSecondary"))
             }
             .padding()
             .background(
-                RoundedRectangle(cornerRadius: 12)
+                RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                     .fill(Color("CardBackground"))
-                    .shadow(color: .black.opacity(0.03), radius: 6, y: 3)
+                    .shadow(
+                        color: .black.opacity(AppTokens.Shadow.light.opacity),
+                        radius: AppTokens.Shadow.light.radius,
+                        y: AppTokens.Shadow.light.y
+                    )
             )
         }
         .buttonStyle(PlainButtonStyle())
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("History: \(dhikir.arabicText), read on \(formattedDate)")
     }
 
     private func formatTime(_ date: Date) -> String {

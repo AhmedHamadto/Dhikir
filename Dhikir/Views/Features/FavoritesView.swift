@@ -29,7 +29,7 @@ struct FavoritesView: View {
                     emptyState
                 } else {
                     ScrollView {
-                        LazyVStack(spacing: 12) {
+                        LazyVStack(spacing: AppTokens.Spacing.md) {
                             ForEach(favoriteDhikirs, id: \.id) { dhikir in
                                 FavoriteCard(dhikir: dhikir, preferredLanguage: preferredLanguage) {
                                     selectedDhikir = dhikir
@@ -53,17 +53,17 @@ struct FavoritesView: View {
     }
 
     private var emptyState: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: AppTokens.Spacing.lg) {
             Image(systemName: "heart")
-                .font(.system(size: 60))
+                .font(AppTokens.Typography.emptyStateIcon)
                 .foregroundStyle(Color("TextSecondary").opacity(0.5))
 
             Text(L(.noFavoritesYet, preferredLanguage))
-                .font(.system(size: 20, weight: .semibold))
+                .font(AppTokens.Typography.heading)
                 .foregroundStyle(Color("TextPrimary"))
 
             Text(L(.favoritesHint, preferredLanguage))
-                .font(.system(size: 14))
+                .font(AppTokens.Typography.bodySmall)
                 .foregroundStyle(Color("TextSecondary"))
                 .multilineTextAlignment(.center)
         }
@@ -86,25 +86,25 @@ struct FavoriteCard: View {
 
     var body: some View {
         Button(action: onTap) {
-            HStack(spacing: 16) {
-                VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: AppTokens.Spacing.lg) {
+                VStack(alignment: .leading, spacing: AppTokens.Spacing.sm) {
                     Text(dhikir.arabicText)
-                        .font(.system(size: 18, weight: .medium))
+                        .font(AppTokens.Typography.arabicSmall)
                         .foregroundStyle(Color("TextPrimary"))
                         .lineLimit(2)
 
                     Text(dhikir.translation(for: preferredLanguage))
-                        .font(.system(size: 14))
+                        .font(AppTokens.Typography.bodySmall)
                         .foregroundStyle(Color("TextSecondary"))
                         .lineLimit(2)
 
                     HStack {
                         Image(systemName: dhikir.sourceType.icon)
-                            .font(.system(size: 12))
+                            .font(AppTokens.Typography.small)
                             .foregroundStyle(Color("AccentGold"))
 
                         Text(dhikir.source)
-                            .font(.system(size: 12, weight: .medium))
+                            .font(AppTokens.Typography.small)
                             .foregroundStyle(Color("TextSecondary"))
                     }
                 }
@@ -113,19 +113,25 @@ struct FavoriteCard: View {
 
                 Button(action: onRemove) {
                     Image(systemName: "heart.fill")
-                        .font(.system(size: 20))
+                        .font(AppTokens.Typography.icon)
                         .foregroundStyle(Color.red)
                 }
                 .accessibilityLabel("Remove from favorites")
             }
             .padding()
             .background(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: AppTokens.Radius.large)
                     .fill(Color("CardBackground"))
-                    .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
+                    .shadow(
+                        color: .black.opacity(AppTokens.Shadow.medium.opacity),
+                        radius: AppTokens.Shadow.medium.radius,
+                        y: AppTokens.Shadow.medium.y
+                    )
             )
         }
         .buttonStyle(PlainButtonStyle())
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Favorite dhikir: \(dhikir.arabicText)")
     }
 
 }
@@ -142,45 +148,45 @@ struct DhikirDetailSheet: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 24) {
+                VStack(spacing: AppTokens.Spacing.xl) {
                     Text(dhikir.arabicText)
-                        .font(.system(size: 28, weight: .medium))
+                        .font(AppTokens.Typography.arabic)
                         .multilineTextAlignment(.center)
                         .foregroundStyle(Color("TextPrimary"))
                         .padding()
 
                     Text(dhikir.transliteration)
-                        .font(.system(size: 16, weight: .medium, design: .serif))
+                        .font(AppTokens.Typography.transliteration)
                         .italic()
                         .foregroundStyle(Color("TextSecondary"))
 
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: AppTokens.Spacing.sm) {
                         Text(L(.translation, preferredLanguage))
-                            .font(.system(size: 14, weight: .semibold))
+                            .font(AppTokens.Typography.captionSemibold)
                             .foregroundStyle(Color("AccentGreen"))
 
                         Text(dhikir.translation(for: preferredLanguage))
-                            .font(.system(size: 16))
+                            .font(AppTokens.Typography.body)
                             .foregroundStyle(Color("TextPrimary"))
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
                     .background(
-                        RoundedRectangle(cornerRadius: 16)
+                        RoundedRectangle(cornerRadius: AppTokens.Radius.large)
                             .fill(Color("CardBackground"))
                     )
 
                     HStack {
                         Text(dhikir.source)
-                            .font(.system(size: 14, weight: .medium))
+                            .font(AppTokens.Typography.caption)
 
                         Spacer()
 
                         Text(dhikir.sourceType.rawValue)
-                            .font(.system(size: 12, weight: .semibold))
+                            .font(AppTokens.Typography.smallSemibold)
                             .foregroundStyle(Color("AccentGreen"))
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 4)
+                            .padding(.horizontal, AppTokens.Spacing.md)
+                            .padding(.vertical, AppTokens.Spacing.xs)
                             .background(
                                 Capsule()
                                     .fill(Color("AccentGreen").opacity(0.1))
@@ -188,34 +194,34 @@ struct DhikirDetailSheet: View {
                     }
                     .padding()
                     .background(
-                        RoundedRectangle(cornerRadius: 12)
+                        RoundedRectangle(cornerRadius: AppTokens.Radius.medium)
                             .fill(Color("CardBackground"))
                     )
 
                     if let benefit = dhikir.benefit(for: preferredLanguage) {
-                        VStack(alignment: .leading, spacing: 8) {
+                        VStack(alignment: .leading, spacing: AppTokens.Spacing.sm) {
                             HStack {
                                 Image(systemName: "lightbulb.fill")
                                     .foregroundStyle(Color("AccentGold"))
                                 Text(L(.benefit, preferredLanguage))
-                                    .font(.system(size: 14, weight: .semibold))
+                                    .font(AppTokens.Typography.captionSemibold)
                                     .foregroundStyle(Color("AccentGold"))
                             }
 
                             Text(benefit)
-                                .font(.system(size: 14))
+                                .font(AppTokens.Typography.bodySmall)
                                 .foregroundStyle(Color("TextSecondary"))
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                         .background(
-                            RoundedRectangle(cornerRadius: 16)
+                            RoundedRectangle(cornerRadius: AppTokens.Radius.large)
                                 .fill(Color("AccentGold").opacity(0.1))
                         )
                     }
 
                     Text("\(dhikir.repetitionCount) \(L(.repeatTimes, preferredLanguage))")
-                        .font(.system(size: 14, weight: .medium))
+                        .font(AppTokens.Typography.caption)
                         .foregroundStyle(Color("TextSecondary"))
                 }
                 .padding()
