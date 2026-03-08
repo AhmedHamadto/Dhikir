@@ -47,6 +47,7 @@
 		FACB278FB3ADFD8E85DDFDA7 /* StreakServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA7A069799152E503461D7 /* StreakServiceTests.swift */; };
 		AA11BB22CC33DD44EE55FF01 /* AppTokensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF02 /* AppTokensTests.swift */; };
 		AA11BB22CC33DD44EE55FF03 /* AppTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF04 /* AppTokens.swift */; };
+		AA11BB22CC33DD44EE55FF06 /* CardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF07 /* CardModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		F43997DB99D3F59E0161E749 /* ReadingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingHistory.swift; sourceTree = "<group>"; };
 		AA11BB22CC33DD44EE55FF02 /* AppTokensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTokensTests.swift; sourceTree = "<group>"; };
 		AA11BB22CC33DD44EE55FF04 /* AppTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTokens.swift; sourceTree = "<group>"; };
+		AA11BB22CC33DD44EE55FF07 /* CardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				AA11BB22CC33DD44EE55FF04 /* AppTokens.swift */,
+				AA11BB22CC33DD44EE55FF07 /* CardModifier.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			files = (
 				9F48B6EC196174055F155FAE /* AppDelegate.swift in Sources */,
 				AA11BB22CC33DD44EE55FF03 /* AppTokens.swift in Sources */,
+				AA11BB22CC33DD44EE55FF06 /* CardModifier.swift in Sources */,
 				5B6025D8410C26871D1FD1B7 /* AudioService.swift in Sources */,
 				A9B6DB76B5AB4788C1B83615 /* ContentView.swift in Sources */,
 				A57B957E2ECF90C95B04A412 /* DatabaseService.swift in Sources */,
