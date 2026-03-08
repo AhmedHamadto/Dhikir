@@ -3,6 +3,7 @@ import SwiftData
 
 struct OnboardingView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Query private var settings: [UserSettings]
 
     @State private var currentPage = 0
@@ -49,6 +50,15 @@ struct OnboardingView: View {
         ]
     }
 
+    private var pageTransition: AnyTransition {
+        reduceMotion
+            ? .opacity
+            : .asymmetric(
+                insertion: .move(edge: .trailing).combined(with: .opacity),
+                removal: .move(edge: .leading).combined(with: .opacity)
+            )
+    }
+
     var body: some View {
         ZStack {
             Color("BackgroundCream")
@@ -66,15 +76,18 @@ struct OnboardingView: View {
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                .animation(.easeInOut, value: currentPage)
+                .animation(reduceMotion ? nil : .easeInOut, value: currentPage)
                 #else
-                if currentPage == 0 {
-                    languageSelectionPage
-                        .animation(.easeInOut, value: currentPage)
-                } else {
-                    OnboardingPageView(page: contentPages[currentPage - 1])
-                        .animation(.easeInOut, value: currentPage)
+                Group {
+                    if currentPage == 0 {
+                        languageSelectionPage
+                    } else {
+                        OnboardingPageView(page: contentPages[currentPage - 1])
+                    }
                 }
+                .id(currentPage)
+                .transition(pageTransition)
+                .animation(reduceMotion ? nil : .easeInOut, value: currentPage)
                 #endif
 
                 bottomSection
@@ -95,14 +108,14 @@ struct OnboardingView: View {
             ZStack {
                 Circle()
                     .fill(Color("AccentGreen").opacity(0.15))
-                    .frame(width: 160, height: 160)
+                    .frame(width: AppTokens.Onboarding.heroOuterCircle, height: AppTokens.Onboarding.heroOuterCircle)
 
                 Circle()
                     .fill(Color("AccentGreen").opacity(0.3))
-                    .frame(width: 120, height: 120)
+                    .frame(width: AppTokens.Onboarding.heroInnerCircle, height: AppTokens.Onboarding.heroInnerCircle)
 
                 Image(systemName: "globe")
-                    .font(.system(size: 50))
+                    .font(.system(size: AppTokens.Onboarding.heroIconSize))
                     .foregroundStyle(Color("AccentGreen"))
             }
 
@@ -116,7 +129,7 @@ struct OnboardingView: View {
                     .font(AppTokens.Typography.body)
                     .foregroundStyle(Color("TextSecondary"))
                     .multilineTextAlignment(.center)
-                    .lineSpacing(4)
+                    .lineSpacing(AppTokens.Onboarding.lineSpacing)
                     .padding(.horizontal, AppTokens.Spacing.xxl)
             }
 
@@ -129,10 +142,10 @@ struct OnboardingView: View {
                     }) {
                         HStack(spacing: AppTokens.Spacing.sm) {
                             Text(language.flag)
-                                .font(.system(size: 20))
+                                .font(AppTokens.Typography.icon)
 
                             Text(language.displayName)
-                                .font(.system(size: 13, weight: .medium))
+                                .font(AppTokens.Typography.small)
                                 .foregroundStyle(selectedLanguage == language ? Color("AccentGreen") : Color("TextPrimary"))
                                 .lineLimit(1)
 
@@ -145,7 +158,7 @@ struct OnboardingView: View {
                                 .fill(Color("CardBackground"))
                                 .overlay(
                                     RoundedRectangle(cornerRadius: AppTokens.Radius.small)
-                                        .stroke(selectedLanguage == language ? Color("AccentGreen") : Color.clear, lineWidth: 2)
+                                        .stroke(selectedLanguage == language ? Color("AccentGreen") : Color.clear, lineWidth: AppTokens.Onboarding.borderWidth)
                                 )
                         )
                     }
@@ -163,15 +176,7 @@ struct OnboardingView: View {
     private var bottomSection: some View {
         VStack(spacing: AppTokens.Spacing.xl) {
             // Page indicators
-            HStack(spacing: AppTokens.Spacing.sm) {
-                ForEach(0..<totalPages, id: \.self) { index in
-                    Circle()
-                        .fill(index == currentPage ? Color("AccentGreen") : Color.gray.opacity(0.3))
-                        .frame(width: 8, height: 8)
-                        .scaleEffect(index == currentPage ? 1.2 : 1.0)
-                        .animation(.spring(response: 0.3), value: currentPage)
-                }
-            }
+            PillProgressIndicator(count: totalPages, current: currentPage)
 
             // Notification denied message
             if currentPage == 3 && notificationDenied {
@@ -202,7 +207,7 @@ struct OnboardingView: View {
             // Action button
             Button(action: handleButtonTap) {
                 Text(buttonTitle)
-                    .font(.system(size: 18, weight: .semibold))
+                    .font(AppTokens.Typography.heading)
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, AppTokens.Spacing.lg)
@@ -221,7 +226,7 @@ struct OnboardingView: View {
                 .foregroundStyle(Color("TextSecondary"))
             }
         }
-        .padding(.bottom, 40)
+        .padding(.bottom, AppTokens.Onboarding.bottomInset)
     }
 
     // MARK: - Button Title
@@ -280,7 +285,7 @@ struct OnboardingView: View {
             try? modelContext.save()
         }
 
-        withAnimation(.easeInOut(duration: 0.3)) {
+        withAnimation(.easeInOut(duration: AppTokens.Onboarding.animationDuration)) {
             hasCompletedOnboarding = true
         }
     }
@@ -305,20 +310,20 @@ struct OnboardingPageView: View {
             ZStack {
                 Circle()
                     .fill(page.color.opacity(0.15))
-                    .frame(width: 160, height: 160)
+                    .frame(width: AppTokens.Onboarding.heroOuterCircle, height: AppTokens.Onboarding.heroOuterCircle)
 
                 Circle()
                     .fill(page.color.opacity(0.3))
-                    .frame(width: 120, height: 120)
+                    .frame(width: AppTokens.Onboarding.heroInnerCircle, height: AppTokens.Onboarding.heroInnerCircle)
 
                 Image(systemName: page.imageName)
-                    .font(.system(size: 50))
+                    .font(.system(size: AppTokens.Onboarding.heroIconSize))
                     .foregroundStyle(page.color)
             }
 
             VStack(spacing: AppTokens.Spacing.lg) {
                 Text(page.subtitle)
-                    .font(.system(size: 20, weight: .medium))
+                    .font(AppTokens.Typography.arabicSmall)
                     .foregroundStyle(page.color)
 
                 Text(page.title)
@@ -330,7 +335,7 @@ struct OnboardingPageView: View {
                     .font(AppTokens.Typography.body)
                     .foregroundStyle(Color("TextSecondary"))
                     .multilineTextAlignment(.center)
-                    .lineSpacing(4)
+                    .lineSpacing(AppTokens.Onboarding.lineSpacing)
                     .padding(.horizontal, AppTokens.Spacing.xxl)
             }
 

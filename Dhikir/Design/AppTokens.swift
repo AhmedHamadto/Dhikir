@@ -56,4 +56,14 @@ enum AppTokens {
         static let strokeWidth: CGFloat = 6
         static let inlineStrokeWidth: CGFloat = 8
     }
+
+    enum Onboarding {
+        static let heroOuterCircle: CGFloat = 160
+        static let heroInnerCircle: CGFloat = 120
+        static let heroIconSize: CGFloat = 50
+        static let lineSpacing: CGFloat = 4
+        static let borderWidth: CGFloat = 2
+        static let bottomInset: CGFloat = 40
+        static let animationDuration: Double = 0.3
+    }
 }
