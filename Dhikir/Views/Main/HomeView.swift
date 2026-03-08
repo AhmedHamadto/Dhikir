@@ -10,6 +10,7 @@ struct HomeView: View {
     @State private var selectedCategory: String?
     @State private var showDhikir = false
     @State private var cardsAppeared = false
+    @State private var milestoneGlow = false
 
     private var preferredLanguage: SupportedLanguage {
         settings.first?.preferredLanguage ?? .english
@@ -85,8 +86,15 @@ struct HomeView: View {
 
                 if let milestone = StreakService.shared.streakMilestone(for: currentStreak) {
                     Text(milestone)
-                        .font(AppTokens.Typography.bodySmall)
+                        .font(AppTokens.Typography.caption)
                         .foregroundStyle(Color("AccentGold"))
+                        .opacity(milestoneGlow ? 1.0 : 0.7)
+                        .onAppear {
+                            guard !reduceMotion else { return }
+                            withAnimation(.easeInOut(duration: 0.6).repeatCount(2, autoreverses: true)) {
+                                milestoneGlow = true
+                            }
+                        }
                 } else {
                     Text(L(.keepGoing, preferredLanguage))
                         .font(AppTokens.Typography.bodySmall)
