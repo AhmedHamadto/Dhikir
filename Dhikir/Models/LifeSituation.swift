@@ -2,8 +2,7 @@ import Foundation
 import SwiftUI
 
 enum LifeSituation: String, CaseIterable, Identifiable {
-    // Temporarily disabled: morning, evening, beforeSleep, afterSalah
-    case uponWaking = "upon_waking"
+    // Temporarily disabled: morning, evening, beforeSleep, afterSalah, uponWaking
     case duringIllness = "during_illness"
     case traveling = "traveling"
     case facingDifficulty = "facing_difficulty"
@@ -14,7 +13,6 @@ enum LifeSituation: String, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .uponWaking: return "Upon Waking"
         case .duringIllness: return "During Illness"
         case .traveling: return "Traveling"
         case .facingDifficulty: return "Facing Difficulty"
@@ -25,7 +23,6 @@ enum LifeSituation: String, CaseIterable, Identifiable {
 
     var arabicName: String {
         switch self {
-        case .uponWaking: return "عند الاستيقاظ"
         case .duringIllness: return "عند المرض"
         case .traveling: return "السفر"
         case .facingDifficulty: return "عند الشدة"
@@ -36,7 +33,6 @@ enum LifeSituation: String, CaseIterable, Identifiable {
 
     var icon: String {
         switch self {
-        case .uponWaking: return "sun.max.fill"
         case .duringIllness: return "heart.circle.fill"
         case .traveling: return "airplane.departure"
         case .facingDifficulty: return "mountain.2.fill"
@@ -47,7 +43,6 @@ enum LifeSituation: String, CaseIterable, Identifiable {
 
     var color: Color {
         switch self {
-        case .uponWaking: return Color(red: 0.9, green: 0.8, blue: 0.6)
         case .duringIllness: return Color(red: 0.7, green: 0.8, blue: 0.7)
         case .traveling: return Color(red: 0.6, green: 0.8, blue: 0.9)
         case .facingDifficulty: return Color(red: 0.6, green: 0.6, blue: 0.7)
@@ -58,12 +53,33 @@ enum LifeSituation: String, CaseIterable, Identifiable {
 
     var description: String {
         switch self {
-        case .uponWaking: return "Thank Allah for a new day"
         case .duringIllness: return "Seek healing and patience"
         case .traveling: return "Protection for your journey"
         case .facingDifficulty: return "Strength through hardship"
         case .beforeDecision: return "Seek divine guidance"
         case .seekingForgiveness: return "Return to Allah"
         }
+    }
+
+    func displayName(for language: SupportedLanguage) -> String {
+        let key: AppString = switch self {
+        case .duringIllness: .situationDuringIllness
+        case .traveling: .situationTraveling
+        case .facingDifficulty: .situationFacingDifficulty
+        case .beforeDecision: .situationBeforeDecision
+        case .seekingForgiveness: .situationSeekingForgiveness
+        }
+        return L(key, language)
+    }
+
+    func description(for language: SupportedLanguage) -> String {
+        let key: AppString = switch self {
+        case .duringIllness: .situationDuringIllnessDesc
+        case .traveling: .situationTravelingDesc
+        case .facingDifficulty: .situationFacingDifficultyDesc
+        case .beforeDecision: .situationBeforeDecisionDesc
+        case .seekingForgiveness: .situationSeekingForgivenessDesc
+        }
+        return L(key, language)
     }
 }

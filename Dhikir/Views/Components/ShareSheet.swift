@@ -10,10 +10,26 @@ struct ShareSheet: View {
         settings.first?.hapticFeedbackEnabled ?? true
     }
 
+    private var preferredLanguage: SupportedLanguage {
+        settings.first?.preferredLanguage ?? .english
+    }
+
+    private var shareText: String {
+        """
+        \(dhikir.arabicText)
+
+        \(dhikir.transliteration)
+
+        \(dhikir.englishTranslation)
+
+        — \(dhikir.source)
+        """
+    }
+
     var body: some View {
         NavigationStack {
             VStack(spacing: 24) {
-                Text("Share Dhikir")
+                Text(L(.shareDhikirTitle, preferredLanguage))
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundStyle(Color("TextPrimary"))
 
@@ -25,13 +41,23 @@ struct ShareSheet: View {
             }
             .padding()
             .background(Color("BackgroundCream").ignoresSafeArea())
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
+                #if os(iOS)
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Done") {
+                    Button(L(.done, preferredLanguage)) {
                         dismiss()
                     }
                 }
+                #else
+                ToolbarItem(placement: .automatic) {
+                    Button(L(.done, preferredLanguage)) {
+                        dismiss()
+                    }
+                }
+                #endif
             }
         }
     }
@@ -70,7 +96,7 @@ struct ShareSheet: View {
             Button(action: copyToClipboard) {
                 HStack {
                     Image(systemName: "doc.on.doc")
-                    Text("Copy Text")
+                    Text(L(.copyText, preferredLanguage))
                     Spacer()
                 }
                 .font(.system(size: 16, weight: .medium))
@@ -85,7 +111,7 @@ struct ShareSheet: View {
             Button(action: shareViaSystem) {
                 HStack {
                     Image(systemName: "square.and.arrow.up")
-                    Text("Share via...")
+                    Text(L(.shareVia, preferredLanguage))
                     Spacer()
                 }
                 .font(.system(size: 16, weight: .medium))
@@ -100,28 +126,22 @@ struct ShareSheet: View {
     }
 
     private func copyToClipboard() {
-        let text = """
-        \(dhikir.arabicText)
-
-        \(dhikir.transliteration)
-
-        \(dhikir.englishTranslation)
-
-        — \(dhikir.source)
-        """
-
-        UIPasteboard.general.string = text
+        #if os(iOS)
+        UIPasteboard.general.string = shareText
+        #elseif os(macOS)
+        NSPasteboard.general.clearContents()
+        NSPasteboard.general.setString(shareText, forType: .string)
+        #endif
 
         if hapticEnabled {
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.success)
+            triggerHaptic(.success)
         }
 
         dismiss()
     }
 
     private func shareViaSystem() {
-        let text = """
+        let fullText = """
         \(dhikir.arabicText)
 
         \(dhikir.transliteration)
@@ -133,26 +153,33 @@ struct ShareSheet: View {
         Shared from Dhikir App
         """
 
+        #if os(iOS)
         let activityVC = UIActivityViewController(
-            activityItems: [text],
+            activityItems: [fullText],
             applicationActivities: nil
         )
 
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {
-            // Find the topmost presented view controller
             var topVC = window.rootViewController
             while let presented = topVC?.presentedViewController {
                 topVC = presented
             }
             topVC?.present(activityVC, animated: true)
         }
+        #elseif os(macOS)
+        let picker = NSSharingServicePicker(items: [fullText])
+        if let window = NSApplication.shared.keyWindow,
+           let contentView = window.contentView {
+            picker.show(relativeTo: .zero, of: contentView, preferredEdge: .minY)
+        }
+        #endif
     }
 }
 
 #Preview {
     ShareSheet(dhikir: Dhikir(
-        arabicText: "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+        arabicText: "\u{062D}\u{064E}\u{0633}\u{0652}\u{0628}\u{064F}\u{0646}\u{064E}\u{0627} \u{0627}\u{0644}\u{0644}\u{0651}\u{064E}\u{0647}\u{064F} \u{0648}\u{064E}\u{0646}\u{0650}\u{0639}\u{0652}\u{0645}\u{064E} \u{0627}\u{0644}\u{0652}\u{0648}\u{064E}\u{0643}\u{0650}\u{064A}\u{0644}\u{064F}",
         transliteration: "Hasbunallahu wa ni'mal wakeel",
         englishTranslation: "Sufficient for us is Allah, and He is the best Disposer of affairs",
         source: "Quran 3:173",

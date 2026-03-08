@@ -16,6 +16,7 @@ final class AudioService {
     }
 
     private func setupAudioSession() {
+        #if os(iOS)
         do {
             try AVAudioSession.sharedInstance().setCategory(
                 .playback,
@@ -28,6 +29,7 @@ final class AudioService {
             print("Failed to setup audio session: \(error)")
             #endif
         }
+        #endif
     }
 
     func play(fileName: String) {

@@ -16,6 +16,14 @@
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "Said by Prophet Ibrahim (AS) when thrown into fire, and by the Companions before the Battle of Badr. Brings immense peace during anxiety and fear.",
+      "benefitTranslations": {
+        "ar": "قالها النبي إبراهيم عليه السلام عندما أُلقي في النار، وقالها الصحابة قبل غزوة بدر. تجلب سكينة عظيمة عند القلق والخوف.",
+        "ur": "نبی ابراہیم علیہ السلام نے آگ میں پھینکے جانے پر یہ کلمات کہے، اور صحابہ نے غزوہ بدر سے پہلے کہے۔ پریشانی اور خوف کے وقت بے پناہ سکون لاتے ہیں۔",
+        "id": "Diucapkan oleh Nabi Ibrahim (AS) saat dilemparkan ke dalam api, dan oleh para Sahabat sebelum Perang Badr. Membawa ketenangan luar biasa saat cemas dan takut.",
+        "tr": "Hz. İbrahim (AS) ateşe atıldığında ve Sahabeler Bedir Savaşı öncesinde bunu söylemişlerdir. Kaygı ve korku anlarında büyük bir huzur getirir.",
+        "fr": "Prononcé par le Prophète Ibrahim (AS) lorsqu'il fut jeté dans le feu, et par les Compagnons avant la bataille de Badr. Apporte une immense paix lors de l'anxiété et de la peur.",
+        "ms": "Diucapkan oleh Nabi Ibrahim (AS) ketika dilemparkan ke dalam api, dan oleh para Sahabat sebelum Perang Badr. Membawa ketenangan luar biasa ketika cemas dan takut."
+      },
       "translations": {
         "ar": "الله كافينا وهو أفضل من يُوكَل إليه الأمور",
         "ur": "اللہ ہمارے لیے کافی ہے اور وہ بہترین کارساز ہے",
@@ -39,6 +47,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The supplication of Prophet Yunus (AS) in the belly of the whale. Allah says no Muslim will call upon Him with this except that He will respond.",
+      "benefitTranslations": {
+        "ar": "دعاء النبي يونس عليه السلام في بطن الحوت. قال الله تعالى إنه ما من مسلم يدعوه بهذا الدعاء إلا استجاب له.",
+        "ur": "نبی یونس علیہ السلام کی مچھلی کے پیٹ میں دعا۔ اللہ تعالیٰ فرماتے ہیں کہ جو مسلمان بھی اس دعا سے پکارے، اللہ ضرور قبول فرماتے ہیں۔",
+        "id": "Doa Nabi Yunus (AS) di dalam perut ikan paus. Allah berfirman bahwa tidak ada seorang Muslim pun yang berdoa dengan doa ini kecuali Allah akan mengabulkannya.",
+        "tr": "Hz. Yunus'un (AS) balığın karnındaki duasıdır. Allah, hiçbir Müslümanın bununla dua etmeyeceğini, ettiği takdirde mutlaka kabul edeceğini bildirmiştir.",
+        "fr": "L'invocation du Prophète Yunus (AS) dans le ventre de la baleine. Allah dit qu'aucun musulman ne L'invoquera avec cette supplication sans qu'Il ne lui réponde.",
+        "ms": "Doa Nabi Yunus (AS) di dalam perut ikan paus. Allah berfirman bahawa tiada seorang Muslim pun yang berdoa dengan doa ini melainkan Allah akan mengabulkannya."
+      },
       "translations": {
         "ar": "لا معبود بحق إلا أنت، سبحانك، إني كنت من الظالمين لنفسي",
         "ur": "تیرے سوا کوئی معبود نہیں، تو پاک ہے، بے شک میں ظالموں میں سے تھا",
@@ -62,6 +78,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) said whoever says this, Allah will forgive him even if he fled from battle.",
+      "benefitTranslations": {
+        "ar": "قال النبي ﷺ: من قال هذا غفر الله له وإن كان فرّ من الزحف.",
+        "ur": "نبی ﷺ نے فرمایا: جو شخص یہ کلمات کہے، اللہ اسے معاف فرما دیں گے چاہے وہ میدان جنگ سے بھاگا ہو۔",
+        "id": "Nabi (SAW) bersabda, barangsiapa mengucapkan ini, Allah akan mengampuninya meskipun ia pernah lari dari medan perang.",
+        "tr": "Peygamber (SAV) buyurdu ki: \"Kim bunu söylerse, savaştan kaçmış olsa bile Allah onu bağışlar.\"",
+        "fr": "Le Prophète (SAW) a dit que quiconque prononce ces paroles, Allah lui pardonnera même s'il a fui le champ de bataille.",
+        "ms": "Nabi (SAW) bersabda, sesiapa yang mengucapkan ini, Allah akan mengampuninya walaupun dia pernah lari dari medan perang."
+      },
       "translations": {
         "ur": "میں اللہ عظیم سے مغفرت مانگتا ہوں جس کے سوا کوئی معبود نہیں، جو ہمیشہ زندہ اور قائم ہے، اور میں اس کی طرف توبہ کرتا ہوں",
         "id": "Aku memohon ampunan kepada Allah Yang Maha Agung, tidak ada Tuhan selain Dia, Yang Maha Hidup, Yang Maha Berdiri Sendiri, dan aku bertaubat kepada-Nya",
@@ -85,6 +109,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) used to frequently make this comprehensive dua seeking refuge from worry, sadness, and all forms of distress.",
+      "benefitTranslations": {
+        "ar": "كان النبي ﷺ يكثر من هذا الدعاء الجامع مستعيذاً من الهمّ والحزن وجميع أنواع الكرب.",
+        "ur": "نبی ﷺ یہ جامع دعا کثرت سے پڑھتے تھے جس میں فکر، غم اور ہر قسم کی تکلیف سے پناہ مانگی جاتی ہے۔",
+        "id": "Nabi (SAW) sering membaca doa komprehensif ini untuk memohon perlindungan dari kegelisahan, kesedihan, dan segala bentuk kesusahan.",
+        "tr": "Peygamber (SAV) endişe, hüzün ve her türlü sıkıntıdan Allah'a sığınarak bu kapsamlı duayı sık sık yapardı.",
+        "fr": "Le Prophète (SAW) faisait fréquemment cette invocation complète demandant refuge contre l'inquiétude, la tristesse et toutes les formes de détresse.",
+        "ms": "Nabi (SAW) kerap membaca doa yang menyeluruh ini untuk memohon perlindungan daripada kegelisahan, kesedihan, dan segala bentuk kesusahan."
+      },
       "translations": {
         "ur": "اے اللہ میں تیری پناہ مانگتا ہوں فکر اور غم سے، کمزوری اور سستی سے، بزدلی اور کنجوسی سے، اور قرض کے بوجھ اور لوگوں کے ظلم سے",
         "id": "Ya Allah, aku berlindung kepada-Mu dari kegelisahan dan kesedihan, dari kelemahan dan kemalasan, dari sifat pengecut dan kikir, dan dari beban hutang dan penindasan manusia",
@@ -107,6 +139,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "Umm Salamah (RA) said this when her husband died, and Allah replaced him with the Prophet (SAW) as her husband.",
+      "benefitTranslations": {
+        "ar": "قالتها أم سلمة رضي الله عنها عند وفاة زوجها، فعوّضها الله بالنبي ﷺ زوجاً.",
+        "ur": "ام سلمہ رضی اللہ عنہا نے اپنے شوہر کی وفات پر یہ دعا پڑھی، تو اللہ نے انہیں نبی ﷺ کو بطور شوہر عطا فرمایا۔",
+        "id": "Ummu Salamah (RA) mengucapkan doa ini ketika suaminya wafat, dan Allah menggantinya dengan Nabi (SAW) sebagai suaminya.",
+        "tr": "Ümmü Seleme (RA) kocası vefat ettiğinde bunu söyledi ve Allah ona kocası olarak Peygamber'i (SAV) nasip etti.",
+        "fr": "Oum Salamah (RA) a prononcé cette invocation à la mort de son mari, et Allah l'a remplacé par le Prophète (SAW) comme époux.",
+        "ms": "Ummu Salamah (RA) mengucapkan doa ini ketika suaminya meninggal dunia, dan Allah menggantikannya dengan Nabi (SAW) sebagai suaminya."
+      },
       "translations": {
         "ur": "بے شک ہم اللہ کے ہیں اور اسی کی طرف لوٹنے والے ہیں۔ اے اللہ مجھے میری مصیبت میں اجر دے اور اس سے بہتر بدلہ عطا فرما",
         "id": "Sesungguhnya kami milik Allah dan kepada-Nya kami kembali. Ya Allah, berilah aku pahala dalam musibahku dan gantilah untukku dengan yang lebih baik",
@@ -128,6 +168,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) advised saying this when angry. Seeking refuge from Shaytan helps calm the heart and dispel anger.",
+      "benefitTranslations": {
+        "ar": "أوصى النبي ﷺ بقولها عند الغضب. الاستعاذة من الشيطان تهدّئ القلب وتزيل الغضب.",
+        "ur": "نبی ﷺ نے غصے کے وقت یہ کہنے کی نصیحت فرمائی۔ شیطان سے پناہ مانگنا دل کو سکون دیتا اور غصہ دور کرتا ہے۔",
+        "id": "Nabi (SAW) menganjurkan untuk mengucapkan ini saat marah. Memohon perlindungan dari syaitan membantu menenangkan hati dan menghilangkan kemarahan.",
+        "tr": "Peygamber (SAV) öfkelenildiğinde bunu söylemeyi tavsiye etmiştir. Şeytandan sığınmak kalbi sakinleştirir ve öfkeyi giderir.",
+        "fr": "Le Prophète (SAW) a conseillé de prononcer ces mots en cas de colère. Chercher refuge contre Shaytan aide à calmer le cœur et à dissiper la colère.",
+        "ms": "Nabi (SAW) menasihati agar mengucapkan ini ketika marah. Memohon perlindungan daripada syaitan membantu menenangkan hati dan menghilangkan kemarahan."
+      },
       "translations": {
         "ur": "میں اللہ کی پناہ مانگتا ہوں شیطان مردود سے",
         "id": "Aku berlindung kepada Allah dari setan yang terkutuk",
@@ -150,6 +198,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "Said when something good happens. The Prophet (SAW) taught this expression of gratitude for blessings.",
+      "benefitTranslations": {
+        "ar": "تقال عند حدوث شيء طيب. علّمنا النبي ﷺ هذا التعبير عن الشكر على النعم.",
+        "ur": "کچھ اچھا ہونے پر کہی جاتی ہے۔ نبی ﷺ نے نعمتوں پر شکر کا یہ طریقہ سکھایا۔",
+        "id": "Diucapkan ketika sesuatu yang baik terjadi. Nabi (SAW) mengajarkan ungkapan syukur ini atas nikmat-nikmat Allah.",
+        "tr": "Güzel bir şey olduğunda söylenir. Peygamber (SAV) nimetlere şükür olarak bu ifadeyi öğretmiştir.",
+        "fr": "Se dit lorsque quelque chose de bon se produit. Le Prophète (SAW) a enseigné cette expression de gratitude pour les bienfaits.",
+        "ms": "Diucapkan apabila sesuatu yang baik berlaku. Nabi (SAW) mengajarkan ungkapan kesyukuran ini atas nikmat-nikmat Allah."
+      },
       "translations": {
         "ar": "الحمد لله الذي بنعمته تتم الأعمال الصالحة",
         "ur": "تمام تعریف اللہ کے لیے ہے جس کی نعمت سے نیک کام مکمل ہوتے ہیں",
@@ -167,12 +223,19 @@
       "source": "Sunan Ibn Majah 3803",
       "sourceType": "Hadith",
       "categories": [
-        "grateful",
         "sad"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "Said when faced with something disliked. Teaches us to be grateful in all circumstances.",
+      "benefitTranslations": {
+        "ar": "تقال عند حدوث ما يُكره. تعلّمنا أن نحمد الله في جميع الأحوال.",
+        "ur": "ناپسندیدہ بات ہونے پر کہی جاتی ہے۔ ہمیں ہر حال میں شکرگزار رہنا سکھاتی ہے۔",
+        "id": "Diucapkan ketika menghadapi sesuatu yang tidak disukai. Mengajarkan kita untuk bersyukur dalam setiap keadaan.",
+        "tr": "Hoşlanılmayan bir durumla karşılaşıldığında söylenir. Her durumda şükretmeyi öğretir.",
+        "fr": "Se dit face à quelque chose de désagréable. Nous enseigne à être reconnaissants en toute circonstance.",
+        "ms": "Diucapkan apabila menghadapi sesuatu yang tidak disukai. Mengajarkan kita untuk bersyukur dalam setiap keadaan."
+      },
       "translations": {
         "ur": "ہر حال میں اللہ کا شکر ہے",
         "id": "Segala puji bagi Allah dalam setiap keadaan",
@@ -196,6 +259,14 @@
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "A powerful dua for when facing any difficulty. Reminds us that only Allah can make things easy.",
+      "benefitTranslations": {
+        "ar": "دعاء قوي عند مواجهة أي صعوبة. يذكّرنا بأن الله وحده القادر على تيسير الأمور.",
+        "ur": "کسی بھی مشکل کے وقت ایک طاقتور دعا۔ یاد دلاتی ہے کہ صرف اللہ ہی چیزوں کو آسان بنا سکتا ہے۔",
+        "id": "Doa yang sangat ampuh saat menghadapi kesulitan apa pun. Mengingatkan kita bahwa hanya Allah yang mampu memudahkan segala urusan.",
+        "tr": "Her türlü zorlukla karşılaşıldığında okunacak güçlü bir duadır. İşleri yalnızca Allah'ın kolaylaştırabileceğini hatırlatır.",
+        "fr": "Une invocation puissante face à toute difficulté. Nous rappelle que seul Allah peut rendre les choses faciles.",
+        "ms": "Doa yang sangat ampuh ketika menghadapi sebarang kesulitan. Mengingatkan kita bahawa hanya Allah yang mampu memudahkan segala urusan."
+      },
       "translations": {
         "ur": "اے اللہ کوئی چیز آسان نہیں سوائے اس کے جو تو آسان کر دے، اور تو مشکل کو آسان کر دیتا ہے جب تو چاہے",
         "id": "Ya Allah, tidak ada kemudahan kecuali yang Engkau mudahkan, dan Engkau menjadikan kesulitan menjadi mudah jika Engkau kehendaki",
@@ -219,6 +290,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) taught this dua for times of distress. Calling upon Allah by His beautiful names.",
+      "benefitTranslations": {
+        "ar": "علّم النبي ﷺ هذا الدعاء لأوقات الكرب. نداء الله بأسمائه الحسنى.",
+        "ur": "نبی ﷺ نے یہ دعا تکلیف کے وقت کے لیے سکھائی۔ اللہ کو اس کے خوبصورت ناموں سے پکارنا۔",
+        "id": "Nabi (SAW) mengajarkan doa ini untuk saat-saat kesusahan. Menyeru Allah dengan nama-nama-Nya yang indah.",
+        "tr": "Peygamber (SAV) bu duayı sıkıntı anları için öğretmiştir. Allah'a güzel isimleriyle yakarış.",
+        "fr": "Le Prophète (SAW) a enseigné cette invocation pour les moments de détresse. Invoquer Allah par Ses beaux noms.",
+        "ms": "Nabi (SAW) mengajarkan doa ini untuk saat-saat kesusahan. Menyeru Allah dengan nama-nama-Nya yang indah."
+      },
       "translations": {
         "ur": "اے ہمیشہ زندہ رہنے والے، اے قائم رکھنے والے، تیری رحمت سے میں مدد مانگتا ہوں",
         "id": "Wahai Yang Maha Hidup, wahai Yang Maha Berdiri Sendiri, dengan rahmat-Mu aku memohon pertolongan",
@@ -240,6 +319,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The dua of Prophet Musa (AS) before speaking to Pharaoh. Excellent for expanding the chest and easing tasks.",
+      "benefitTranslations": {
+        "ar": "دعاء النبي موسى عليه السلام قبل مخاطبة فرعون. ممتاز لشرح الصدر وتيسير المهام.",
+        "ur": "نبی موسیٰ علیہ السلام کی فرعون سے بات کرنے سے پہلے کی دعا۔ سینہ کھولنے اور کام آسان کرنے کے لیے بہترین ہے۔",
+        "id": "Doa Nabi Musa (AS) sebelum berbicara dengan Fir'aun. Sangat baik untuk melapangkan dada dan memudahkan urusan.",
+        "tr": "Hz. Musa'nın (AS) Firavun'la konuşmadan önceki duasıdır. Göğsü açmak ve işleri kolaylaştırmak için mükemmeldir.",
+        "fr": "L'invocation du Prophète Moussa (AS) avant de s'adresser à Pharaon. Excellente pour ouvrir la poitrine et faciliter les tâches.",
+        "ms": "Doa Nabi Musa (AS) sebelum bercakap dengan Fir'aun. Sangat baik untuk melapangkan dada dan memudahkan urusan."
+      },
       "translations": {
         "ur": "اے میرے رب میرا سینہ کھول دے اور میرا کام آسان کر دے",
         "id": "Ya Tuhanku, lapangkanlah dadaku dan mudahkanlah urusanku",
@@ -257,12 +344,19 @@
       "sourceType": "Quran",
       "categories": [
         "hopeful",
-        "grateful",
         "_after_salah"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "One of the most comprehensive duas in the Quran. The Prophet (SAW) used to make this dua frequently.",
+      "benefitTranslations": {
+        "ar": "من أجمع الأدعية في القرآن. كان النبي ﷺ يكثر من هذا الدعاء.",
+        "ur": "قرآن کی سب سے جامع دعاؤں میں سے ایک۔ نبی ﷺ کثرت سے یہ دعا کیا کرتے تھے۔",
+        "id": "Salah satu doa paling komprehensif dalam Al-Quran. Nabi (SAW) sering membaca doa ini.",
+        "tr": "Kur'an'daki en kapsamlı dualardan biridir. Peygamber (SAV) bu duayı sıkça yapardı.",
+        "fr": "L'une des invocations les plus complètes du Coran. Le Prophète (SAW) faisait fréquemment cette invocation.",
+        "ms": "Salah satu doa paling menyeluruh dalam Al-Quran. Nabi (SAW) kerap membaca doa ini."
+      },
       "translations": {
         "ur": "اے ہمارے رب ہمیں دنیا میں بھلائی دے اور آخرت میں بھلائی دے اور ہمیں آگ کے عذاب سے بچا",
         "id": "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari azab neraka",
@@ -285,6 +379,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A beautiful comprehensive dua asking Allah for the essentials of a good life.",
+      "benefitTranslations": {
+        "ar": "دعاء جميل وجامع يسأل الله أساسيات الحياة الطيبة.",
+        "ur": "ایک خوبصورت جامع دعا جس میں اللہ سے اچھی زندگی کے بنیادی اجزاء مانگے جاتے ہیں۔",
+        "id": "Doa yang indah dan menyeluruh memohon kepada Allah hal-hal mendasar untuk kehidupan yang baik.",
+        "tr": "Güzel bir hayatın temel unsurlarını Allah'tan isteyen kapsamlı ve güzel bir duadır.",
+        "fr": "Une belle invocation complète demandant à Allah les éléments essentiels d'une bonne vie.",
+        "ms": "Doa yang indah dan menyeluruh memohon kepada Allah perkara-perkara asas untuk kehidupan yang baik."
+      },
       "translations": {
         "ur": "اے اللہ میں تجھ سے ہدایت، تقویٰ، پاکدامنی اور بے نیازی مانگتا ہوں",
         "id": "Ya Allah, aku memohon kepada-Mu petunjuk, ketakwaan, kesucian, dan kecukupan",
@@ -306,6 +408,14 @@
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "A concise dua for guidance. The Prophet (SAW) told Ali (RA) to remember by 'guidance' the guidance of the path.",
+      "benefitTranslations": {
+        "ar": "دعاء موجز للهداية. أخبر النبي ﷺ علياً رضي الله عنه أن يتذكر بالهداية هداية الطريق.",
+        "ur": "ہدایت کے لیے ایک مختصر دعا۔ نبی ﷺ نے علی رضی اللہ عنہ کو فرمایا کہ ہدایت سے مراد راستے کی ہدایت یاد رکھو۔",
+        "id": "Doa yang ringkas untuk memohon petunjuk. Nabi (SAW) berpesan kepada Ali (RA) agar mengingat dengan 'petunjuk' itu petunjuk ke jalan yang benar.",
+        "tr": "Hidayet için kısa ve öz bir duadır. Peygamber (SAV), Ali'ye (RA) 'hidayet' ile yolun doğruluğunu kastetmesini söylemiştir.",
+        "fr": "Une invocation concise pour la guidance. Le Prophète (SAW) a dit à Ali (RA) de se rappeler par 'guidance' la guidance du chemin.",
+        "ms": "Doa yang ringkas untuk memohon petunjuk. Nabi (SAW) berpesan kepada Ali (RA) agar mengingat dengan 'petunjuk' itu petunjuk ke jalan yang benar."
+      },
       "translations": {
         "ur": "اے اللہ مجھے ہدایت دے اور مجھے سیدھے راستے پر قائم رکھ",
         "id": "Ya Allah, tunjukilah aku dan tetapkanlah aku di jalan yang benar",
@@ -323,11 +433,19 @@
       "sourceType": "Hadith",
       "categories": [
         "_morning",
-        "upon_waking"
+        "_upon_waking"
       ],
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "One of the morning adhkar. Establishes tawheed and gratitude at the start of each day.",
+      "benefitTranslations": {
+        "ar": "من أذكار الصباح. يرسّخ التوحيد والشكر في بداية كل يوم.",
+        "ur": "صبح کے اذکار میں سے ایک۔ ہر دن کی شروعات میں توحید اور شکر کو قائم کرتا ہے۔",
+        "id": "Salah satu dzikir pagi. Meneguhkan tauhid dan rasa syukur di awal setiap hari.",
+        "tr": "Sabah zikirlerinden biridir. Her günün başında tevhidi ve şükrü pekiştirir.",
+        "fr": "L'un des adhkar du matin. Établit le tawhid et la gratitude au début de chaque journée.",
+        "ms": "Salah satu zikir pagi. Meneguhkan tauhid dan rasa syukur di permulaan setiap hari."
+      },
       "translations": {
         "ur": "ہم نے صبح کی اور بادشاہت اللہ کی ہے، تمام تعریف اللہ کے لیے ہے، اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں، اسی کی بادشاہت ہے اور اسی کی تعریف ہے، اور وہ ہر چیز پر قادر ہے",
         "id": "Kami memasuki pagi dan kerajaan adalah milik Allah, segala puji bagi Allah, tiada Tuhan selain Allah Yang Esa, tiada sekutu bagi-Nya, milik-Nya kerajaan dan pujian, dan Dia Maha Kuasa atas segala sesuatu",
@@ -349,6 +467,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "The evening version of the morning dhikir. Said in the evening to acknowledge Allah's sovereignty.",
+      "benefitTranslations": {
+        "ar": "النسخة المسائية من ذكر الصباح. تقال في المساء اعترافاً بسيادة الله.",
+        "ur": "صبح کے ذکر کا شام کا نسخہ۔ شام کو اللہ کی بادشاہت کا اعتراف کرتے ہوئے کہا جاتا ہے۔",
+        "id": "Versi petang dari dzikir pagi. Diucapkan pada petang hari sebagai pengakuan atas kekuasaan Allah.",
+        "tr": "Sabah zikrinin akşam versiyonudur. Akşam söylenerek Allah'ın hâkimiyeti kabul edilir.",
+        "fr": "La version du soir du dhikr du matin. Se dit le soir pour reconnaître la souveraineté d'Allah.",
+        "ms": "Versi petang bagi zikir pagi. Diucapkan pada waktu petang sebagai pengakuan terhadap kekuasaan Allah."
+      },
       "translations": {
         "ur": "ہم نے شام کی اور بادشاہت اللہ کی ہے، تمام تعریف اللہ کے لیے ہے، اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں، اسی کی بادشاہت ہے اور اسی کی تعریف ہے، اور وہ ہر چیز پر قادر ہے",
         "id": "Kami memasuki petang dan kerajaan adalah milik Allah, segala puji bagi Allah, tiada Tuhan selain Allah Yang Esa, tiada sekutu bagi-Nya, milik-Nya kerajaan dan pujian, dan Dia Maha Kuasa atas segala sesuatu",
@@ -370,6 +496,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) would say this when going to sleep, acknowledging that sleep is a minor death.",
+      "benefitTranslations": {
+        "ar": "كان النبي ﷺ يقولها عند النوم، اعترافاً بأن النوم موت أصغر.",
+        "ur": "نبی ﷺ سوتے وقت یہ کہتے تھے، اس بات کا اعتراف کرتے ہوئے کہ نیند ایک چھوٹی موت ہے۔",
+        "id": "Nabi (SAW) mengucapkan ini ketika hendak tidur, mengakui bahwa tidur adalah kematian kecil.",
+        "tr": "Peygamber (SAV) uyumaya giderken, uykuyu küçük bir ölüm olarak kabul ederek bunu söylerdi.",
+        "fr": "Le Prophète (SAW) disait cela en allant dormir, reconnaissant que le sommeil est une petite mort.",
+        "ms": "Nabi (SAW) mengucapkan ini ketika hendak tidur, mengakui bahawa tidur adalah kematian kecil."
+      },
       "translations": {
         "ur": "تیرے نام سے اے اللہ میں مرتا ہوں اور جیتا ہوں",
         "id": "Dengan nama-Mu ya Allah, aku mati dan aku hidup",
@@ -386,12 +520,20 @@
       "source": "Sahih Bukhari 6312",
       "sourceType": "Hadith",
       "categories": [
-        "upon_waking",
+        "_upon_waking",
         "_morning"
       ],
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "Said immediately upon waking. Acknowledging Allah's power over life and death.",
+      "benefitTranslations": {
+        "ar": "تقال فور الاستيقاظ. اعتراف بقدرة الله على الحياة والموت.",
+        "ur": "بیدار ہوتے ہی فوراً کہی جاتی ہے۔ اللہ کی زندگی اور موت پر قدرت کا اعتراف۔",
+        "id": "Diucapkan segera setelah bangun tidur. Mengakui kuasa Allah atas kehidupan dan kematian.",
+        "tr": "Uyanır uyanmaz söylenir. Allah'ın hayat ve ölüm üzerindeki kudretini kabul etmektir.",
+        "fr": "Se dit immédiatement au réveil. Reconnaître le pouvoir d'Allah sur la vie et la mort.",
+        "ms": "Diucapkan sejurus selepas bangun tidur. Mengakui kuasa Allah atas kehidupan dan kematian."
+      },
       "translations": {
         "ur": "تمام تعریف اللہ کے لیے ہے جس نے ہمیں مارنے کے بعد زندہ کیا اور اسی کی طرف اٹھ کر جانا ہے",
         "id": "Segala puji bagi Allah yang menghidupkan kami setelah mematikan kami, dan kepada-Nya kebangkitan",
@@ -414,6 +556,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A morning dua asking Allah for health in body, hearing, and sight - our most important faculties.",
+      "benefitTranslations": {
+        "ar": "دعاء صباحي يسأل الله العافية في البدن والسمع والبصر - أهم حواسنا.",
+        "ur": "صبح کی دعا جس میں اللہ سے جسم، سماعت اور بصارت میں عافیت مانگی جاتی ہے - ہماری سب سے اہم حسیات۔",
+        "id": "Doa pagi memohon kepada Allah kesehatan pada tubuh, pendengaran, dan penglihatan - panca indera kita yang paling penting.",
+        "tr": "Vücut, işitme ve görme sağlığı için yapılan bir sabah duasıdır - en önemli duyularımız.",
+        "fr": "Une invocation matinale demandant à Allah la santé du corps, de l'ouïe et de la vue - nos facultés les plus importantes.",
+        "ms": "Doa pagi memohon kepada Allah kesihatan pada tubuh, pendengaran, dan penglihatan - pancaindera kita yang paling penting."
+      },
       "translations": {
         "ur": "اے اللہ میرے جسم میں عافیت دے، میری سماعت میں عافیت دے، میری بینائی میں عافیت دے، تیرے سوا کوئی معبود نہیں",
         "id": "Ya Allah, berilah aku kesehatan pada tubuhku, berilah aku kesehatan pada pendengaranku, berilah aku kesehatan pada penglihatanku, tiada Tuhan selain Engkau",
@@ -437,6 +587,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "Whoever says this three times in morning and evening, nothing will harm them.",
+      "benefitTranslations": {
+        "ar": "من قالها ثلاث مرات صباحاً ومساءً لم يضره شيء.",
+        "ur": "جو شخص صبح و شام تین مرتبہ یہ کہے، اسے کوئی چیز نقصان نہیں پہنچا سکتی۔",
+        "id": "Barangsiapa mengucapkannya tiga kali pada pagi dan petang, maka tidak ada sesuatu pun yang akan membahayakannya.",
+        "tr": "Sabah ve akşam üçer kez söyleyen kimseye hiçbir şey zarar veremez.",
+        "fr": "Quiconque le dit trois fois le matin et le soir, rien ne lui nuira.",
+        "ms": "Sesiapa yang mengucapkannya tiga kali pada pagi dan petang, maka tiada sesuatu pun yang akan membahayakannya."
+      },
       "translations": {
         "ur": "اللہ کے نام سے جس کے نام کے ساتھ زمین یا آسمان میں کوئی چیز نقصان نہیں پہنچا سکتی، اور وہ سننے والا جاننے والا ہے",
         "id": "Dengan nama Allah yang dengan nama-Nya tidak ada sesuatu pun di bumi dan di langit yang dapat membahayakan, dan Dia Maha Mendengar lagi Maha Mengetahui",
@@ -460,6 +618,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) said: 'Ask Allah for pardon and well-being, for after certainty of faith, no one is given anything better than well-being.'",
+      "benefitTranslations": {
+        "ar": "قال النبي ﷺ: سلوا الله العفو والعافية، فإنه لم يُعطَ أحد بعد اليقين خيراً من العافية.",
+        "ur": "نبی ﷺ نے فرمایا: اللہ سے معافی اور عافیت مانگو، کیونکہ یقین ایمان کے بعد کسی کو عافیت سے بہتر کوئی چیز نہیں دی گئی۔",
+        "id": "Nabi (SAW) bersabda: 'Mintalah kepada Allah ampunan dan kesejahteraan, karena setelah keyakinan iman, tidak ada yang lebih baik dari kesejahteraan.'",
+        "tr": "Peygamber (SAV) buyurdu: 'Allah'tan af ve afiyet isteyin. Çünkü kesin imandan sonra hiç kimseye afiyetten daha hayırlı bir şey verilmemiştir.'",
+        "fr": "Le Prophète (SAW) a dit : 'Demandez à Allah le pardon et le bien-être, car après la certitude de la foi, personne ne reçoit rien de meilleur que le bien-être.'",
+        "ms": "Nabi (SAW) bersabda: 'Mintalah kepada Allah keampunan dan kesejahteraan, kerana selepas keyakinan iman, tiada yang lebih baik daripada kesejahteraan.'"
+      },
       "translations": {
         "ur": "اے اللہ میں تجھ سے دنیا اور آخرت میں معافی اور عافیت مانگتا ہوں",
         "id": "Ya Allah, aku memohon kepada-Mu ampunan dan kesejahteraan di dunia dan akhirat",
@@ -483,6 +649,14 @@
       "repetitionCount": 100,
       "audioFileName": null,
       "benefit": "Whoever says this 100 times in the morning and evening will have his sins forgiven even if they were like the foam of the sea.",
+      "benefitTranslations": {
+        "ar": "من قالها مئة مرة صباحاً ومساءً غُفرت ذنوبه وإن كانت مثل زبد البحر.",
+        "ur": "جو صبح و شام سو مرتبہ یہ کہے، اس کے گناہ معاف کر دیے جائیں گے چاہے سمندر کی جھاگ جتنے ہوں۔",
+        "id": "Barangsiapa mengucapkannya 100 kali pada pagi dan petang, dosanya akan diampuni meskipun sebanyak buih di lautan.",
+        "tr": "Sabah ve akşam yüzer kez söyleyenin günahları, deniz köpüğü kadar çok olsa bile bağışlanır.",
+        "fr": "Quiconque le dit 100 fois le matin et le soir verra ses péchés pardonnés même s'ils étaient comme l'écume de la mer.",
+        "ms": "Sesiapa yang mengucapkannya 100 kali pada pagi dan petang, dosanya akan diampunkan walaupun sebanyak buih di lautan."
+      },
       "translations": {
         "ur": "اللہ پاک ہے اپنی حمد کے ساتھ",
         "id": "Maha Suci Allah dan segala puji bagi-Nya",
@@ -506,6 +680,14 @@
       "repetitionCount": 10,
       "audioFileName": null,
       "benefit": "Whoever says this 10 times will have the reward of freeing four slaves from the children of Isma'il.",
+      "benefitTranslations": {
+        "ar": "من قالها عشر مرات كان كمن أعتق أربع رقاب من ولد إسماعيل.",
+        "ur": "جو دس مرتبہ یہ کہے، اسے اسماعیل کی اولاد میں سے چار غلام آزاد کرنے کا ثواب ملے گا۔",
+        "id": "Barangsiapa mengucapkannya 10 kali, akan mendapat pahala seperti membebaskan empat budak dari keturunan Isma'il.",
+        "tr": "Bunu on kez söyleyen, İsmail'in (AS) soyundan dört köle azat etmiş gibi sevap alır.",
+        "fr": "Quiconque le dit 10 fois aura la récompense d'avoir libéré quatre esclaves parmi les enfants d'Isma'il.",
+        "ms": "Sesiapa yang mengucapkannya 10 kali, akan mendapat pahala seperti membebaskan empat hamba daripada keturunan Isma'il."
+      },
       "translations": {
         "ur": "اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں، اسی کی بادشاہت ہے اور اسی کی تعریف ہے، اور وہ ہر چیز پر قادر ہے",
         "id": "Tiada Tuhan selain Allah Yang Esa, tiada sekutu bagi-Nya, milik-Nya kerajaan dan pujian, dan Dia Maha Kuasa atas segala sesuatu",
@@ -529,6 +711,14 @@
       "repetitionCount": 33,
       "audioFileName": null,
       "benefit": "The four beloved phrases to Allah. More beloved to the Prophet (SAW) than everything the sun rises upon.",
+      "benefitTranslations": {
+        "ar": "الكلمات الأربع الحبيبة إلى الله. أحب إلى النبي ﷺ مما طلعت عليه الشمس.",
+        "ur": "اللہ کو سب سے پیاری چار عبارات۔ نبی ﷺ کو ہر اس چیز سے زیادہ محبوب جن پر سورج طلوع ہوتا ہے۔",
+        "id": "Empat kalimat yang paling dicintai Allah. Lebih dicintai Nabi (SAW) daripada segala sesuatu yang disinari matahari.",
+        "tr": "Allah'a en sevimli dört kelime. Peygamber'e (SAV) güneşin doğduğu her şeyden daha sevimlidir.",
+        "fr": "Les quatre expressions les plus aimées d'Allah. Plus aimées du Prophète (SAW) que tout ce sur quoi le soleil se lève.",
+        "ms": "Empat kalimah yang paling dicintai Allah. Lebih dicintai Nabi (SAW) daripada segala sesuatu yang disinari matahari."
+      },
       "translations": {
         "ur": "اللہ پاک ہے، تمام تعریف اللہ کے لیے ہے، اللہ کے سوا کوئی معبود نہیں، اور اللہ سب سے بڑا ہے",
         "id": "Maha Suci Allah, segala puji bagi Allah, tiada Tuhan selain Allah, dan Allah Maha Besar",
@@ -551,6 +741,14 @@
       "repetitionCount": 100,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) used to seek forgiveness from Allah more than 70 times a day.",
+      "benefitTranslations": {
+        "ar": "كان النبي ﷺ يستغفر الله أكثر من سبعين مرة في اليوم.",
+        "ur": "نبی ﷺ دن میں ستر سے زیادہ مرتبہ اللہ سے مغفرت طلب کیا کرتے تھے۔",
+        "id": "Nabi (SAW) memohon ampunan kepada Allah lebih dari 70 kali sehari.",
+        "tr": "Peygamber (SAV) günde yetmişten fazla kez Allah'tan bağışlanma dilerdi.",
+        "fr": "Le Prophète (SAW) demandait pardon à Allah plus de 70 fois par jour.",
+        "ms": "Nabi (SAW) memohon ampunan kepada Allah lebih daripada 70 kali sehari."
+      },
       "translations": {
         "ur": "میں اللہ سے مغفرت مانگتا ہوں",
         "id": "Aku memohon ampunan kepada Allah",
@@ -567,13 +765,20 @@
       "source": "Sahih Bukhari 6406",
       "sourceType": "Hadith",
       "categories": [
-        "grateful",
         "_after_salah",
         "joyful"
       ],
       "repetitionCount": 10,
       "audioFileName": null,
       "benefit": "Two words light on the tongue, heavy on the scales, beloved to the Most Merciful.",
+      "benefitTranslations": {
+        "ar": "كلمتان خفيفتان على اللسان، ثقيلتان في الميزان، حبيبتان إلى الرحمن.",
+        "ur": "دو کلمے زبان پر ہلکے، میزان میں بھاری، رحمٰن کو محبوب۔",
+        "id": "Dua kalimat yang ringan di lidah, berat di timbangan, dan dicintai oleh Ar-Rahman.",
+        "tr": "Dilde hafif, mizanda ağır, Rahman'a sevimli iki kelimedir.",
+        "fr": "Deux paroles légères sur la langue, lourdes dans la balance, aimées du Très Miséricordieux.",
+        "ms": "Dua kalimah yang ringan di lidah, berat di neraca timbangan, dan dicintai oleh Ar-Rahman."
+      },
       "translations": {
         "ur": "اللہ پاک ہے اپنی حمد کے ساتھ، اللہ عظیم پاک ہے",
         "id": "Maha Suci Allah dan segala puji bagi-Nya, Maha Suci Allah Yang Maha Agung",
@@ -595,6 +800,14 @@
       "repetitionCount": 10,
       "audioFileName": null,
       "benefit": "Sending blessings upon the Prophet (SAW). Whoever sends one blessing, Allah sends ten upon them.",
+      "benefitTranslations": {
+        "ar": "الصلاة على النبي ﷺ. من صلّى عليه صلاة واحدة صلّى الله عليه بها عشراً.",
+        "ur": "نبی ﷺ پر درود بھیجنا۔ جو ایک مرتبہ درود بھیجے، اللہ اس پر دس رحمتیں نازل فرماتے ہیں۔",
+        "id": "Mengirimkan selawat kepada Nabi (SAW). Barangsiapa mengirim satu selawat, Allah akan melimpahkan sepuluh rahmat kepadanya.",
+        "tr": "Peygamber'e (SAV) salât getirmek. Kim bir kez salât getirirse, Allah ona on kat rahmet eder.",
+        "fr": "Envoyer des bénédictions sur le Prophète (SAW). Quiconque envoie une bénédiction, Allah lui en envoie dix.",
+        "ms": "Mengirimkan selawat kepada Nabi (SAW). Sesiapa yang mengirim satu selawat, Allah akan melimpahkan sepuluh rahmat kepadanya."
+      },
       "translations": {
         "ur": "اے اللہ رحمت نازل فرما محمد پر اور آل محمد پر جیسے تو نے رحمت نازل فرمائی ابراہیم پر اور آل ابراہیم پر، بے شک تو قابل تعریف بزرگی والا ہے",
         "id": "Ya Allah, limpahkanlah rahmat kepada Muhammad dan keluarga Muhammad, sebagaimana Engkau telah melimpahkan rahmat kepada Ibrahim dan keluarga Ibrahim, sesungguhnya Engkau Maha Terpuji lagi Maha Mulia",
@@ -617,6 +830,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) taught Abu Bakr (RA) to say this in his prayer. A comprehensive dua for forgiveness.",
+      "benefitTranslations": {
+        "ar": "علّم النبي ﷺ أبا بكر رضي الله عنه أن يقولها في صلاته. دعاء جامع للمغفرة.",
+        "ur": "نبی ﷺ نے ابوبکر رضی اللہ عنہ کو نماز میں یہ دعا پڑھنا سکھائی۔ مغفرت کی ایک جامع دعا۔",
+        "id": "Nabi (SAW) mengajarkan Abu Bakar (RA) untuk membaca doa ini dalam shalatnya. Doa yang menyeluruh untuk memohon ampunan.",
+        "tr": "Peygamber (SAV), Ebu Bekir'e (RA) namazında bunu okumasını öğretmiştir. Kapsamlı bir bağışlanma duasıdır.",
+        "fr": "Le Prophète (SAW) a enseigné à Abou Bakr (RA) de dire cela dans sa prière. Une invocation complète pour le pardon.",
+        "ms": "Nabi (SAW) mengajarkan Abu Bakar (RA) untuk membaca doa ini dalam solatnya. Doa yang menyeluruh untuk memohon keampunan."
+      },
       "translations": {
         "ur": "اے اللہ میں نے اپنی جان پر بہت ظلم کیا اور گناہ تیرے سوا کوئی نہیں بخشتا، پس مجھے اپنے پاس سے مغفرت عطا فرما اور مجھ پر رحم فرما، بے شک تو ہی بخشنے والا رحم کرنے والا ہے",
         "id": "Ya Allah, sungguh aku telah menzalimi diriku dengan kezaliman yang banyak, dan tidak ada yang mengampuni dosa kecuali Engkau, maka ampunilah aku dengan ampunan dari sisi-Mu dan rahmatilah aku, sesungguhnya Engkau Maha Pengampun lagi Maha Penyayang",
@@ -639,6 +860,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "Said when leaving the house. One who says this is guided, protected, and defended, and Satan will stay away.",
+      "benefitTranslations": {
+        "ar": "تقال عند الخروج من المنزل. من قالها يُهدى ويُكفى ويُوقى، ويتنحى عنه الشيطان.",
+        "ur": "گھر سے نکلتے وقت کہی جاتی ہے۔ جو یہ کہے اسے ہدایت، حفاظت اور دفاع ملتا ہے، اور شیطان دور رہتا ہے۔",
+        "id": "Diucapkan saat keluar rumah. Siapa yang mengucapkannya akan dibimbing, dilindungi, dan dijaga, serta syaitan akan menjauh darinya.",
+        "tr": "Evden çıkarken söylenir. Bunu söyleyen hidayete erdirilir, korunur ve muhafaza edilir, şeytan da ondan uzak durur.",
+        "fr": "Se dit en quittant la maison. Celui qui le dit est guidé, protégé et défendu, et Satan s'éloigne de lui.",
+        "ms": "Diucapkan ketika keluar rumah. Sesiapa yang mengucapkannya akan dibimbing, dilindungi, dan dijaga, serta syaitan akan menjauh darinya."
+      },
       "translations": {
         "ur": "اللہ کے نام سے، میں نے اللہ پر بھروسہ کیا، اللہ کے سوا نہ کوئی طاقت ہے نہ قوت",
         "id": "Dengan nama Allah, aku bertawakkal kepada Allah, tiada daya dan kekuatan kecuali dengan Allah",
@@ -660,6 +889,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "The Quranic dua for traveling. Acknowledging that all means of transportation are from Allah.",
+      "benefitTranslations": {
+        "ar": "الدعاء القرآني للسفر. اعتراف بأن جميع وسائل التنقل من الله.",
+        "ur": "سفر کی قرآنی دعا۔ اس بات کا اعتراف کہ نقل و حمل کے تمام ذرائع اللہ کی طرف سے ہیں۔",
+        "id": "Doa Al-Quran untuk bepergian. Mengakui bahwa semua sarana transportasi berasal dari Allah.",
+        "tr": "Seyahat için Kur'anî bir duadır. Tüm ulaşım araçlarının Allah'tan olduğunu kabul etmektir.",
+        "fr": "L'invocation coranique pour le voyage. Reconnaître que tous les moyens de transport viennent d'Allah.",
+        "ms": "Doa Al-Quran untuk perjalanan. Mengakui bahawa semua sarana pengangkutan datang daripada Allah."
+      },
       "translations": {
         "ur": "پاک ہے وہ جس نے اسے ہمارے لیے مسخر کیا اور ہم اس کے قابو میں نہ تھے، اور ہم اپنے رب کی طرف لوٹنے والے ہیں",
         "id": "Maha Suci Allah yang telah menundukkan semua ini bagi kami padahal kami tidak mampu menguasainya, dan sungguh kepada Tuhan kami kami akan kembali",
@@ -681,6 +918,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "Part of the comprehensive travel supplication taught by the Prophet (SAW).",
+      "benefitTranslations": {
+        "ar": "جزء من دعاء السفر الشامل الذي علّمه النبي ﷺ.",
+        "ur": "نبی ﷺ کی سکھائی ہوئی جامع سفر کی دعا کا حصہ۔",
+        "id": "Bagian dari doa perjalanan yang lengkap yang diajarkan oleh Nabi (SAW).",
+        "tr": "Peygamber'in (SAV) öğrettiği kapsamlı seyahat duasının bir parçasıdır.",
+        "fr": "Fait partie de la supplication complète de voyage enseignée par le Prophète (SAW).",
+        "ms": "Sebahagian daripada doa perjalanan yang lengkap yang diajarkan oleh Nabi (SAW)."
+      },
       "translations": {
         "ur": "اے اللہ ہم تجھ سے اس سفر میں نیکی اور تقویٰ مانگتے ہیں اور ایسے عمل کی توفیق جو تجھے پسند ہو",
         "id": "Ya Allah, kami memohon kepada-Mu dalam perjalanan kami ini kebaikan dan ketakwaan, serta amal yang Engkau ridhai",
@@ -702,6 +947,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "Said when fearing harm from others. Entrusting one's affairs entirely to Allah.",
+      "benefitTranslations": {
+        "ar": "تقال عند الخوف من أذى الآخرين. تفويض الأمور كلها إلى الله.",
+        "ur": "دوسروں سے نقصان کا خوف ہو تو کہی جاتی ہے۔ اپنے معاملات پوری طرح اللہ کے سپرد کرنا۔",
+        "id": "Diucapkan saat takut akan bahaya dari orang lain. Menyerahkan segala urusan sepenuhnya kepada Allah.",
+        "tr": "Başkalarından zarar gelmesinden korkulduğunda söylenir. İşlerin tamamen Allah'a havale edilmesidir.",
+        "fr": "Se dit quand on craint le mal d'autrui. Confier entièrement ses affaires à Allah.",
+        "ms": "Diucapkan apabila takut akan bahaya daripada orang lain. Menyerahkan segala urusan sepenuhnya kepada Allah."
+      },
       "translations": {
         "ur": "اے اللہ ان سے جیسے چاہے میرے لیے کافی ہو جا",
         "id": "Ya Allah, cukupkanlah aku dari mereka dengan cara yang Engkau kehendaki",
@@ -723,6 +976,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) would visit the sick and make this dua for them. A powerful supplication for healing.",
+      "benefitTranslations": {
+        "ar": "كان النبي ﷺ يزور المرضى ويدعو لهم بهذا الدعاء. دعاء قوي للشفاء.",
+        "ur": "نبی ﷺ بیماروں کی عیادت کرتے اور ان کے لیے یہ دعا فرماتے تھے۔ شفا کی ایک طاقتور دعا۔",
+        "id": "Nabi (SAW) menjenguk orang sakit dan mendoakan mereka dengan doa ini. Doa yang sangat ampuh untuk kesembuhan.",
+        "tr": "Peygamber (SAV) hastaları ziyaret eder ve onlar için bu duayı yapardı. Şifa için güçlü bir duadır.",
+        "fr": "Le Prophète (SAW) rendait visite aux malades et faisait cette invocation pour eux. Une puissante supplication pour la guérison.",
+        "ms": "Nabi (SAW) menziarahi orang sakit dan mendoakan mereka dengan doa ini. Doa yang sangat ampuh untuk kesembuhan."
+      },
       "translations": {
         "ur": "اے اللہ، لوگوں کے رب، تکلیف دور کر دے، شفا دے تو ہی شفا دینے والا ہے، تیری شفا کے سوا کوئی شفا نہیں، ایسی شفا جو بیماری نہ چھوڑے",
         "id": "Ya Allah, Tuhan manusia, hilangkanlah penyakit ini, sembuhkanlah, Engkaulah Yang Maha Menyembuhkan, tiada kesembuhan kecuali kesembuhan dari-Mu, kesembuhan yang tidak meninggalkan penyakit",
@@ -744,6 +1005,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The ruqyah (spiritual healing) that Jibreel performed on the Prophet (SAW).",
+      "benefitTranslations": {
+        "ar": "الرقية التي رقى بها جبريل عليه السلام النبي ﷺ.",
+        "ur": "وہ رقیہ (روحانی علاج) جو جبرائیل علیہ السلام نے نبی ﷺ پر کیا۔",
+        "id": "Ruqyah (pengobatan spiritual) yang dilakukan oleh Jibril kepada Nabi (SAW).",
+        "tr": "Cebrail'in (AS) Peygamber'e (SAV) yaptığı rukye (manevi tedavi).",
+        "fr": "La ruqya (guérison spirituelle) que Jibrîl a pratiquée sur le Prophète (SAW).",
+        "ms": "Ruqyah (rawatan spiritual) yang dilakukan oleh Jibril kepada Nabi (SAW)."
+      },
       "translations": {
         "ur": "اللہ کے نام سے تجھ پر دم کرتا ہوں، ہر اس چیز سے جو تجھے تکلیف دے، ہر نفس کے شر سے یا حاسد کی نظر سے، اللہ تجھے شفا دے، اللہ کے نام سے تجھ پر دم کرتا ہوں",
         "id": "Dengan nama Allah aku meruqyahmu, dari segala sesuatu yang menyakitimu, dari kejahatan setiap jiwa atau mata yang hasad, semoga Allah menyembuhkanmu, dengan nama Allah aku meruqyahmu",
@@ -766,6 +1035,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "The beginning of Salat al-Istikhara. Seeking Allah's guidance before making important decisions.",
+      "benefitTranslations": {
+        "ar": "بداية صلاة الاستخارة. طلب هداية الله قبل اتخاذ القرارات المهمة.",
+        "ur": "صلاۃ الاستخارہ کی ابتدا۔ اہم فیصلے لینے سے پہلے اللہ سے رہنمائی طلب کرنا۔",
+        "id": "Permulaan Shalat Istikharah. Memohon petunjuk Allah sebelum membuat keputusan penting.",
+        "tr": "İstihare namazının başlangıcıdır. Önemli kararlar almadan önce Allah'tan rehberlik istemek.",
+        "fr": "Le début de la Salat al-Istikhara. Chercher la guidance d'Allah avant de prendre des décisions importantes.",
+        "ms": "Permulaan Solat Istikharah. Memohon petunjuk Allah sebelum membuat keputusan penting."
+      },
       "translations": {
         "ur": "اے اللہ میں تیرے علم سے خیر مانگتا ہوں، تیری قدرت سے طاقت مانگتا ہوں، اور تیرے عظیم فضل سے سوال کرتا ہوں، کیونکہ تو قدرت رکھتا ہے اور میں نہیں رکھتا، تو جانتا ہے اور میں نہیں جانتا، اور تو غیبوں کا جاننے والا ہے۔ اے اللہ اگر تیرے علم میں یہ معاملہ میرے لیے میرے دین، معاش اور انجام کار میں بہتر ہے تو اسے میرے مقدر میں لکھ دے اور آسان کر دے پھر اس میں برکت دے۔ اور اگر تیرے علم میں یہ معاملہ میرے لیے میرے دین، معاش اور انجام کار میں برا ہے تو اسے مجھ سے اور مجھے اس سے پھیر دے، اور میرے لیے خیر مقدر فرما جہاں بھی ہو پھر مجھے اس پر راضی کر دے",
         "id": "Ya Allah, aku memohon pilihan yang terbaik kepada-Mu dengan ilmu-Mu, aku memohon kekuatan dengan kekuasaan-Mu, dan aku memohon dari karunia-Mu yang agung, kerana sesungguhnya Engkau berkuasa dan aku tidak berkuasa, Engkau mengetahui dan aku tidak mengetahui, dan Engkau Maha Mengetahui perkara ghaib. Ya Allah, jika Engkau mengetahui bahawa urusan ini baik bagiku dalam agamaku, kehidupanku, dan kesudahan urusanku, maka takdirkanlah ia untukku dan mudahkanlah ia bagiku kemudian berkahilah ia untukku. Dan jika Engkau mengetahui bahawa urusan ini buruk bagiku dalam agamaku, kehidupanku, dan kesudahan urusanku, maka palingkanlah ia daripadaku dan palingkanlah aku daripadanya, dan takdirkanlah untukku kebaikan di mana sahaja ia berada kemudian redhakanlah aku dengannya",
@@ -788,6 +1065,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The dua of Prophet Zakariya (AS). Excellent for those feeling alone or longing for companionship.",
+      "benefitTranslations": {
+        "ar": "دعاء النبي زكريا عليه السلام. ممتاز لمن يشعر بالوحدة أو يتوق إلى الصحبة.",
+        "ur": "نبی زکریا علیہ السلام کی دعا۔ تنہائی محسوس کرنے والوں یا رفاقت کے خواہشمندوں کے لیے بہترین۔",
+        "id": "Doa Nabi Zakaria (AS). Sangat baik bagi yang merasa kesepian atau merindukan teman.",
+        "tr": "Hz. Zekeriya'nın (AS) duasıdır. Yalnızlık hisseden veya arkadaşlık özlemi çekenler için mükemmeldir.",
+        "fr": "L'invocation du Prophète Zakariya (AS). Excellente pour ceux qui se sentent seuls ou qui aspirent à la compagnie.",
+        "ms": "Doa Nabi Zakaria (AS). Sangat baik bagi yang merasa keseorangan atau merindukan teman."
+      },
       "translations": {
         "ur": "اے میرے رب مجھے اکیلا نہ چھوڑ اور تو بہترین وارث ہے",
         "id": "Ya Tuhanku, janganlah Engkau membiarkan aku seorang diri, dan Engkau adalah sebaik-baik pewaris",
@@ -804,11 +1089,19 @@
       "source": "Quran 20:114",
       "sourceType": "Quran",
       "categories": [
-        "upon_waking"
+        "_upon_waking"
       ],
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "Allah commanded the Prophet (SAW) to ask for increase only in knowledge. Knowledge is the greatest treasure.",
+      "benefitTranslations": {
+        "ar": "أمر الله النبي ﷺ أن يسأل الزيادة في العلم فقط. العلم أعظم كنز.",
+        "ur": "اللہ نے نبی ﷺ کو صرف علم میں اضافے کا سوال کرنے کا حکم دیا۔ علم سب سے بڑا خزانہ ہے۔",
+        "id": "Allah memerintahkan Nabi (SAW) untuk meminta penambahan hanya dalam ilmu. Ilmu adalah harta yang paling berharga.",
+        "tr": "Allah, Peygamber'e (SAV) yalnızca ilimde artış istemesini emretmiştir. İlim en büyük hazinedir.",
+        "fr": "Allah a ordonné au Prophète (SAW) de ne demander d'augmentation que dans la science. La science est le plus grand trésor.",
+        "ms": "Allah memerintahkan Nabi (SAW) untuk meminta penambahan hanya dalam ilmu. Ilmu adalah harta yang paling berharga."
+      },
       "translations": {
         "ur": "اور کہہ اے میرے رب میرے علم میں اضافہ فرما",
         "id": "Dan katakanlah, Ya Tuhanku, tambahkanlah ilmu kepadaku",
@@ -831,6 +1124,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The dua of Prophet Sulayman (AS). Asking for the ability to be truly grateful.",
+      "benefitTranslations": {
+        "ar": "دعاء النبي سليمان عليه السلام. طلب القدرة على الشكر الحقيقي.",
+        "ur": "نبی سلیمان علیہ السلام کی دعا۔ حقیقی شکرگزاری کی توفیق مانگنا۔",
+        "id": "Doa Nabi Sulaiman (AS). Memohon kemampuan untuk benar-benar bersyukur.",
+        "tr": "Hz. Süleyman'ın (AS) duasıdır. Gerçek anlamda şükredebilme kabiliyetini istemek.",
+        "fr": "L'invocation du Prophète Soulayman (AS). Demander la capacité d'être véritablement reconnaissant.",
+        "ms": "Doa Nabi Sulaiman (AS). Memohon kemampuan untuk benar-benar bersyukur."
+      },
       "translations": {
         "ur": "اے میرے رب مجھے توفیق دے کہ میں تیری اس نعمت کا شکر ادا کروں جو تو نے مجھے اور میرے والدین کو دی ہے اور یہ کہ میں ایسا نیک عمل کروں جس سے تو راضی ہو",
         "id": "Ya Tuhanku, berilah aku ilham untuk tetap mensyukuri nikmat-Mu yang telah Engkau anugerahkan kepadaku dan kepada orang tuaku dan untuk mengerjakan amal saleh yang Engkau ridhai",
@@ -852,6 +1153,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A beautiful dua asking for inspiration and protection from one's own nafs (self).",
+      "benefitTranslations": {
+        "ar": "دعاء جميل يسأل الإلهام والحماية من النفس.",
+        "ur": "ایک خوبصورت دعا جس میں الہام اور اپنے نفس کے شر سے حفاظت مانگی جاتی ہے۔",
+        "id": "Doa yang indah memohon ilham dan perlindungan dari kejahatan nafsu sendiri.",
+        "tr": "İlham ve kişinin kendi nefsinin şerrinden korunma isteyen güzel bir duadır.",
+        "fr": "Une belle invocation demandant l'inspiration et la protection contre son propre nafs (ego).",
+        "ms": "Doa yang indah memohon ilham dan perlindungan daripada kejahatan nafsu sendiri."
+      },
       "translations": {
         "ur": "اے اللہ مجھے رشد و ہدایت عطا فرما اور اپنے نفس کے شر سے مجھے بچا",
         "id": "Ya Allah, ilhamkanlah kepadaku petunjuk dan lindungilah aku dari kejahatan diriku",
@@ -873,6 +1182,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) frequently sought refuge from these four things that weaken a person.",
+      "benefitTranslations": {
+        "ar": "كان النبي ﷺ يكثر الاستعاذة من هذه الأمور الأربعة التي تُضعف الإنسان.",
+        "ur": "نبی ﷺ کثرت سے ان چار چیزوں سے پناہ مانگتے تھے جو انسان کو کمزور کرتی ہیں۔",
+        "id": "Nabi (SAW) sering memohon perlindungan dari empat hal ini yang melemahkan seseorang.",
+        "tr": "Peygamber (SAV) insanı zayıflatan bu dört şeyden sık sık Allah'a sığınırdı.",
+        "fr": "Le Prophète (SAW) cherchait fréquemment refuge contre ces quatre choses qui affaiblissent une personne.",
+        "ms": "Nabi (SAW) kerap memohon perlindungan daripada empat perkara ini yang melemahkan seseorang."
+      },
       "translations": {
         "ur": "اے اللہ میں تیری پناہ مانگتا ہوں سستی، بڑھاپے، گناہ اور قرض سے",
         "id": "Ya Allah, aku berlindung kepada-Mu dari kemalasan dan kepikunan, dari dosa dan hutang",
@@ -897,6 +1214,14 @@
       "repetitionCount": 10,
       "audioFileName": null,
       "benefit": "One of the treasures from beneath the Throne of Allah. Said when feeling powerless or overwhelmed.",
+      "benefitTranslations": {
+        "ar": "كنز من كنوز تحت العرش. تقال عند الشعور بالعجز أو الاكتئاب.",
+        "ur": "اللہ کے عرش کے نیچے کے خزانوں میں سے ایک۔ بے بسی یا مغلوب ہونے پر کہی جاتی ہے۔",
+        "id": "Salah satu perbendaharaan dari bawah Arsy Allah. Diucapkan saat merasa tak berdaya atau kewalahan.",
+        "tr": "Allah'ın Arşı'nın altındaki hazinelerden biridir. Güçsüzlük veya bunalmışlık hissedildiğinde söylenir.",
+        "fr": "L'un des trésors de sous le Trône d'Allah. Se dit quand on se sent impuissant ou submergé.",
+        "ms": "Salah satu perbendaharaan dari bawah Arasy Allah. Diucapkan ketika merasa tidak berdaya atau tertekan."
+      },
       "translations": {
         "ur": "اللہ کے سوا نہ کوئی طاقت ہے نہ قوت",
         "id": "Tiada daya dan kekuatan kecuali dengan Allah",
@@ -919,6 +1244,14 @@
       "repetitionCount": 10,
       "audioFileName": null,
       "benefit": "Whoever says this, a palm tree is planted for them in Paradise.",
+      "benefitTranslations": {
+        "ar": "من قالها غُرست له نخلة في الجنة.",
+        "ur": "جو یہ کہے، اس کے لیے جنت میں ایک کھجور کا درخت لگایا جاتا ہے۔",
+        "id": "Barangsiapa mengucapkan ini, akan ditanam untuknya sebatang pohon kurma di surga.",
+        "tr": "Bunu söyleyene cennette bir hurma ağacı dikilir.",
+        "fr": "Quiconque dit cela, un palmier est planté pour lui au Paradis.",
+        "ms": "Sesiapa yang mengucapkan ini, akan ditanam untuknya sebatang pokok kurma di syurga."
+      },
       "translations": {
         "ur": "اللہ عظیم کی تسبیح اس کی حمد کے ساتھ",
         "id": "Maha Suci Allah Yang Maha Agung dan segala puji bagi-Nya",
@@ -941,6 +1274,14 @@
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) made this dua frequently. Our hearts are between Allah's fingers, and He turns them as He wills.",
+      "benefitTranslations": {
+        "ar": "كان النبي ﷺ يكثر من هذا الدعاء. قلوبنا بين أصابع الله يقلبها كيف يشاء.",
+        "ur": "نبی ﷺ یہ دعا کثرت سے کیا کرتے تھے۔ ہمارے دل اللہ کی انگلیوں کے درمیان ہیں، وہ جیسے چاہے پلٹتا ہے۔",
+        "id": "Nabi (SAW) sering membaca doa ini. Hati kita berada di antara jari-jari Allah, dan Dia membolak-balikkannya sesuai kehendak-Nya.",
+        "tr": "Peygamber (SAV) bu duayı sık sık yapardı. Kalplerimiz Allah'ın parmakları arasındadır, onları dilediği gibi çevirir.",
+        "fr": "Le Prophète (SAW) faisait fréquemment cette invocation. Nos cœurs sont entre les doigts d'Allah, et Il les tourne comme Il veut.",
+        "ms": "Nabi (SAW) kerap membaca doa ini. Hati kita berada di antara jari-jari Allah, dan Dia membolak-balikkannya mengikut kehendak-Nya."
+      },
       "translations": {
         "ur": "اے دلوں کے پلٹنے والے میرے دل کو اپنے دین پر ثابت رکھ",
         "id": "Wahai Dzat Yang Membolak-balikkan hati, tetapkanlah hatiku di atas agama-Mu",
@@ -959,11 +1300,20 @@
       "categories": [
         "lost",
         "hopeful",
-        "fearful"
+        "fearful",
+        "grateful"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A Quranic dua asking Allah to keep our hearts steadfast on guidance.",
+      "benefitTranslations": {
+        "ar": "دعاء قرآني يسأل الله أن يثبت قلوبنا على الهداية.",
+        "ur": "ایک قرآنی دعا جس میں اللہ سے ہمارے دلوں کو ہدایت پر ثابت رکھنے کی درخواست کی جاتی ہے۔",
+        "id": "Doa Al-Quran memohon kepada Allah agar menjaga hati kita tetap teguh di atas petunjuk.",
+        "tr": "Allah'tan kalplerimizi hidayette sabit tutmasını isteyen Kur'anî bir duadır.",
+        "fr": "Une invocation coranique demandant à Allah de garder nos cœurs fermes sur la guidance.",
+        "ms": "Doa Al-Quran memohon kepada Allah agar menjaga hati kita tetap teguh di atas petunjuk."
+      },
       "translations": {
         "ur": "اے ہمارے رب ہمیں ہدایت دینے کے بعد ہمارے دلوں کو ٹیڑھا نہ کر اور ہمیں اپنے پاس سے رحمت عطا فرما، بے شک تو ہی بڑا دینے والا ہے",
         "id": "Ya Tuhan kami, janganlah Engkau jadikan hati kami condong kepada kesesatan setelah Engkau beri petunjuk kepada kami, dan karuniakanlah kepada kami rahmat dari sisi-Mu, sesungguhnya Engkau Maha Pemberi",
@@ -985,6 +1335,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The dua of the believers when facing Goliath. Asking for patience and steadfastness.",
+      "benefitTranslations": {
+        "ar": "دعاء المؤمنين عند مواجهة جالوت. طلب الصبر والثبات.",
+        "ur": "جالوت کا سامنا کرتے وقت مومنین کی دعا۔ صبر اور ثابت قدمی کی درخواست۔",
+        "id": "Doa orang-orang beriman saat menghadapi Jalut (Goliath). Memohon kesabaran dan keteguhan.",
+        "tr": "Câlut'la (Golyat) karşılaşan müminlerin duasıdır. Sabır ve sebat istemek.",
+        "fr": "L'invocation des croyants face à Goliath. Demander la patience et la fermeté.",
+        "ms": "Doa orang-orang beriman ketika menghadapi Jalut (Goliath). Memohon kesabaran dan keteguhan."
+      },
       "translations": {
         "ur": "اے ہمارے رب ہم پر صبر نازل فرما اور ہمارے قدم جما دے اور کافروں کے خلاف ہماری مدد فرما",
         "id": "Ya Tuhan kami, limpahkanlah kesabaran kepada kami, teguhkanlah pendirian kami, dan tolonglah kami melawan orang-orang kafir",
@@ -1001,11 +1359,20 @@
       "source": "Sahih Muslim 2739",
       "sourceType": "Hadith",
       "categories": [
-        "upon_waking"
+        "_upon_waking",
+        "grateful"
       ],
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A comprehensive dua seeking protection from losing Allah's favors and blessings.",
+      "benefitTranslations": {
+        "ar": "دعاء شامل يطلب الحماية من زوال نعم الله وبركاته.",
+        "ur": "ایک جامع دعا جس میں اللہ کی نعمتوں اور برکتوں کے چھن جانے سے حفاظت مانگی جاتی ہے۔",
+        "id": "Doa yang menyeluruh memohon perlindungan dari hilangnya nikmat dan keberkahan Allah.",
+        "tr": "Allah'ın nimet ve bereketlerini kaybetmekten korunmayı isteyen kapsamlı bir duadır.",
+        "fr": "Une invocation complète cherchant la protection contre la perte des faveurs et bénédictions d'Allah.",
+        "ms": "Doa yang menyeluruh memohon perlindungan daripada hilangnya nikmat dan keberkatan Allah."
+      },
       "translations": {
         "ur": "اے اللہ میں تیری پناہ مانگتا ہوں تیری نعمت کے چھن جانے سے، تیری عافیت کے بدل جانے سے، تیری اچانک سزا سے اور تیری تمام ناراضگی سے",
         "id": "Ya Allah, aku berlindung kepada-Mu dari hilangnya nikmat-Mu, berubahnya kesejahteraan-Mu, datangnya azab-Mu secara tiba-tiba, dan dari segala kemurkaan-Mu",
@@ -1027,6 +1394,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) would say this after Fajr prayer. Asking for the three pillars of a successful life.",
+      "benefitTranslations": {
+        "ar": "كان النبي ﷺ يقولها بعد صلاة الفجر. يسأل أركان الحياة الناجحة الثلاثة.",
+        "ur": "نبی ﷺ فجر کی نماز کے بعد یہ کہتے تھے۔ کامیاب زندگی کے تین ستونوں کا سوال۔",
+        "id": "Nabi (SAW) mengucapkan ini setelah shalat Subuh. Memohon tiga pilar kehidupan yang sukses.",
+        "tr": "Peygamber (SAV) sabah namazından sonra bunu söylerdi. Başarılı bir hayatın üç temelini istemek.",
+        "fr": "Le Prophète (SAW) disait cela après la prière de Fajr. Demander les trois piliers d'une vie réussie.",
+        "ms": "Nabi (SAW) mengucapkan ini selepas solat Subuh. Memohon tiga tiang kehidupan yang berjaya."
+      },
       "translations": {
         "ur": "اے اللہ میں تجھ سے نفع بخش علم، پاکیزہ رزق اور مقبول عمل مانگتا ہوں",
         "id": "Ya Allah, aku memohon kepada-Mu ilmu yang bermanfaat, rezeki yang baik, dan amal yang diterima",
@@ -1049,6 +1424,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "Whoever says this in morning and evening, it becomes a right upon Allah to please them on the Day of Judgment.",
+      "benefitTranslations": {
+        "ar": "من قالها صباحاً ومساءً كان حقاً على الله أن يرضيه يوم القيامة.",
+        "ur": "جو صبح و شام یہ کہے، اللہ پر اس کا حق ہو جاتا ہے کہ قیامت کے دن اسے راضی کرے۔",
+        "id": "Barangsiapa mengucapkan ini pada pagi dan petang, menjadi hak atas Allah untuk membuatnya ridha pada Hari Kiamat.",
+        "tr": "Sabah akşam söyleyen kişiyi kıyamet gününde razı etmek Allah üzerine bir hak olur.",
+        "fr": "Quiconque dit cela matin et soir, il devient un droit envers Allah de le satisfaire le Jour du Jugement.",
+        "ms": "Sesiapa yang mengucapkan ini pada pagi dan petang, menjadi hak ke atas Allah untuk meredhakannya pada Hari Kiamat."
+      },
       "translations": {
         "ur": "میں اللہ کو رب مان کر راضی ہوا، اسلام کو دین مان کر راضی ہوا، اور محمد کو نبی مان کر راضی ہوا",
         "id": "Aku ridha Allah sebagai Tuhan, Islam sebagai agama, dan Muhammad sebagai Nabi",
@@ -1070,6 +1453,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "Whoever says this in the morning has fulfilled the gratitude of that day.",
+      "benefitTranslations": {
+        "ar": "من قالها في الصباح فقد أدّى شكر يومه.",
+        "ur": "جو صبح کو یہ کہے، اس نے اس دن کا شکر ادا کر دیا۔",
+        "id": "Barangsiapa mengucapkan ini di pagi hari, dia telah menunaikan rasa syukur hari itu.",
+        "tr": "Sabah bunu söyleyen, o günün şükrünü eda etmiş olur.",
+        "fr": "Quiconque dit cela le matin a accompli la gratitude de cette journée.",
+        "ms": "Sesiapa yang mengucapkan ini pada waktu pagi, dia telah menunaikan rasa syukur hari itu."
+      },
       "translations": {
         "ur": "اے اللہ جو بھی نعمت مجھے یا تیری کسی مخلوق کو صبح ملی ہے وہ تیری طرف سے ہے، تو اکیلا ہے، تیرا کوئی شریک نہیں، پس تیرے لیے حمد ہے اور تیرے لیے شکر ہے",
         "id": "Ya Allah, nikmat apa pun yang aku atau makhluk-Mu dapatkan di pagi ini adalah dari-Mu semata, tiada sekutu bagi-Mu, maka bagi-Mu segala puji dan syukur",
@@ -1091,6 +1482,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The kaffarat al-majlis (expiation of the gathering). Said at the end of any gathering to expiate any wrong speech.",
+      "benefitTranslations": {
+        "ar": "كفارة المجلس. تقال في ختام أي مجلس لتكفير ما قيل فيه من خطأ.",
+        "ur": "کفارۃ المجلس (مجلس کا کفارہ)۔ کسی بھی مجلس کے اختتام پر غلط بات کے کفارے کے طور پر کہی جاتی ہے۔",
+        "id": "Kafaratul majelis (penebus dosa dalam majelis). Diucapkan di akhir setiap pertemuan untuk menebus perkataan yang salah.",
+        "tr": "Keffâretü'l-meclis (meclisten ayrılırken söylenen dua). Herhangi bir toplantı sonunda, toplantıda söylenen yanlış sözlerin kefareti olarak söylenir.",
+        "fr": "La kafarat al-majlis (expiation de l'assemblée). Se dit à la fin de toute réunion pour expier toute parole incorrecte.",
+        "ms": "Kafaratul majlis (penebus dosa dalam majlis). Diucapkan di akhir setiap perhimpunan untuk menebus perkataan yang salah."
+      },
       "translations": {
         "ur": "اے اللہ تو پاک ہے اپنی حمد کے ساتھ، میں گواہی دیتا ہوں کہ تیرے سوا کوئی معبود نہیں، میں تجھ سے مغفرت مانگتا ہوں اور تیری طرف توبہ کرتا ہوں",
         "id": "Maha Suci Engkau ya Allah dan segala puji bagi-Mu, aku bersaksi bahwa tiada Tuhan selain Engkau, aku memohon ampunan dan bertaubat kepada-Mu",
@@ -1113,6 +1512,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "A morning and evening dhikir acknowledging Allah's complete control over our lives.",
+      "benefitTranslations": {
+        "ar": "ذكر صباحي ومسائي يعترف بسيطرة الله الكاملة على حياتنا.",
+        "ur": "صبح و شام کا ذکر جو ہماری زندگیوں پر اللہ کے مکمل اختیار کا اعتراف ہے۔",
+        "id": "Dzikir pagi dan petang yang mengakui kuasa penuh Allah atas kehidupan kita.",
+        "tr": "Hayatımız üzerindeki mutlak ilahi hâkimiyeti kabul eden sabah-akşam zikridir.",
+        "fr": "Un dhikr du matin et du soir reconnaissant le contrôle total d'Allah sur nos vies.",
+        "ms": "Zikir pagi dan petang yang mengakui kuasa penuh Allah atas kehidupan kita."
+      },
       "translations": {
         "ur": "اے اللہ تیرے ساتھ ہم نے صبح کی اور تیرے ساتھ شام کی، تیرے ساتھ ہم جیتے ہیں اور تیرے ساتھ مرتے ہیں، اور تیری طرف اٹھ کر جانا ہے",
         "id": "Ya Allah, dengan-Mu kami memasuki pagi dan dengan-Mu kami memasuki petang, dengan-Mu kami hidup dan dengan-Mu kami mati, dan kepada-Mu tempat kembali",
@@ -1137,6 +1544,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) said whoever says this upon stopping somewhere, nothing will harm them until they leave.",
+      "benefitTranslations": {
+        "ar": "قال النبي ﷺ: من قالها حين ينزل منزلاً لم يضره شيء حتى يرتحل.",
+        "ur": "نبی ﷺ نے فرمایا: جو کہیں رکتے وقت یہ کہے، اسے وہاں سے جانے تک کوئی چیز نقصان نہیں پہنچائے گی۔",
+        "id": "Nabi (SAW) bersabda, barangsiapa mengucapkan ini saat singgah di suatu tempat, tidak ada yang akan membahayakannya hingga ia pergi.",
+        "tr": "Peygamber (SAV) buyurdu: Bir yere konduğunda bunu söyleyen kimseye, oradan ayrılana kadar hiçbir şey zarar veremez.",
+        "fr": "Le Prophète (SAW) a dit que quiconque prononce cela en s'arrêtant quelque part, rien ne lui nuira jusqu'à ce qu'il parte.",
+        "ms": "Nabi (SAW) bersabda, sesiapa yang mengucapkan ini ketika singgah di sesuatu tempat, tiada yang akan membahayakannya sehingga dia pergi."
+      },
       "translations": {
         "ur": "میں اللہ کے مکمل کلمات کی پناہ لیتا ہوں اس کی مخلوق کے شر سے",
         "id": "Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari kejahatan makhluk-Nya",
@@ -1160,6 +1575,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "Sayyid al-Istighfar (Master of Seeking Forgiveness). Whoever says it in the morning with conviction and dies that day enters Paradise.",
+      "benefitTranslations": {
+        "ar": "سيد الاستغفار. من قالها موقناً بها في الصباح ومات في يومه دخل الجنة.",
+        "ur": "سید الاستغفار (استغفار کا سردار)۔ جو صبح کو یقین کے ساتھ یہ کہے اور اسی دن فوت ہو جائے تو جنت میں داخل ہوگا۔",
+        "id": "Sayyidul Istighfar (penghulu istighfar). Barangsiapa mengucapkannya di pagi hari dengan penuh keyakinan lalu meninggal pada hari itu, maka ia masuk surga.",
+        "tr": "Seyyidü'l-İstiğfar (İstiğfarın efendisi). Sabah bunu inanarak söyleyip o gün vefat eden kişi cennete girer.",
+        "fr": "Sayyid al-Istighfar (le maître de la demande de pardon). Quiconque le dit le matin avec conviction et meurt ce jour-là entre au Paradis.",
+        "ms": "Sayyidul Istighfar (penghulu istighfar). Sesiapa yang mengucapkannya pada waktu pagi dengan penuh keyakinan lalu meninggal pada hari itu, maka dia masuk syurga."
+      },
       "translations": {
         "ur": "اے اللہ تو میرا رب ہے، تیرے سوا کوئی معبود نہیں، تو نے مجھے پیدا کیا اور میں تیرا بندہ ہوں، اور میں اپنی طاقت بھر تیرے عہد و وعدہ پر قائم ہوں، میں نے جو کچھ کیا اس کے شر سے تیری پناہ مانگتا ہوں، تیری نعمتوں کا تیرے سامنے اقرار کرتا ہوں اور اپنے گناہوں کا اعتراف کرتا ہوں، پس مجھے بخش دے کیونکہ گناہوں کو تیرے سوا کوئی نہیں بخشتا",
         "id": "Ya Allah, Engkau adalah Tuhanku, tiada Tuhan selain Engkau, Engkau telah menciptakanku dan aku adalah hamba-Mu, dan aku berpegang pada perjanjian dan janji-Mu semampuku, aku berlindung kepada-Mu dari kejahatan yang telah aku perbuat, aku mengakui nikmat-Mu kepadaku dan aku mengakui dosaku, maka ampunilah aku kerana sesungguhnya tiada yang mengampuni dosa kecuali Engkau",
@@ -1182,6 +1605,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A beautiful dua for family and righteousness. Asking Allah for pious family members and spiritual leadership.",
+      "benefitTranslations": {
+        "ar": "دعاء جميل للأسرة والصلاح. يسأل الله ذرية صالحة وقيادة روحية.",
+        "ur": "خاندان اور نیکی کے لیے ایک خوبصورت دعا۔ اللہ سے نیک اہل خانہ اور روحانی قیادت کا سوال۔",
+        "id": "Doa yang indah untuk keluarga dan kebaikan. Memohon kepada Allah keluarga yang salih dan kepemimpinan spiritual.",
+        "tr": "Aile ve salihlik için güzel bir duadır. Allah'tan salih aile fertleri ve manevi liderlik istemek.",
+        "fr": "Une belle invocation pour la famille et la piété. Demander à Allah des membres de famille pieux et un leadership spirituel.",
+        "ms": "Doa yang indah untuk keluarga dan kebaikan. Memohon kepada Allah ahli keluarga yang soleh dan kepimpinan spiritual."
+      },
       "translations": {
         "ur": "اے ہمارے رب ہمیں ہماری بیویوں اور اولاد سے آنکھوں کی ٹھنڈک عطا فرما اور ہمیں متقیوں کا امام بنا دے",
         "id": "Ya Tuhan kami, anugerahkanlah kepada kami dari istri-istri kami dan keturunan kami sebagai penyejuk mata, dan jadikanlah kami imam bagi orang-orang yang bertakwa",
@@ -1203,6 +1634,14 @@
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "The dua of Prophet Zakariya (AS) asking for a righteous child. Allah answered and granted him Yahya (AS).",
+      "benefitTranslations": {
+        "ar": "دعاء النبي زكريا عليه السلام طلباً لولد صالح. استجاب الله ورزقه يحيى عليه السلام.",
+        "ur": "نبی زکریا علیہ السلام کی نیک اولاد کے لیے دعا۔ اللہ نے قبول فرمایا اور انہیں یحییٰ علیہ السلام عطا کیے۔",
+        "id": "Doa Nabi Zakaria (AS) memohon anak yang salih. Allah mengabulkannya dan menganugerahi beliau Yahya (AS).",
+        "tr": "Hz. Zekeriya'nın (AS) salih bir evlat isteyen duasıdır. Allah kabul etti ve ona Yahya'yı (AS) nasip etti.",
+        "fr": "L'invocation du Prophète Zakariya (AS) demandant un enfant pieux. Allah a exaucé sa prière et lui a accordé Yahya (AS).",
+        "ms": "Doa Nabi Zakaria (AS) memohon anak yang soleh. Allah mengabulkannya dan menganugerahkan kepadanya Yahya (AS)."
+      },
       "translations": {
         "ur": "اے میرے رب مجھے اپنے پاس سے نیک اولاد عطا فرما، بے شک تو دعا سننے والا ہے",
         "id": "Ya Tuhanku, berilah aku dari sisi-Mu keturunan yang baik, sesungguhnya Engkau Maha Mendengar doa",
@@ -1225,6 +1664,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) would seek refuge from these four things in every prayer. Essential protection from major trials.",
+      "benefitTranslations": {
+        "ar": "كان النبي ﷺ يستعيذ من هذه الأمور الأربعة في كل صلاة. حماية أساسية من الفتن الكبرى.",
+        "ur": "نبی ﷺ ہر نماز میں ان چار چیزوں سے پناہ مانگتے تھے۔ بڑے فتنوں سے ضروری حفاظت۔",
+        "id": "Nabi (SAW) memohon perlindungan dari empat hal ini dalam setiap shalat. Perlindungan penting dari ujian-ujian besar.",
+        "tr": "Peygamber (SAV) her namazda bu dört şeyden Allah'a sığınırdı. Büyük fitnelerden temel korunma.",
+        "fr": "Le Prophète (SAW) cherchait refuge contre ces quatre choses dans chaque prière. Protection essentielle contre les grandes épreuves.",
+        "ms": "Nabi (SAW) memohon perlindungan daripada empat perkara ini dalam setiap solat. Perlindungan penting daripada ujian-ujian besar."
+      },
       "translations": {
         "ur": "اے اللہ میں تیری پناہ مانگتا ہوں قبر کے عذاب سے، دجال کے فتنے سے، اور زندگی و موت کے فتنوں سے",
         "id": "Ya Allah, aku berlindung kepada-Mu dari azab kubur, dari fitnah Dajjal, dan dari fitnah kehidupan dan kematian",
@@ -1246,6 +1693,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A comprehensive dua asking Allah to rectify all aspects of life - religious, worldly, and eternal.",
+      "benefitTranslations": {
+        "ar": "دعاء شامل يسأل الله إصلاح جميع جوانب الحياة - الدينية والدنيوية والأخروية.",
+        "ur": "ایک جامع دعا جس میں اللہ سے زندگی کے تمام پہلوؤں - دینی، دنیاوی اور اخروی - کی اصلاح مانگی جاتی ہے۔",
+        "id": "Doa yang menyeluruh memohon kepada Allah untuk memperbaiki semua aspek kehidupan - agama, dunia, dan akhirat.",
+        "tr": "Hayatın tüm yönlerini - dinî, dünyevi ve uhrevî - düzeltmeyi Allah'tan isteyen kapsamlı bir duadır.",
+        "fr": "Une invocation complète demandant à Allah de rectifier tous les aspects de la vie - religieux, mondain et éternel.",
+        "ms": "Doa yang menyeluruh memohon kepada Allah untuk memperbaiki semua aspek kehidupan - agama, dunia, dan akhirat."
+      },
       "translations": {
         "ur": "اے اللہ میرا دین درست کر دے جو میرے معاملات کی حفاظت ہے، میری دنیا درست کر دے جس میں میری معاش ہے، اور میری آخرت درست کر دے جس میں میرا لوٹنا ہے",
         "id": "Ya Allah, perbaikilah agamaku yang merupakan pelindung urusanku, perbaikilah duniaku yang merupakan tempat penghidupanku, dan perbaikilah akhiratku yang merupakan tempat kembaliku",
@@ -1267,6 +1722,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) would make this comprehensive dua for forgiveness in his sujud, covering all types of sins.",
+      "benefitTranslations": {
+        "ar": "كان النبي ﷺ يدعو بهذا الدعاء الجامع للمغفرة في سجوده، شاملاً جميع أنواع الذنوب.",
+        "ur": "نبی ﷺ اپنے سجدے میں مغفرت کی یہ جامع دعا کیا کرتے تھے، جو تمام قسم کے گناہوں کا احاطہ کرتی ہے۔",
+        "id": "Nabi (SAW) membaca doa ampunan yang menyeluruh ini dalam sujudnya, mencakup semua jenis dosa.",
+        "tr": "Peygamber (SAV) secdesinde her türlü günahı kapsayan bu kapsamlı bağışlanma duasını yapardı.",
+        "fr": "Le Prophète (SAW) faisait cette invocation complète pour le pardon dans sa prosternation, couvrant tous les types de péchés.",
+        "ms": "Nabi (SAW) membaca doa ampunan yang menyeluruh ini dalam sujudnya, meliputi semua jenis dosa."
+      },
       "translations": {
         "ur": "اے اللہ میرے تمام گناہ معاف فرما، چھوٹے بڑے، پہلے پچھلے، ظاہر و پوشیدہ",
         "id": "Ya Allah, ampunilah semua dosaku, yang kecil dan yang besar, yang pertama dan yang terakhir, yang terang-terangan dan yang tersembunyi",
@@ -1288,6 +1751,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A concise but powerful dua. The Prophet (SAW) said Paradise says 'O Allah, admit me' and the Fire says 'O Allah, save from me'.",
+      "benefitTranslations": {
+        "ar": "دعاء مختصر لكنه قوي. قال النبي ﷺ: الجنة تقول يا رب أدخلني، والنار تقول يا رب أنقذ مني.",
+        "ur": "ایک مختصر مگر طاقتور دعا۔ نبی ﷺ نے فرمایا: جنت کہتی ہے اے اللہ مجھے داخل کر، اور جہنم کہتی ہے اے اللہ مجھ سے بچا۔",
+        "id": "Doa yang singkat namun sangat ampuh. Nabi (SAW) bersabda bahwa surga berkata 'Ya Allah, masukkanlah aku' dan neraka berkata 'Ya Allah, selamatkanlah daripadaku'.",
+        "tr": "Kısa ama güçlü bir duadır. Peygamber (SAV) buyurdu ki: Cennet 'Ya Rabbi, beni doldur' der, cehennem de 'Ya Rabbi, benden koru' der.",
+        "fr": "Une invocation concise mais puissante. Le Prophète (SAW) a dit que le Paradis dit 'Ô Allah, admets-moi' et le Feu dit 'Ô Allah, sauve de moi'.",
+        "ms": "Doa yang ringkas tetapi sangat ampuh. Nabi (SAW) bersabda bahawa syurga berkata 'Ya Allah, masukkanlah aku' dan neraka berkata 'Ya Allah, selamatkanlah daripadaku'."
+      },
       "translations": {
         "ur": "اے اللہ میں تجھ سے جنت مانگتا ہوں اور جہنم سے تیری پناہ چاہتا ہوں",
         "id": "Ya Allah, aku memohon kepada-Mu surga dan aku berlindung kepada-Mu dari neraka",
@@ -1310,6 +1781,14 @@
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "The dua of Prophet Musa (AS) when he was alone and in need. Shortly after, Allah blessed him with shelter, family, and provision.",
+      "benefitTranslations": {
+        "ar": "دعاء النبي موسى عليه السلام حين كان وحيداً ومحتاجاً. بعدها بقليل رزقه الله المأوى والأهل والرزق.",
+        "ur": "نبی موسیٰ علیہ السلام کی دعا جب وہ تنہا اور محتاج تھے۔ اس کے فوراً بعد اللہ نے انہیں پناہ، خاندان اور رزق سے نوازا۔",
+        "id": "Doa Nabi Musa (AS) ketika beliau sendirian dan dalam kebutuhan. Tak lama setelahnya, Allah memberkatinya dengan tempat tinggal, keluarga, dan rezeki.",
+        "tr": "Hz. Musa'nın (AS) yalnız ve muhtaç olduğu zamandaki duasıdır. Kısa süre sonra Allah ona barınak, aile ve rızık nasip etmiştir.",
+        "fr": "L'invocation du Prophète Moussa (AS) lorsqu'il était seul et dans le besoin. Peu après, Allah le bénit avec un abri, une famille et des provisions.",
+        "ms": "Doa Nabi Musa (AS) ketika beliau bersendirian dan dalam keperluan. Tidak lama selepas itu, Allah memberkatinya dengan tempat tinggal, keluarga, dan rezeki."
+      },
       "translations": {
         "ur": "اے میرے رب جو بھی خیر تو مجھ پر اتارے میں اس کا محتاج ہوں",
         "id": "Ya Tuhanku, sungguh aku sangat membutuhkan kebaikan apa pun yang Engkau turunkan kepadaku",
@@ -1331,6 +1810,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The dua of the righteous warriors who fought alongside the prophets. Combines repentance with asking for steadfastness.",
+      "benefitTranslations": {
+        "ar": "دعاء المقاتلين الصالحين الذين قاتلوا مع الأنبياء. يجمع بين التوبة وطلب الثبات.",
+        "ur": "نیک مجاہدین کی دعا جنہوں نے انبیاء کے ساتھ مل کر لڑائی کی۔ توبہ اور ثابت قدمی کی درخواست کو جمع کرتی ہے۔",
+        "id": "Doa para pejuang salih yang berperang bersama para nabi. Menggabungkan taubat dengan permohonan keteguhan.",
+        "tr": "Peygamberlerin yanında savaşan salih savaşçıların duasıdır. Tövbe ile sebat isteğini birleştirir.",
+        "fr": "L'invocation des combattants vertueux qui ont combattu aux côtés des prophètes. Combine le repentir avec la demande de fermeté.",
+        "ms": "Doa para pejuang yang soleh yang berperang bersama para nabi. Menggabungkan taubat dengan permohonan keteguhan."
+      },
       "translations": {
         "ur": "اے ہمارے رب ہمارے گناہ اور ہماری زیادتی معاف فرما، ہمارے قدم جما دے اور کافروں کے خلاف ہماری مدد فرما",
         "id": "Ya Tuhan kami, ampunilah dosa-dosa kami dan tindakan kami yang berlebihan dalam urusan kami, teguhkanlah pendirian kami, dan tolonglah kami melawan orang-orang kafir",
@@ -1352,6 +1839,14 @@
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "The first dua of repentance by Adam and Hawwa (AS). Allah taught them these words to seek forgiveness.",
+      "benefitTranslations": {
+        "ar": "أول دعاء توبة من آدم وحواء عليهما السلام. علّمهما الله هذه الكلمات لطلب المغفرة.",
+        "ur": "آدم اور حوا علیہما السلام کی پہلی توبہ کی دعا۔ اللہ نے انہیں مغفرت مانگنے کے لیے یہ الفاظ سکھائے۔",
+        "id": "Doa taubat pertama oleh Adam dan Hawa (AS). Allah mengajarkan mereka kata-kata ini untuk memohon ampunan.",
+        "tr": "Âdem ve Havva'nın (AS) ilk tövbe duasıdır. Allah onlara bağışlanma dilemek için bu kelimeleri öğretmiştir.",
+        "fr": "La première invocation de repentir d'Adam et Hawwa (AS). Allah leur a enseigné ces mots pour demander le pardon.",
+        "ms": "Doa taubat pertama oleh Adam dan Hawa (AS). Allah mengajarkan mereka kata-kata ini untuk memohon keampunan."
+      },
       "translations": {
         "ur": "اے ہمارے رب ہم نے اپنی جانوں پر ظلم کیا اور اگر تو ہمیں معاف نہ کرے اور رحم نہ کرے تو ہم ضرور نقصان اٹھانے والوں میں سے ہوں گے",
         "id": "Ya Tuhan kami, kami telah menganiaya diri kami sendiri, dan jika Engkau tidak mengampuni kami dan memberi rahmat kepada kami, niscaya kami termasuk orang-orang yang merugi",
@@ -1373,6 +1868,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "Asking Allah to purify and elevate the soul. Only Allah can truly purify the heart and grant taqwa.",
+      "benefitTranslations": {
+        "ar": "طلب تزكية النفس ورفعتها من الله. الله وحده القادر على تطهير القلب ومنح التقوى.",
+        "ur": "اللہ سے نفس کو پاک اور بلند کرنے کی درخواست۔ صرف اللہ ہی حقیقی طور پر دل کو پاک کر سکتا اور تقویٰ عطا کر سکتا ہے۔",
+        "id": "Memohon kepada Allah untuk menyucikan dan meninggikan jiwa. Hanya Allah yang benar-benar mampu menyucikan hati dan menganugerahkan takwa.",
+        "tr": "Allah'tan nefsi arındırmasını ve yüceltmesini istemek. Kalbi gerçek anlamda ancak Allah arındırabilir ve takva verebilir.",
+        "fr": "Demander à Allah de purifier et d'élever l'âme. Seul Allah peut véritablement purifier le cœur et accorder la taqwa.",
+        "ms": "Memohon kepada Allah untuk menyucikan dan meninggikan jiwa. Hanya Allah yang benar-benar mampu menyucikan hati dan menganugerahkan takwa."
+      },
       "translations": {
         "ur": "اے اللہ میرے نفس کو تقویٰ دے اور اسے پاک کر، تو ہی اسے سب سے بہتر پاک کرنے والا ہے، تو ہی اس کا مالک اور محافظ ہے",
         "id": "Ya Allah, berilah jiwaku ketakwaannya dan sucikanlah ia, Engkaulah sebaik-baik yang menyucikannya, Engkau pelindung dan pemiliknya",
@@ -1394,6 +1897,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "Seeking protection from hardships that affect dignity and from injustice in any form.",
+      "benefitTranslations": {
+        "ar": "الاستعاذة من المصاعب التي تمس الكرامة ومن الظلم بكل أشكاله.",
+        "ur": "ان مصائب سے حفاظت مانگنا جو عزت نفس کو متاثر کریں اور ہر قسم کے ظلم سے پناہ۔",
+        "id": "Memohon perlindungan dari kesulitan yang menjatuhkan martabat dan dari kezaliman dalam bentuk apa pun.",
+        "tr": "Onuru etkileyen sıkıntılardan ve her türlü zulümden korunma istemek.",
+        "fr": "Chercher la protection contre les épreuves qui affectent la dignité et contre l'injustice sous toutes ses formes.",
+        "ms": "Memohon perlindungan daripada kesulitan yang menjatuhkan maruah dan daripada kezaliman dalam apa jua bentuk."
+      },
       "translations": {
         "ur": "اے اللہ میں تیری پناہ مانگتا ہوں فقر، تنگی، ذلت سے، اور اس سے کہ میں ظلم کروں یا مجھ پر ظلم کیا جائے",
         "id": "Ya Allah, aku berlindung kepada-Mu dari kefakiran, kekurangan, kehinaan, dan dari menzalimi atau dizalimi",
@@ -1415,6 +1926,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "Seeking protection from sins committed through our senses. The gateway to most sins.",
+      "benefitTranslations": {
+        "ar": "الاستعاذة من الذنوب المرتكبة عبر الحواس. البوابة لأكثر المعاصي.",
+        "ur": "اپنی حسیات کے ذریعے ہونے والے گناہوں سے حفاظت مانگنا۔ اکثر گناہوں کا دروازہ۔",
+        "id": "Memohon perlindungan dari dosa-dosa yang dilakukan melalui pancaindera kita. Pintu masuk bagi kebanyakan dosa.",
+        "tr": "Duyularımızla işlenen günahlardan korunma istemek. Çoğu günahın kapısı.",
+        "fr": "Chercher la protection contre les péchés commis par nos sens. La porte d'entrée de la plupart des péchés.",
+        "ms": "Memohon perlindungan daripada dosa-dosa yang dilakukan melalui pancaindera kita. Pintu masuk bagi kebanyakan dosa."
+      },
       "translations": {
         "ur": "اے اللہ میں تیری پناہ مانگتا ہوں اپنے کان کے شر سے، اپنی آنکھ کے شر سے، اپنی زبان کے شر سے اور اپنے دل کے شر سے",
         "id": "Ya Allah, aku berlindung kepada-Mu dari kejahatan pendengaranku, penglihatanku, lisanku, dan hatiku",
@@ -1438,6 +1957,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "The beginning of a comprehensive morning/evening protection dua, glorifying Allah's complete knowledge and power.",
+      "benefitTranslations": {
+        "ar": "بداية دعاء حماية شامل للصباح والمساء، يمجّد علم الله الكامل وقدرته.",
+        "ur": "صبح و شام کی ایک جامع حفاظتی دعا کی ابتدا، اللہ کے مکمل علم اور قدرت کی تمجید۔",
+        "id": "Pembukaan doa perlindungan pagi/petang yang menyeluruh, mengagungkan ilmu dan kuasa Allah yang sempurna.",
+        "tr": "Sabah-akşam okunan kapsamlı bir koruma duasının başlangıcıdır. Allah'ın tam ilmini ve kudretini yüceltir.",
+        "fr": "Le début d'une invocation complète de protection matin/soir, glorifiant la connaissance et la puissance totales d'Allah.",
+        "ms": "Pembukaan doa perlindungan pagi/petang yang menyeluruh, mengagungkan ilmu dan kuasa Allah yang sempurna."
+      },
       "translations": {
         "ur": "اے اللہ غیب اور حاضر کے جاننے والے، آسمانوں اور زمین کے پیدا کرنے والے، ہر چیز کے رب اور مالک، میں گواہی دیتا ہوں کہ تیرے سوا کوئی معبود نہیں، میں اپنے نفس کے شر سے اور شیطان کے شر اور اس کے جال سے تیری پناہ مانگتا ہوں",
         "id": "Ya Allah, Yang Mengetahui yang ghaib dan yang nyata, Pencipta langit dan bumi, Tuhan dan Pemilik segala sesuatu, aku bersaksi bahawa tiada Tuhan selain Engkau, aku berlindung kepada-Mu dari kejahatan diriku, dan dari kejahatan syaitan dan perangkapnya",
@@ -1460,6 +1987,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "Part of the comprehensive dua acknowledging Allah's lordship over all creation.",
+      "benefitTranslations": {
+        "ar": "جزء من الدعاء الشامل الذي يعترف بربوبية الله على جميع المخلوقات.",
+        "ur": "تمام مخلوقات پر اللہ کی ربوبیت کا اعتراف کرنے والی جامع دعا کا حصہ۔",
+        "id": "Bagian dari doa menyeluruh yang mengakui keesaan Allah sebagai Tuhan atas seluruh ciptaan.",
+        "tr": "Allah'ın tüm yaratılış üzerindeki rablığını kabul eden kapsamlı duanın bir parçasıdır.",
+        "fr": "Fait partie de l'invocation complète reconnaissant la seigneurie d'Allah sur toute la création.",
+        "ms": "Sebahagian daripada doa menyeluruh yang mengakui kekuasaan Allah sebagai Tuhan atas seluruh ciptaan."
+      },
       "translations": {
         "ur": "اے اللہ آسمانوں کے رب، زمین کے رب، عرش عظیم کے رب، ہمارے رب اور ہر چیز کے رب، دانے اور گٹھلی کو پھاڑنے والے، تورات، انجیل اور قرآن نازل کرنے والے، میں ہر شر والے کے شر سے تیری پناہ مانگتا ہوں جس کی پیشانی تیرے ہاتھ میں ہے",
         "id": "Ya Allah, Tuhan langit, Tuhan bumi, Tuhan Arsy yang agung, Tuhan kami dan Tuhan segala sesuatu, Yang membelah biji dan benih, Yang menurunkan Taurat, Injil, dan Al-Quran, aku berlindung kepada-Mu dari kejahatan setiap makhluk jahat yang Engkau pegang ubun-ubunnya",
@@ -1476,11 +2011,20 @@
       "source": "Jami at-Tirmidhi 3563",
       "sourceType": "Hadith",
       "categories": [
-        "joyful"
+        "joyful",
+        "grateful"
       ],
       "repetitionCount": 7,
       "audioFileName": null,
       "benefit": "A powerful dua for provision and protection from haram. The Prophet (SAW) taught this to those in debt.",
+      "benefitTranslations": {
+        "ar": "دعاء قوي للرزق والحماية من الحرام. علّمه النبي ﷺ لمن عليه دين.",
+        "ur": "رزق اور حرام سے حفاظت کے لیے ایک طاقتور دعا۔ نبی ﷺ نے یہ قرضداروں کو سکھائی۔",
+        "id": "Doa yang ampuh untuk rezeki dan perlindungan dari yang haram. Nabi (SAW) mengajarkan ini kepada orang yang berhutang.",
+        "tr": "Rızık ve haramdan korunma için güçlü bir duadır. Peygamber (SAV) bunu borçlu olanlara öğretmiştir.",
+        "fr": "Une puissante invocation pour la subsistance et la protection contre le haram. Le Prophète (SAW) l'a enseignée à ceux qui étaient endettés.",
+        "ms": "Doa yang ampuh untuk rezeki dan perlindungan daripada yang haram. Nabi (SAW) mengajarkan ini kepada orang yang berhutang."
+      },
       "translations": {
         "ur": "اے اللہ مجھے اپنے حلال سے اپنے حرام سے بے نیاز کر دے اور اپنے فضل سے اپنے سوا ہر ایک سے بے نیاز کر دے",
         "id": "Ya Allah, cukupkanlah aku dengan yang halal dari yang haram, dan kayakanlah aku dengan karunia-Mu dari selain-Mu",
@@ -1503,6 +2047,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "A Quranic protection from Shaytan's whispers and his very presence. Allah commanded the Prophet (SAW) to say this.",
+      "benefitTranslations": {
+        "ar": "حماية قرآنية من وساوس الشيطان ومن حضوره. أمر الله النبي ﷺ بقولها.",
+        "ur": "شیطان کے وسوسوں اور اس کی موجودگی سے قرآنی حفاظت۔ اللہ نے نبی ﷺ کو یہ کہنے کا حکم دیا۔",
+        "id": "Perlindungan Al-Quran dari bisikan syaitan dan kehadirannya. Allah memerintahkan Nabi (SAW) untuk mengucapkan ini.",
+        "tr": "Kur'an'dan şeytanın vesveselerine ve varlığına karşı bir korumadır. Allah, Peygamber'e (SAV) bunu söylemesini emretmiştir.",
+        "fr": "Une protection coranique contre les chuchotements de Shaytan et sa présence même. Allah a ordonné au Prophète (SAW) de prononcer ces mots.",
+        "ms": "Perlindungan Al-Quran daripada bisikan syaitan dan kehadirannya. Allah memerintahkan Nabi (SAW) untuk mengucapkan ini."
+      },
       "translations": {
         "ur": "اے میرے رب میں شیطانوں کے وسوسوں سے تیری پناہ مانگتا ہوں، اور میں تیری پناہ مانگتا ہوں اے رب کہ وہ میرے پاس آئیں",
         "id": "Ya Tuhanku, aku berlindung kepada-Mu dari bisikan-bisikan setan, dan aku berlindung kepada-Mu ya Tuhanku dari kehadiran mereka",
@@ -1525,6 +2077,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "A comprehensive dua that encompasses all the good and protection the Prophet (SAW) ever asked for.",
+      "benefitTranslations": {
+        "ar": "دعاء شامل يتضمن كل خير وحماية طلبها النبي ﷺ.",
+        "ur": "ایک جامع دعا جو ہر اس خیر اور حفاظت کو شامل کرتی ہے جو نبی ﷺ نے کبھی مانگی۔",
+        "id": "Doa yang menyeluruh yang mencakup semua kebaikan dan perlindungan yang pernah dimohon oleh Nabi (SAW).",
+        "tr": "Peygamber'in (SAV) istediği tüm hayır ve korunmayı kapsayan kapsamlı bir duadır.",
+        "fr": "Une invocation complète qui englobe tout le bien et toute la protection que le Prophète (SAW) a jamais demandés.",
+        "ms": "Doa yang menyeluruh yang merangkumi semua kebaikan dan perlindungan yang pernah dimohon oleh Nabi (SAW)."
+      },
       "translations": {
         "ur": "اے اللہ میں تجھ سے اس خیر کا سوال کرتا ہوں جو تیرے نبی محمد نے مانگی، اور اس شر سے تیری پناہ مانگتا ہوں جس سے تیرے نبی محمد نے پناہ مانگی",
         "id": "Ya Allah, aku memohon kepada-Mu kebaikan yang dimohonkan oleh Nabi-Mu Muhammad, dan aku berlindung kepada-Mu dari kejahatan yang Nabi-Mu Muhammad berlindung darinya",
@@ -1546,6 +2106,14 @@
       "repetitionCount": 3,
       "audioFileName": null,
       "benefit": "The Prophet (SAW) advised Mu'adh ibn Jabal (RA) to never leave this dua after every prayer.",
+      "benefitTranslations": {
+        "ar": "أوصى النبي ﷺ معاذ بن جبل رضي الله عنه بعدم ترك هذا الدعاء بعد كل صلاة.",
+        "ur": "نبی ﷺ نے معاذ بن جبل رضی اللہ عنہ کو نصیحت فرمائی کہ ہر نماز کے بعد یہ دعا کبھی نہ چھوڑیں۔",
+        "id": "Nabi (SAW) menasihati Mu'adz bin Jabal (RA) untuk tidak pernah meninggalkan doa ini setelah setiap shalat.",
+        "tr": "Peygamber (SAV), Muaz bin Cebel'e (RA) her namazdan sonra bu duayı asla bırakmamasını tavsiye etmiştir.",
+        "fr": "Le Prophète (SAW) a conseillé à Mu'adh ibn Jabal (RA) de ne jamais délaisser cette invocation après chaque prière.",
+        "ms": "Nabi (SAW) menasihati Mu'adz bin Jabal (RA) untuk tidak pernah meninggalkan doa ini selepas setiap solat."
+      },
       "translations": {
         "ur": "اے اللہ تیرے ذکر، تیرے شکر اور حسن عبادت میں میری مدد فرما",
         "id": "Ya Allah, tolonglah aku untuk mengingat-Mu, bersyukur kepada-Mu, dan beribadah dengan baik kepada-Mu",
@@ -1567,6 +2135,14 @@
       "repetitionCount": 1,
       "audioFileName": null,
       "benefit": "Part of the opening dua of prayer. A beautiful metaphor asking Allah for complete distance from sin.",
+      "benefitTranslations": {
+        "ar": "جزء من دعاء استفتاح الصلاة. استعارة جميلة تسأل الله البُعد الكامل عن الذنب.",
+        "ur": "نماز کی افتتاحی دعا کا حصہ۔ گناہ سے مکمل دوری مانگنے کی ایک خوبصورت تمثیل۔",
+        "id": "Bagian dari doa pembuka shalat. Sebuah kiasan yang indah memohon kepada Allah jarak yang sempurna dari dosa.",
+        "tr": "Namaz açılış duasının bir parçasıdır. Günahtan tamamen uzak olmayı isteyen güzel bir benzetmedir.",
+        "fr": "Fait partie de l'invocation d'ouverture de la prière. Une belle métaphore demandant à Allah une distance complète du péché.",
+        "ms": "Sebahagian daripada doa pembukaan solat. Satu kiasan yang indah memohon kepada Allah jarak yang sempurna daripada dosa."
+      },
       "translations": {
         "ur": "اے اللہ مجھے میرے گناہوں سے اتنا دور کر دے جتنا تو نے مشرق کو مغرب سے دور کیا ہے",
         "id": "Ya Allah, jauhkanlah antara aku dan dosa-dosaku sebagaimana Engkau menjauhkan antara timur dan barat",

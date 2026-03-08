@@ -107,7 +107,7 @@ We reserve the right to modify these terms at any time. Continued use of the app
 
 ### 11. Governing Law
 
-These terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to conflict of law principles.
+These terms shall be governed by and construed in accordance with the laws of Western Australia, Australia, without regard to conflict of law principles.
 
 ### 12. Severability
 
@@ -119,7 +119,7 @@ If any provision of these terms is found to be unenforceable, the remaining prov
 
 For questions or concerns regarding these disclaimers:
 
-**Email:** [your-email@example.com]
+**Email:** ahmed.abdelmuniem@gmail.com
 
 ---
 

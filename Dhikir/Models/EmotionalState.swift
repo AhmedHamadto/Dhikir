@@ -89,4 +89,36 @@ enum EmotionalState: String, CaseIterable, Identifiable {
         case .lost: return "Seek guidance and clarity"
         }
     }
+
+    func displayName(for language: SupportedLanguage) -> String {
+        let key: AppString = switch self {
+        case .anxious: .emotionAnxious
+        case .sad: .emotionSad
+        case .angry: .emotionAngry
+        case .grateful: .emotionGrateful
+        case .hopeful: .emotionHopeful
+        case .lonely: .emotionLonely
+        case .overwhelmed: .emotionOverwhelmed
+        case .fearful: .emotionFearful
+        case .joyful: .emotionJoyful
+        case .lost: .emotionLost
+        }
+        return L(key, language)
+    }
+
+    func description(for language: SupportedLanguage) -> String {
+        let key: AppString = switch self {
+        case .anxious: .emotionAnxiousDesc
+        case .sad: .emotionSadDesc
+        case .angry: .emotionAngryDesc
+        case .grateful: .emotionGratefulDesc
+        case .hopeful: .emotionHopefulDesc
+        case .lonely: .emotionLonelyDesc
+        case .overwhelmed: .emotionOverwhelmedDesc
+        case .fearful: .emotionFearfulDesc
+        case .joyful: .emotionJoyfulDesc
+        case .lost: .emotionLostDesc
+        }
+        return L(key, language)
+    }
 }
