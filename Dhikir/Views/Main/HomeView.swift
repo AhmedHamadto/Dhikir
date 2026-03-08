@@ -3,11 +3,13 @@ import SwiftData
 
 struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Query private var streaks: [UserStreak]
     @Query private var settings: [UserSettings]
     @Binding var showEmotionSelection: Bool
     @State private var selectedCategory: String?
     @State private var showDhikir = false
+    @State private var cardsAppeared = false
 
     private var preferredLanguage: SupportedLanguage {
         settings.first?.preferredLanguage ?? .english
@@ -46,6 +48,7 @@ struct HomeView: View {
                     showEmotionSelection = false
                 }
                 NotificationService.shared.clearBadge()
+                cardsAppeared = true
             }
         }
     }
@@ -66,21 +69,27 @@ struct HomeView: View {
     private var streakCard: some View {
         HStack(spacing: AppTokens.Spacing.lg) {
             Image(systemName: "flame.fill")
-                .font(.system(size: 28))
+                .font(.system(size: AppTokens.IconSize.medium))
                 .foregroundStyle(Color.orange)
 
             VStack(alignment: .leading, spacing: AppTokens.Spacing.xs) {
-                Text("\(currentStreak) \(L(.dayStreak, preferredLanguage))")
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundStyle(Color("TextPrimary"))
+                if currentStreak == 0 {
+                    Text(L(.startYourJourney, preferredLanguage))
+                        .font(AppTokens.Typography.heading)
+                        .foregroundStyle(Color("TextPrimary"))
+                } else {
+                    Text("\(currentStreak) \(L(.dayStreak, preferredLanguage))")
+                        .font(AppTokens.Typography.heading)
+                        .foregroundStyle(Color("TextPrimary"))
+                }
 
                 if let milestone = StreakService.shared.streakMilestone(for: currentStreak) {
                     Text(milestone)
-                        .font(.system(size: 14))
+                        .font(AppTokens.Typography.bodySmall)
                         .foregroundStyle(Color("AccentGold"))
                 } else {
                     Text(L(.keepGoing, preferredLanguage))
-                        .font(.system(size: 14))
+                        .font(AppTokens.Typography.bodySmall)
                         .foregroundStyle(Color("TextSecondary"))
                 }
             }
@@ -94,7 +103,10 @@ struct HomeView: View {
                 .shadow(color: .black.opacity(AppTokens.Shadow.heavy.opacity), radius: AppTokens.Shadow.heavy.radius, y: AppTokens.Shadow.heavy.y)
         )
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(currentStreak) day streak")
+        .accessibilityLabel(currentStreak == 0
+            ? L(.startYourJourney, preferredLanguage)
+            : "\(currentStreak) day streak"
+        )
     }
 
     private var emotionsSection: some View {
@@ -108,7 +120,7 @@ struct HomeView: View {
                 GridItem(.flexible()),
                 GridItem(.flexible())
             ], spacing: AppTokens.Spacing.sm) {
-                ForEach(EmotionalState.allCases) { emotion in
+                ForEach(Array(EmotionalState.allCases.enumerated()), id: \.element) { index, emotion in
                     EmotionButton(
                         title: emotion.displayName(for: preferredLanguage),
                         arabicTitle: emotion.arabicName,
@@ -120,6 +132,12 @@ struct HomeView: View {
                     ) {
                         selectCategory(emotion.rawValue)
                     }
+                    .opacity(cardsAppeared ? 1 : 0)
+                    .offset(y: cardsAppeared ? 0 : 8)
+                    .animation(
+                        reduceMotion ? .none : .easeInOut(duration: 0.3).delay(Double(index) * 0.03),
+                        value: cardsAppeared
+                    )
                 }
             }
         }
@@ -135,7 +153,8 @@ struct HomeView: View {
                 GridItem(.flexible()),
                 GridItem(.flexible())
             ], spacing: AppTokens.Spacing.md) {
-                ForEach(LifeSituation.allCases) { situation in
+                ForEach(Array(LifeSituation.allCases.enumerated()), id: \.element) { index, situation in
+                    let staggerOffset = EmotionalState.allCases.count + index
                     EmotionButton(
                         title: situation.displayName(for: preferredLanguage),
                         arabicTitle: situation.arabicName,
@@ -146,6 +165,12 @@ struct HomeView: View {
                     ) {
                         selectCategory(situation.rawValue)
                     }
+                    .opacity(cardsAppeared ? 1 : 0)
+                    .offset(y: cardsAppeared ? 0 : 8)
+                    .animation(
+                        reduceMotion ? .none : .easeInOut(duration: 0.3).delay(Double(staggerOffset) * 0.03),
+                        value: cardsAppeared
+                    )
                 }
             }
         }

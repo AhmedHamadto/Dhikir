@@ -13,6 +13,11 @@ enum AppTokens {
         static let transliteration = Font.system(size: 18, weight: .medium, design: .serif)
         static let counter = Font.system(size: 28, weight: .bold)
         static let counterSmall = Font.system(size: 14, weight: .medium)
+        static let bodySmall = Font.system(size: 14)
+    }
+
+    enum IconSize {
+        static let medium: CGFloat = 28
     }
 
     enum Spacing {

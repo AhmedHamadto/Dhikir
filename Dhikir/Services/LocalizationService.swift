@@ -10,6 +10,7 @@ enum AppString: String {
     case whatImDoing = "what_im_doing"
     case dayStreak = "day_streak"
     case keepGoing = "keep_going"
+    case startYourJourney = "start_your_journey"
 
     // Tabs
     case tabHome = "tab_home"
@@ -164,6 +165,7 @@ struct LocalizationService {
             "what_im_doing": "What I'm Doing",
             "day_streak": "Day Streak",
             "keep_going": "Keep going!",
+            "start_your_journey": "Start your journey",
 
             // Tabs
             "tab_home": "Home",
@@ -311,6 +313,7 @@ struct LocalizationService {
             "what_im_doing": "ما أفعله",
             "day_streak": "أيام متتالية",
             "keep_going": "استمر!",
+            "start_your_journey": "ابدأ رحلتك",
             "tab_home": "الرئيسية",
             "tab_favorites": "المفضلة",
             "tab_history": "السجل",
@@ -436,6 +439,7 @@ struct LocalizationService {
             "what_im_doing": "میں کیا کر رہا ہوں",
             "day_streak": "مسلسل دن",
             "keep_going": "جاری رکھیں!",
+            "start_your_journey": "اپنا سفر شروع کریں",
             "tab_home": "ہوم",
             "tab_favorites": "پسندیدہ",
             "tab_history": "تاریخ",
@@ -561,6 +565,7 @@ struct LocalizationService {
             "what_im_doing": "Yang Saya Lakukan",
             "day_streak": "Hari Berturut-turut",
             "keep_going": "Terus semangat!",
+            "start_your_journey": "Mulai perjalananmu",
             "tab_home": "Beranda",
             "tab_favorites": "Favorit",
             "tab_history": "Riwayat",
@@ -686,6 +691,7 @@ struct LocalizationService {
             "what_im_doing": "Ne Yapıyorum",
             "day_streak": "Günlük Seri",
             "keep_going": "Devam et!",
+            "start_your_journey": "Yolculuğuna başla",
             "tab_home": "Ana Sayfa",
             "tab_favorites": "Favoriler",
             "tab_history": "Geçmiş",
@@ -811,6 +817,7 @@ struct LocalizationService {
             "what_im_doing": "Ce que je fais",
             "day_streak": "Jours consécutifs",
             "keep_going": "Continuez !",
+            "start_your_journey": "Commencez votre voyage",
             "tab_home": "Accueil",
             "tab_favorites": "Favoris",
             "tab_history": "Historique",
@@ -936,6 +943,7 @@ struct LocalizationService {
             "what_im_doing": "Apa Yang Saya Lakukan",
             "day_streak": "Hari Berturut-turut",
             "keep_going": "Teruskan!",
+            "start_your_journey": "Mulakan perjalanan anda",
             "tab_home": "Utama",
             "tab_favorites": "Kegemaran",
             "tab_history": "Sejarah",
