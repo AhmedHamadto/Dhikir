@@ -24,7 +24,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 24) {
+                VStack(spacing: AppTokens.Spacing.xl) {
                     headerSection
 
                     streakCard
@@ -51,25 +51,25 @@ struct HomeView: View {
     }
 
     private var headerSection: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: AppTokens.Spacing.sm) {
             Text(L(.appName, preferredLanguage))
-                .font(.system(size: 36, weight: .bold, design: .serif))
+                .font(AppTokens.Typography.appTitle)
                 .foregroundStyle(Color("TextPrimary"))
 
             Text(L(.howAreYouFeeling, preferredLanguage))
-                .font(.system(size: 18, weight: .medium))
-                .foregroundStyle(Color("TextSecondary"))
+                .font(AppTokens.Typography.callToAction)
+                .foregroundStyle(Color("TextPrimary"))
         }
-        .padding(.top, 20)
+        .padding(.top, AppTokens.Spacing.xl)
     }
 
     private var streakCard: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: AppTokens.Spacing.lg) {
             Image(systemName: "flame.fill")
                 .font(.system(size: 28))
                 .foregroundStyle(Color.orange)
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: AppTokens.Spacing.xs) {
                 Text("\(currentStreak) \(L(.dayStreak, preferredLanguage))")
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(Color("TextPrimary"))
@@ -89,24 +89,25 @@ struct HomeView: View {
         }
         .padding()
         .background(
-            RoundedRectangle(cornerRadius: 16)
+            RoundedRectangle(cornerRadius: AppTokens.Radius.large)
                 .fill(Color("CardBackground"))
-                .shadow(color: .black.opacity(0.05), radius: 10, y: 5)
+                .shadow(color: .black.opacity(AppTokens.Shadow.heavy.opacity), radius: AppTokens.Shadow.heavy.radius, y: AppTokens.Shadow.heavy.y)
         )
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(currentStreak) day streak")
     }
 
     private var emotionsSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: AppTokens.Spacing.lg) {
             Text(L(.howIFeel, preferredLanguage))
-                .font(.system(size: 20, weight: .semibold))
+                .font(AppTokens.Typography.heading)
                 .foregroundStyle(Color("TextPrimary"))
 
             LazyVGrid(columns: [
                 GridItem(.flexible()),
+                GridItem(.flexible()),
                 GridItem(.flexible())
-            ], spacing: 12) {
+            ], spacing: AppTokens.Spacing.sm) {
                 ForEach(EmotionalState.allCases) { emotion in
                     EmotionButton(
                         title: emotion.displayName(for: preferredLanguage),
@@ -114,6 +115,7 @@ struct HomeView: View {
                         icon: emotion.icon,
                         color: emotion.color,
                         description: emotion.description(for: preferredLanguage),
+                        compact: true,
                         hapticEnabled: hapticEnabled
                     ) {
                         selectCategory(emotion.rawValue)
@@ -124,15 +126,15 @@ struct HomeView: View {
     }
 
     private var situationsSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: AppTokens.Spacing.lg) {
             Text(L(.whatImDoing, preferredLanguage))
-                .font(.system(size: 20, weight: .semibold))
+                .font(AppTokens.Typography.heading)
                 .foregroundStyle(Color("TextPrimary"))
 
             LazyVGrid(columns: [
                 GridItem(.flexible()),
                 GridItem(.flexible())
-            ], spacing: 12) {
+            ], spacing: AppTokens.Spacing.md) {
                 ForEach(LifeSituation.allCases) { situation in
                     EmotionButton(
                         title: situation.displayName(for: preferredLanguage),

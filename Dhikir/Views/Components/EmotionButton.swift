@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 struct EmotionButton: View {
     let title: String
@@ -6,49 +7,56 @@ struct EmotionButton: View {
     let icon: String
     let color: Color
     let description: String
+    var compact: Bool = false
     var hapticEnabled: Bool = true
     let action: () -> Void
 
     @State private var isPressed = false
 
+    private var iconSize: CGFloat { compact ? 40 : 50 }
+    private var iconFontSize: CGFloat { compact ? 18 : 22 }
+    private var titleFontSize: CGFloat { compact ? 12 : 14 }
+    private var arabicFontSize: CGFloat { compact ? 10 : 12 }
+    private var verticalPadding: CGFloat { compact ? 12 : 16 }
+
     var body: some View {
         Button(action: {
             if hapticEnabled {
-                let generator = UIImpactFeedbackGenerator(style: .medium)
-                generator.impactOccurred()
+                triggerHaptic(.medium)
             }
             action()
         }) {
-            VStack(spacing: 8) {
+            VStack(spacing: AppTokens.Spacing.sm) {
                 ZStack {
                     Circle()
                         .fill(color.opacity(0.2))
-                        .frame(width: 50, height: 50)
+                        .frame(width: iconSize, height: iconSize)
 
                     Image(systemName: icon)
-                        .font(.system(size: 22))
+                        .font(.system(size: iconFontSize))
                         .foregroundStyle(color)
                 }
 
                 Text(title)
-                    .font(.system(size: 14, weight: .semibold))
+                    .font(.system(size: titleFontSize, weight: .semibold))
                     .foregroundStyle(Color("TextPrimary"))
 
                 Text(arabicTitle)
-                    .font(.system(size: 12, weight: .medium))
+                    .font(.system(size: arabicFontSize, weight: .medium))
                     .foregroundStyle(Color("TextSecondary"))
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 16)
+            .frame(minHeight: 44)
+            .padding(.vertical, verticalPadding)
             .background(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: AppTokens.Radius.large)
                     .fill(Color("CardBackground"))
-                    .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
+                    .shadow(color: .black.opacity(AppTokens.Shadow.medium.opacity), radius: AppTokens.Shadow.medium.radius, y: AppTokens.Shadow.medium.y)
             )
             .scaleEffect(isPressed ? 0.95 : 1.0)
         }
         .buttonStyle(PlainButtonStyle())
-        .accessibilityLabel("\(title) — \(description)")
+        .accessibilityLabel("\(title), \(arabicTitle)")
         .onLongPressGesture(minimumDuration: .infinity, pressing: { pressing in
             withAnimation(.easeInOut(duration: 0.15)) {
                 isPressed = pressing
